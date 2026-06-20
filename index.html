@@ -1,0 +1,1281 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Cybersecurity & Secure Web Development Portfolio</title>
+  <style> 
+ /* Extracted from portfolio.html: styles.css */
+:root{
+  --bg0:#05060a;
+  --bg1:#070a12;
+  --card: rgba(10, 14, 28, .72);
+  --card2: rgba(10, 14, 28, .45);
+  --stroke: rgba(168, 85, 247, .22);
+  --stroke2: rgba(168, 85, 247, .12);
+  --text:#f0eaff;
+  --muted: rgba(240, 234, 255, .72);
+  --muted2: rgba(240, 234, 255, .55);
+
+  --cyan:#f472ff; 
+  --neon:#d946ef; 
+  --blue:#a855f7; 
+  --indigo:#7c3aed;
+
+  --grad: linear-gradient(135deg, rgba(168,85,247,.55), rgba(217,70,239,.35), rgba(124,58,237,.15));
+  --grad2: linear-gradient(135deg, rgba(217,70,239,.18), rgba(168,85,247,.25), rgba(124,58,237,.08));
+  --shadow: 0 18px 70px rgba(88, 28, 135, .42);
+  --shadow2: 0 10px 40px rgba(217, 70, 239, .16);
+
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 12px;
+
+  --focus: 0 0 0 4px rgba(217,70,239,.22);
+  --maxw: 1120px;
+  --headerH: 70px;
+}
+
+*{ box-sizing:border-box; }
+html, body{ height:100%; scroll-behavior: smooth; }
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x:hidden;
+  position: relative;
+}
+
+/* Fluid/Wave purple background animation */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20vmax;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(closest-side at 20% 30%, rgba(168,85,247,.50), transparent 65%),
+    radial-gradient(closest-side at 80% 25%, rgba(217,70,239,.42), transparent 60%),
+    radial-gradient(closest-side at 55% 85%, rgba(124,58,237,.35), transparent 62%),
+    radial-gradient(closest-side at 25% 80%, rgba(168,85,247,.25), transparent 55%);
+  filter: blur(36px) saturate(1.15);
+  opacity:.75;
+  transform: translate3d(0,0,0);
+  animation: fluidWave 14s ease-in-out infinite alternate;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:-20vmax;
+  z-index:0;
+  pointer-events:none;
+  background:
+    linear-gradient(135deg, rgba(168,85,247,.22), rgba(217,70,239,.14), rgba(124,58,237,.16));
+  mask-image: radial-gradient(circle at 50% 30%, rgba(0,0,0,1), rgba(0,0,0,0) 65%);
+  opacity:.35;
+  filter: blur(22px);
+  animation: fluidWave2 18s ease-in-out infinite alternate;
+}
+
+@keyframes fluidWave{
+  0%{ transform: translate3d(-6%, -2%, 0) scale(1.02) rotate(-2deg); }
+  33%{ transform: translate3d(3%, -6%, 0) scale(1.04) rotate(2deg); }
+  66%{ transform: translate3d(6%, 3%, 0) scale(1.03) rotate(-1deg); }
+  100%{ transform: translate3d(-2%, 7%, 0) scale(1.05) rotate(1deg); }
+}
+
+@keyframes fluidWave2{
+  0%{ transform: translate3d(4%, 2%, 0) scale(1.03); }
+  50%{ transform: translate3d(-5%, -3%, 0) scale(1.06); }
+  100%{ transform: translate3d(2%, -6%, 0) scale(1.04); }
+}
+
+a{ color:inherit; text-decoration:none; }
+button, input, textarea{ font:inherit; }
+
+.noise::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="260" height="260" filter="url(%23n)" opacity="0.35"/></svg>');
+  mix-blend-mode:overlay;
+  opacity:.18;
+  z-index:0;
+}
+
+.wrap{ position:relative; z-index:1; }
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  backdrop-filter: blur(14px);
+  background: rgba(5,6,10,.62);
+  border-bottom: 1px solid rgba(120,180,255,.14);
+}
+
+.nav{
+  max-width: var(--maxw);
+  margin:0 auto;
+  height: var(--headerH);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 0 18px;
+  gap:14px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 220px;
+}
+
+.logo{
+  width:40px; height:40px;
+  display:grid;
+  place-items:center;
+}
+
+.logoImg{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius: 14px;
+  display:block;
+}
+
+.logo{
+  background: radial-gradient(circle at 30% 30%, rgba(34,211,238,.55), rgba(59,130,246,.28) 55%, rgba(99,102,241,.10));
+  border:1px solid rgba(120,180,255,.25);
+  box-shadow: 0 0 0 6px rgba(34,211,238,.06), var(--shadow2);
+  position:relative;
+  overflow:hidden;
+  border-radius: 14px;
+}
+
+.logo::after{
+  content:"";
+  position:absolute;
+  inset:-40px;
+  background: conic-gradient(from 180deg, rgba(34,211,238,.0), rgba(34,211,238,.35), rgba(59,130,246,.35), rgba(99,102,241,.0));
+  animation: spin 7s linear infinite;
+  opacity:.85;
+}
+@keyframes spin{ to{ transform: rotate(360deg);} }
+
+.brand-text h1{
+  font-size: 14px;
+  margin:0;
+  letter-spacing:.2px;
+  font-weight:700;
+  line-height:1.2;
+}
+.brand-text p{ margin:0; font-size:12px; color:var(--muted2); }
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:14px;
+  padding:0;
+  margin:0;
+  align-items:center;
+}
+
+nav a{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  border:1px solid transparent;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  font-size: 13px;
+  white-space:nowrap;
+}
+
+nav a:hover{
+  background: rgba(217,70,239,.08);
+  border-color: rgba(217,70,239,.20);
+  transform: translateY(-1px);
+  color: var(--text);
+}
+
+.right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:flex-end;
+  min-width: 220px;
+}
+
+.langToggle{
+  display:flex;
+  border-radius: 999px;
+  padding:3px;
+  border:1px solid rgba(120,180,255,.18);
+  background: rgba(10,14,28,.4);
+  gap:4px;
+}
+
+.langToggle button{
+  border:0;
+  border-radius:999px;
+  padding: 8px 12px;
+  background: transparent;
+  color: var(--muted);
+  cursor:pointer;
+  transition: background .15s ease, color .15s ease;
+  font-size: 13px;
+}
+
+.langToggle button[aria-pressed="true"]{
+  background: rgba(34,211,238,.12);
+  color: var(--text);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.14) inset;
+}
+
+.ctaBtn{
+  border:1px solid rgba(120,180,255,.20);
+  background: rgba(10,14,28,.45);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor:pointer;
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+  font-weight:600;
+  font-size: 13px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  white-space:nowrap;
+}
+.ctaBtn:hover{
+  transform: translateY(-1px);
+  background: rgba(34,211,238,.08);
+  border-color: rgba(34,211,238,.30);
+}
+
+.mobileToggle{ display:none; }
+
+/* Hero */
+.hero{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 44px 18px 22px;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 20px;
+  align-items:stretch;
+}
+
+.heroCard{
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(10,14,28,.65), rgba(10,14,28,.40));
+  border:1px solid rgba(120,180,255,.16);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.heroCard::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(900px 420px at 15% 20%, rgba(34,211,238,.20), transparent 55%),
+              radial-gradient(700px 360px at 80% 0%, rgba(59,130,246,.18), transparent 60%);
+  pointer-events:none;
+}
+
+.heroInner{
+  position:relative;
+  padding: 26px;
+  display:flex;
+  flex-direction:column;
+  gap: 14px;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding: 8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(120,180,255,.18);
+  background: rgba(5,6,10,.25);
+  width: fit-content;
+}
+
+.pulseDot{
+  width:10px; height:10px;
+  border-radius:50%;
+  background: rgba(34,211,238,1);
+  box-shadow: 0 0 0 0 rgba(34,211,238,.40);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%{ box-shadow:0 0 0 0 rgba(34,211,238,.35);} 
+  60%{ box-shadow:0 0 0 12px rgba(34,211,238,0);} 
+  100%{ box-shadow:0 0 0 0 rgba(34,211,238,0);} 
+}
+
+.heroTitle{
+  font-size: clamp(26px, 4.2vw, 44px);
+  line-height:1.08;
+  margin:0;
+  font-weight:800;
+  letter-spacing: .2px;
+}
+
+.heroLead{
+  margin:0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height:1.7;
+  max-width: 58ch;
+}
+
+.heroActions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:15px;
+  align-items:center;
+}
+
+.primary{
+  border:1px solid rgba(34,211,238,.30);
+  background: linear-gradient(135deg, rgba(34,211,238,.15), rgba(59,130,246,.10));
+  box-shadow: 0 0 0 4px rgba(34,211,238,.10) inset;
+}
+
+.ghost{ background: rgba(10,14,28,.35); }
+
+.miniStats{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat{
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(10,14,28,.45);
+  border:1px solid rgba(217,70,239,.14);
+  position:relative;
+  overflow:hidden;
+}
+.stat::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background: radial-gradient(220px 120px at 20% 10%, rgba(34,211,238,.18), transparent 55%),
+              radial-gradient(240px 140px at 85% 40%, rgba(59,130,246,.14), transparent 60%);
+  pointer-events:none;
+}
+.stat strong{ position:relative; display:block; font-size:16px; margin-bottom: 4px; }
+.stat span{ position:relative; color: var(--muted2); font-size: 12.5px; }
+
+/* Right panel */
+.sideCard{
+  border-radius: var(--radius-xl);
+  background: linear-gradient(180deg, rgba(10,14,28,.55), rgba(10,14,28,.30));
+  border:1px solid rgba(120,180,255,.14);
+  box-shadow: var(--shadow2);
+  overflow:hidden;
+  position:relative;
+}
+.sideCard::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: radial-gradient(520px 280px at 20% 0%, rgba(34,211,238,.18), transparent 55%),
+              radial-gradient(540px 300px at 90% 10%, rgba(59,130,246,.16), transparent 60%);
+  pointer-events:none;
+}
+
+.sideInner{ position:relative; padding: 18px; display:flex; flex-direction:column; gap:14px; height:100%; }
+
+.profileRow{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.avatar{
+  width: 62px; height: 62px;
+  border-radius: 22px;
+  border:1px solid rgba(120,180,255,.22);
+  background: radial-gradient(circle at 30% 30%, rgba(34,211,238,.40), rgba(59,130,246,.18) 50%, rgba(99,102,241,.10));
+  position:relative;
+  overflow:hidden;
+  flex: 0 0 auto;
+}
+.avatar::after{
+  content:"";
+  position:absolute;
+  inset:-30px;
+  background: conic-gradient(from 90deg, rgba(34,211,238,.0), rgba(34,211,238,.35), rgba(59,130,246,.35), rgba(99,102,241,.0));
+  opacity:.85;
+  animation: spin 8s linear infinite;
+}
+
+.profileText{ flex: 1 1 auto; }
+.profileText h2{ margin:0; font-size: 16px; }
+.profileText p{ margin:4px 0 0; color: var(--muted2); font-size: 12.5px; line-height:1.5; }
+
+.chipRow{ display:flex; flex-wrap:wrap; gap:8px; }
+.chip{
+  padding:8px 10px;
+  border-radius: 999px;
+  background: rgba(10,14,28,.45);
+  border:1px solid rgba(120,180,255,.14);
+  color: var(--muted);
+  font-size: 12.5px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+.chip i{
+  width:8px; height:8px;
+  border-radius:50%;
+  background: rgba(34,211,238,.9);
+  box-shadow: 0 0 0 6px rgba(34,211,238,.12);
+}
+
+/* Sections */
+.section{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 30px 18px;
+}
+
+.sectionHeader{ margin-bottom: 20px; }
+
+.sectionHeader h3{
+  margin:0 0 6px 0;
+  font-size: 22px;
+  letter-spacing:.2px;
+  background: linear-gradient(90deg, #fff, var(--muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sectionHeader p{ margin:0; color: var(--muted2); font-size: 14px; max-width: 64ch; }
+
+.grid2{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.card{
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(10,14,28,.55), rgba(10,14,28,.32));
+  border:1px solid rgba(120,180,255,.14);
+  box-shadow: 0 10px 34px rgba(10,40,120,.18);
+  overflow:hidden;
+}
+
+.cardInner{ padding: 20px; }
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.item{
+  padding: 14px;
+  border-radius: 14px;
+  border:1px solid rgba(120,180,255,.12);
+  background: rgba(5,6,10,.18);
+  display:flex;
+  gap: 14px;
+  align-items:flex-start;
+}
+
+.itemIcon{
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  border:1px solid rgba(120,180,255,.20);
+  background: rgba(34,211,238,.08);
+  flex: 0 0 auto;
+  display:grid;
+  place-items:center;
+  box-shadow: 0 0 0 4px rgba(34,211,238,.08) inset;
+  font-size: 16px;
+}
+
+.itemIcon svg{ width:18px; height:18px; opacity:.95; }
+.item b{ display:block; font-size: 14px; margin-bottom:4px; }
+.item span{ display:block; color: var(--muted2); font-size: 13px; line-height:1.5; }
+
+footer{
+  padding: 40px 18px;
+  color: var(--muted2);
+  text-align:center;
+  border-top: 1px solid rgba(120,180,255,.08);
+  margin-top: 40px;
+}
+
+/* RTL Support Override */
+html[dir="rtl"] body { text-align: right; }
+html[dir="rtl"] .item { flex-direction: row; }
+html[dir="rtl"] .badge { gap: 8px; }
+
+/* Responsiveness */
+@media (max-width: 960px){
+  .hero{ grid-template-columns: 1fr; }
+  .right{ min-width: unset; }
+  .brand{ min-width: unset; }
+}
+
+@media (max-width: 780px){
+  nav ul{ display:none; }
+  .mobileToggle{ display:inline-flex; }
+  .heroInner{ min-height: unset; }
+  .grid2{ grid-template-columns: 1fr; }
+  .miniStats{ grid-template-columns: 1fr; }
+}
+
+/* Language support hiding/showing mechanism via JS */
+[data-lang="ar"], [data-lang="en"] { display: none; }
+
+/* Mobile menu drawer */
+.drawerOverlay{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(6px);
+  z-index:80;
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .2s ease;
+}
+.drawerOverlay.show{ opacity:1; pointer-events:auto; }
+
+.drawer{
+  position:fixed;
+  top: 68px;
+  left: 12px;
+  right: 12px;
+  z-index:90;
+  border-radius: 18px;
+  border:1px solid rgba(120,180,255,.18);
+  background: rgba(5,6,10,.72);
+  backdrop-filter: blur(14px);
+  transform: translateY(-10px);
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .2s ease, transform .2s ease;
+  box-shadow: 0 18px 70px rgba(10, 40, 120, .35);
+}
+.drawer.show{
+  opacity:1;
+  transform: translateY(0);
+  pointer-events:auto;
+}
+
+.drawer ul{ list-style:none; padding: 14px; margin:0; display:flex; flex-direction:column; gap: 8px; }
+.drawer a{ padding: 12px 12px; border-radius: 14px; border:1px solid rgba(120,180,255,.12); background: rgba(10,14,28,.38); color: var(--muted); display: block; }
+.drawer a:hover{ border-color: rgba(34,211,238,.25); color: var(--text); }
+
+.toast{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform: translateX(-50%);
+  background: rgba(5,6,10,.8);
+  border: 1px solid rgba(120,180,255,.18);
+  border-radius: 16px;
+  padding: 12px 14px;
+  box-shadow: 0 18px 70px rgba(88, 28, 135, .30);
+  display:none;
+  z-index:120;
+}
+.toast.show{ display:flex; gap:10px; align-items:center; }
+.ticon{ width:28px; height:28px; border-radius: 10px; display:grid; place-items:center; background: rgba(34,211,238,.08); border: 1px solid rgba(34,211,238,.20); }
+.toast p{ margin:0; font-size:13px; color: var(--text); }
+</style>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+</head>
+<body class="noise">
+  <div class="wrap">
+    <header>
+      <div class="nav">
+        <div class="brand" aria-label="Brand">
+          <div class="logo" aria-hidden="true"><img class="logoImg" src="my-logo.png" alt="Logo" /></div>
+
+          <div class="brand-text">
+            <h1>
+              <span data-lang="en">Majd Abdulaziz</span>
+              <span data-lang="ar">مجد عبد العزيز</span>
+            </h1>
+            <p>
+              <span data-lang="en">Cybersecurity Portfolio</span>
+              <span data-lang="ar">ملف الأمن السيبراني</span>
+            </p>
+          </div>
+        </div>
+
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#about"><span data-lang="en">About</span><span data-lang="ar">من أنا</span></a></li>
+            <li><a href="#skills"><span data-lang="en">Skills</span><span data-lang="ar">المهارات التقنية</span></a></li>
+            <li><a href="#projects"><span data-lang="en">Projects & Tools</span><span data-lang="ar">المشاريع والأدوات</span></a></li>
+            <li><a href="#certs"><span data-lang="en">Accreditations</span><span data-lang="ar">الاعتمادات والشهادات</span></a></li>
+            <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ar">التواصل</span></a></li>
+          </ul>
+        </nav>
+
+        <div class="right">
+          <div class="langToggle" role="group" aria-label="Language">
+            <button type="button" id="langAr" aria-pressed="false">AR</button>
+            <button type="button" id="langEn" aria-pressed="true">EN</button>
+          </div>
+
+          <button class="ctaBtn mobileToggle" type="button" id="openMenu" aria-label="Open menu">
+            <span aria-hidden="true">☰</span>
+          </button>
+
+          <button class="ctaBtn" type="button" id="scrollContact">
+            <span aria-hidden="true">⚡</span>
+            <span data-lang="en">Quick reach</span>
+            <span data-lang="ar">تواصل فوري</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true"></div>
+    <div class="drawer" id="drawer" aria-hidden="true">
+      <ul>
+        <li><a href="#about" class="drawerLink" data-close-drawer><span data-lang="ar">من أنا</span><span data-lang="en">About</span></a></li>
+        <li><a href="#skills" class="drawerLink" data-close-drawer><span data-lang="ar">المهارات</span><span data-lang="en">Skills</span></a></li>
+        <li><a href="#projects" class="drawerLink" data-close-drawer><span data-lang="ar">المشاريع</span><span data-lang="en">Projects</span></a></li>
+        <li><a href="#certs" class="drawerLink" data-close-drawer><span data-lang="ar">الشهادات</span><span data-lang="en">Certifications</span></a></li>
+        <li><a href="#contact" class="drawerLink" data-close-drawer><span data-lang="ar">التواصل</span><span data-lang="en">Contact</span></a></li>
+      </ul>
+    </div>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="heroCard">
+          <div class="heroInner">
+            <div class="badge">
+              <span class="pulseDot" aria-hidden="true"></span>
+              <span data-lang="en">Ready to secure environments & lift defensive postures</span>
+              <span data-lang="ar">جاهزة لتأمين البيئات الرقمية ورفع مستوى الحماية الدفاعية</span>
+            </div>
+
+            <h2 class="heroTitle">
+              <span data-lang="en">Majd Abdulaziz Ali Ibrahim</span>
+              <span data-lang="ar">مجد عبد العزيز علي إبراهيم</span>
+            </h2>
+
+            <p class="heroLead">
+              <span data-lang="en">Cybersecurity Diploma Graduate | Certified Ethical Hacker (CEH)</span>
+              <span data-lang="ar">طالبة دبلوم أمن سيبراني | حاصلة على شهادة الـ CEH</span>
+            </p>
+
+            <p class="heroLead" style="color: var(--cyan); font-weight: 600;">
+              <span data-lang="en">Seeking a Co-op Training opportunity.</span>
+              <span data-lang="ar">أبحث عن فرصة تدريب تعاوني.</span>
+            </p>
+
+            <div class="heroActions">
+              <button class="ctaBtn primary" type="button" id="viewSkills">
+                <span aria-hidden="true">🛡️</span>
+                <span data-lang="en">View Technical Skills</span>
+                <span data-lang="ar">عرض المهارات التقنية</span>
+              </button>
+              <a class="ctaBtn ghost" href="#certs">
+                <span aria-hidden="true">🏅</span>
+                <span data-lang="en">Accreditations Vault</span>
+                <span data-lang="ar">خزنة الشهادات والوثائق</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="miniStats" aria-label="Highlights">
+            <div class="stat">
+              <strong>
+                <span data-lang="en">AppSec & Hardening Focus</span>
+                <span data-lang="ar">التركيز على أمن التطبيقات وتشديد الأنظمة</span>
+              </strong>
+              <span>
+                <span data-lang="en">Vulnerability analysis, secure configurations, and baseline testing.</span>
+                <span data-lang="ar">تحليل الثغرات الأمنية، الإعدادات الآمنة، واختبارات الأنظمة الأساسية.</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="sideCard" aria-label="Quick profile">
+          <div class="sideInner">
+            <div class="profileRow">
+              <div style="display:flex; gap:14px; align-items:center;">
+                <div class="avatar" aria-hidden="true"></div>
+                <div class="profileText">
+                  <h2>
+                    <span data-lang="en">Majd Abdulaziz</span>
+                    <span data-lang="ar">مجد عبد العزيز</span>
+                  </h2>
+                  <p>
+                    <span data-lang="en">Cybersecurity Specialist</span>
+                    <span data-lang="ar">أخصائية أمن سيبراني</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="chipRow" aria-label="Core areas">
+              <span class="chip"><i aria-hidden="true"></i><span>OWASP Top 10</span></span>
+              <span class="chip"><i aria-hidden="true"></i><span>Vulnerability Assessment</span></span>
+              <span class="chip"><i aria-hidden="true"></i><span>Network Security</span></span>
+              <span class="chip"><i aria-hidden="true"></i><span>Secure Code Auditing</span></span>
+            </div>
+
+            <div class="card" style="background: rgba(10,14,28,.30); margin-top: auto;">
+              <div class="cardInner">
+                <div class="sectionHeader" style="margin:0;">
+                  <h3>
+                    <span data-lang="en">Why Co-op Ready?</span>
+                    <span data-lang="ar">لماذا أنا مستعدة للتدريب؟</span>
+                  </h3>
+                  <p style="font-size: 12.5px;">
+                    <span data-lang="en">Deep self-learning, academic discipline, and hands-on lab projects.</span>
+                    <span data-lang="ar">تعليم ذاتي عميق، انضباط أكاديمي، ومشاريع معملية تطبيقية.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="about">
+        <div class="sectionHeader">
+          <h3>
+            <span data-lang="en">About Me</span>
+            <span data-lang="ar">من أنا</span>
+          </h3>
+          <p>
+            <span data-lang="en">Bridging theoretical knowledge with offensive and defensive practical laboratory metrics.</span>
+            <span data-lang="ar">ربط المعرفة النظرية الأكاديمية بالتطبيق العملي الدفاعي والهجومي في المختبرات السيبرانية.</span>
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardInner">
+              <div class="item" style="margin:0; border-color: rgba(34,211,238,.2);">
+                <div class="itemIcon" aria-hidden="true">🛡️</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Application Security (AppSec)</span>
+                    <span data-lang="ar">أمن التطبيقات والبرمجيات</span>
+                  </b>
+                  <span>
+                    <span data-lang="en">Evaluating logical flaws, assessing baseline authentication, and mitigating OWASP threats.</span>
+                    <span data-lang="ar">تقييم الأخطاء المنطقية، فحص آليات المصادقة، والحد من مخاطر ثغرات OWASP.</span>
+                  </span>
+                </div>
+              </div>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon" aria-hidden="true">📋</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Actionable Technical Reporting</span>
+                      <span data-lang="ar">تقارير فنية دقيقة</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Documenting vulnerabilities with detailed evidence, business impact, and mitigation steps.</span>
+                      <span data-lang="ar">توثيق الثغرات بالأدلة الفنية وتأثيرها على العمل مع تقديم خطوات واضحة للإصلاح.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardInner">
+              <h3>
+                <span data-lang="en">Core Mindset & Approach</span>
+                <span data-lang="ar">المنهجية والفكر التقني</span>
+              </h3>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon" style="color:var(--cyan)">1</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Continuous Autonomous Research</span>
+                      <span data-lang="ar">البحث والتعليم الذاتي المستمر</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Utilizing terminal tools and isolated sandboxes to analyze operating systems and modern attack pathways.</span>
+                      <span data-lang="ar">استخدام سطر الأوامر (Terminal) والبيئات المعزولة لتحليل أنظمة التشغيل ومسارات الهجوم الحديثة.</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="itemIcon" style="color:var(--cyan)">2</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Hardening & Implementation</span>
+                      <span data-lang="ar">التشديد والتحصين الأمني</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Applying rigid security configurations, access control matrices, and baseline policies.</span>
+                      <span data-lang="ar">تطبيق إعدادات الحماية الصارمة، مصفوفات التحكم بالوصول، وسياسات الأمن الأساسية.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="skills">
+        <div class="sectionHeader">
+          <h3>
+            <span data-lang="en">Technical Capabilities</span>
+            <span data-lang="ar">المهارات والقدرات التقنية</span>
+          </h3>
+          <p>
+            <span data-lang="en">Offensive tactics balanced with practical secure development and system defense knowledge.</span>
+            <span data-lang="ar">القدرات الهجومية المتوازنة مع التطوير الآمن ومعرفة آليات الدفاع عن الأنظمة.</span>
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:16px; color: var(--cyan);">
+                <span data-lang="en">Cybersecurity & Ethical Hacking</span>
+                <span data-lang="ar">الأمن السيبراني والاختراق الأخلاقي</span>
+              </h3>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon">🧩</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Offensive Methodology (CEH)</span>
+                      <span data-lang="ar">المنهجية الهجومية واختبار الاختراق</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Information gathering, network scanning, and vulnerability exploitation concepts based on CEH guidelines.</span>
+                      <span data-lang="ar">جمع المعلومات، فحص الشبكات، واستغلال الثغرات الأمنية وفق منهجية الشهادة العالمية CEH.</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="itemIcon">🔐</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Defensive Posture & Hardening</span>
+                      <span data-lang="ar">آليات الدفاع وحماية الأنظمة</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Familiarity with firewall configurations, access rules, log analysis, and malware containment principles.</span>
+                      <span data-lang="ar">الإلمام بجدران الحماية، قواعد الوصول، تحليل السجلات (Logs)، ومبادئ احتواء البرمجيات الخبيثة.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:16px; color: var(--cyan);">
+                <span data-lang="en">Secure Web Engineering & Systems</span>
+                <span data-lang="ar">تطوير الويب الآمن وإدارة الأنظمة</span>
+              </h3>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon">⚙️</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Secure API Design & Logic</span>
+                      <span data-lang="ar">برمجة واجهات التطبيقات (APIs) الآمنة</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Input validation, safe authorization checks, rate-limiting, and preventative code layers.</span>
+                      <span data-lang="ar">التحقق من المدخلات، فحص الصلاحيات الآمن، تحديد معدل الطلبات، وبناء طبقات برمجية وقائية.</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="item">
+                  <div class="itemIcon">🖥️</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">OS & Virtualization Maintenance</span>
+                      <span data-lang="ar">إدارة الأنظمة والبيئات الافتراضية</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Advanced macOS system terminal management, file system auditing, and secure hypervisors (UTM, Parallels).</span>
+                      <span data-lang="ar">إدارة متقدمة لأنظمة التشغيل عبر الـ Terminal، تدقيق الملفات، والتعامل مع البيئات الافتراضية المعزولة.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="sectionHeader">
+          <h3>
+            <span data-lang="en">Academic Projects & Lab Frameworks</span>
+            <span data-lang="ar">المشاريع الأكاديمية والمختبرات التطبيقية</span>
+          </h3>
+          <p>
+            <span data-lang="en">A showcase of practical engineering and vulnerability simulation blueprints designed for enterprise validation.</span>
+            <span data-lang="ar">نماذج عملية لمشاريع برمجية ومختبرات فحص الثغرات مجهزة خصيصاً للتوافق مع المعايير المؤسسية.</span>
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardInner">
+              <h4>
+                <span data-lang="en">🛡️ Web Application Pen-Testing Sandbox</span>
+                <span data-lang="ar">🛡️ مختبر محاكاة فحص ثغرات تطبيقات الويب</span>
+              </h4>
+              <p style="font-size:13px; color:var(--muted);">
+                <span data-lang="en">An isolated testing structure utilizing virtualization to deploy, scan, and document OWASP Top 10 critical flaws like SQLi and Broken Authentication inside a laboratory environment.</span>
+                <span data-lang="ar">بيئة معزولة بالكامل تحاكي تطبيقات ويب حقيقية لفحص واكتشاف ثغرات OWASP العشرة الأكثر خطورة (مثل حقن قواعد البيانات واختراق المصادقة) وتوثيقها في تقارير فنية.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardInner">
+              <h4>
+                <span data-lang="en">🧰 Toolkit & Ecosystem Competency</span>
+                <span data-lang="ar">🧰 الأدوات والبيئات التقنية المستخدمة</span>
+              </h4>
+              <div class="chipRow" style="margin-top:10px;">
+                <span class="chip"><i></i>Nmap</span>
+                <span class="chip"><i></i>Burp Suite</span>
+                <span class="chip"><i></i>Wireshark</span>
+                <span class="chip"><i></i>Linux CLI</span>
+                <span class="chip"><i></i>macOS Hardening</span>
+                <span class="chip"><i></i>Virtualization (UTM/Parallels)</span>
+                <span class="chip"><i></i>Secure HTML5/CSS3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="certs">
+        <div class="sectionHeader">
+          <h3>
+            <span data-lang="en">Accreditations & Credentials Vault</span>
+            <span data-lang="ar">الاعتمادات الأكاديمية والشهادات</span>
+          </h3>
+          <p>
+            <span data-lang="en">Validated certifications and diplomas foundational to my cybersecurity career track.</span>
+            <span data-lang="ar">الشهادات المعتمدة والدبلومات الأساسية التي تشكل ركيزة مساري المهني في الأمن السيبراني.</span>
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="cardInner">
+            <div class="list" style="margin-top:0;">
+              <div class="item">
+                <div class="itemIcon" style="background:rgba(217,70,239,.1); border-color:var(--neon);">🏅</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Certified Ethical Hacker (CEH)</span>
+                    <span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span>
+                  </b>
+                  <span>
+                    <span data-lang="en">Issued by EC-Council. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span>
+                    <span data-lang="ar">صادرة من المجلس العالمي وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="itemIcon">🎓</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Cybersecurity Professional Diploma</span>
+                    <span data-lang="ar">دبلوم الأمن السيبراني المحترف</span>
+                  </b>
+                  <span>
+                    <span data-lang="en">Academy of Learning | Built upon rigorous academic standards, administrative discipline, and secure foundational frameworks.</span>
+                    <span data-lang="ar">أكاديمية التعلم | دبلوم أكاديمي مبني على أسس قوية لمعايير أمن المعلومات والشبكات والإدارة الفنية.</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="item" style="margin-top: 15px; border-style: dashed;">
+                <div class="itemIcon">🧪</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Verified Digital Files Vault</span>
+                    <span data-lang="ar">خزنة الوثائق والملفات المعتمدة</span>
+                  </b>
+                  <span style="display:block; font-size:13px; margin-top:6px;">
+                    <span data-lang="en">An organized file directory housing official academic transcripts, certificate validations, and laboratory documentation folders.</span>
+                    <span data-lang="ar">دليل منظم يحتوي على السجلات الأكاديمية الرسمية، إثباتات الشهادات الرقمية، وتقارير المعامل التطبيقية.</span>
+                  </span>
+                  <span style="font-size:12px; margin-top:10px; display:block; color: var(--cyan);">
+                    <span data-lang="en">Academic & Certificates Drive Portfolio</span>
+                    <span data-lang="ar">ملف الشهادات والوثائق الأكاديمية (Google Drive)</span>
+                  </span>
+                  <span style="font-size:12px; margin-top:5px; display:block; color: var(--cyan);">
+                    <span data-lang="en">Secure Cloud Link Available for Verification</span>
+                    <span data-lang="ar">رابط سحابي آمن متاح للتحقق</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="sectionHeader">
+          <h3>
+            <span data-lang="en">Contact Channels</span>
+            <span data-lang="ar">قنوات التواصل</span>
+          </h3>
+          <p>
+            <span data-lang="en">Reach out immediately for Co-op opportunities. Desktop & mobile optimized.</span>
+            <span data-lang="ar">تواصل فوري لمناقشة فرص التدريب التعاوني. متوافق بالكامل مع الجوال والحاسوب.</span>
+          </p>
+        </div>
+
+        <div class="grid2">
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:15px; color: var(--cyan);">
+                <span data-lang="en">Secure Electronic Mail</span>
+                <span data-lang="ar">البريد الإلكتروني الرسمي</span>
+              </h3>
+              <div class="list" style="margin-top:12px;">
+                <div class="item" style="align-items:center;">
+                  <div class="itemIcon">📧</div>
+                  <div>
+                    <b><span data-lang="en">Primary Contact</span><span data-lang="ar">البريد الأساسي</span></b>
+                    <a href="mailto:majd2.abdulaziz@gmail.com" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
+                      majd2.abdulaziz@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div class="item" style="align-items:center;">
+                  <div class="itemIcon">📩</div>
+                  <div>
+                    <b><span data-lang="en">Backup Contact</span><span data-lang="ar">البريد الاحتياطي</span></b>
+                    <a href="mailto:majd_abdulaziz@icloud.com" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
+                      majd_abdulaziz@icloud.com
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:15px; color: var(--cyan);">
+                <span data-lang="en">Professional Matrices & Codes (QR)</span>
+                <span data-lang="ar">المنصات والملفات المهنية الموثقة (QR)</span>
+              </h3>
+              <div class="grid2" style="margin-top:12px; grid-template-columns: 1fr;">
+                <div class="item" style="align-items:center;">
+                  <div class="itemIcon">🔳</div>
+                  <div>
+                    <b>QR GitHub</b>
+                    <div style="margin-top:8px;">
+                      <a href="https://github.com/majd2abdulaziz-code" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">
+                        <img src="img/QR GitHub .png" alt="QR GitHub" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
+                      </a>
+                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
+                        <a href="https://github.com/majd2abdulaziz-code" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">https://github.com/majd2abdulaziz-code</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item" style="align-items:center;">
+                  <div class="itemIcon">🔳</div>
+                  <div>
+                    <b>QR LinkedIn</b>
+                    <div style="margin-top:8px;">
+                      <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">
+                        <img src="img/ LinkedIn.png" alt="LinkedIn QR Code" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
+                      </a>
+                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
+                        <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">linkedin.com/feed/</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="item" style="align-items:center;">
+                  <div class="itemIcon">🔳</div>
+                  <div>
+                    <b>QR Google Drive</b>
+                    <div style="margin-top:8px;">
+                      <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" aria-label="Open Google Drive">
+                        <img src="img/QR-Google-Drive.png" alt="QR Google Drive" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
+                      </a>
+                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
+                        <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="cardInner">
+            <h3 style="font-size:15px; color: var(--cyan);">
+              <span data-lang="en">Direct Communications (Instant Contact)</span>
+              <span data-lang="ar">الاتصال والرسائل الفورية (تواصل سريع)</span>
+            </h3>
+            <div class="list" style="margin-top:12px;">
+              <div class="item" style="align-items:center;">
+                <div class="itemIcon">💬</div>
+                <div>
+                  <b><span data-lang="en">Instant WhatsApp</span><span data-lang="ar">مراسلة فورية عبر الواتساب</span></b>
+                  <a id="waLink" href="#" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
+                    0537292913
+                  </a>
+                </div>
+              </div>
+              <div class="item" style="align-items:center;">
+                <div class="itemIcon">📱</div>
+                <div>
+                  <b><span data-lang="en">Direct SMS</span><span data-lang="ar">رسالة نصية مباشرة</span></b>
+                  <a id="smsLink" href="#" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
+                    0537292913
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <span data-lang="en">© 2026 Majd Abdulaziz Ali Ibrahim. All Rights Reserved. Cybersecurity & Co-op Portfolio.</span>
+          <span data-lang="ar">© 2026 مجد عبد العزيز علي إبراهيم. جميع الحقوق محفوظة. محفظة الأمن السيبراني والتدريب التعاوني.</span>
+        </div>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite">
+      <div class="ticon" aria-hidden="true">✅</div>
+      <p id="toastText">Received (locally)</p>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+  const root = document.documentElement;
+  const arBtn = document.getElementById("langAr");
+  const enBtn = document.getElementById("langEn");
+  const toastText = document.getElementById("toastText");
+
+  function setLanguage(lang) {
+    const isAR = lang === "ar";
+
+    root.lang = lang;
+    root.dir = isAR ? "rtl" : "ltr";
+
+    // التحكم بالظهور والاختفاء عبر الـ JavaScript مباشرة لتفادي تعليق التصميم
+    document.querySelectorAll('[data-lang="ar"]').forEach(el => el.style.display = isAR ? 'inline' : 'none');
+    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = isAR ? 'none' : 'inline');
+
+    if (toastText) {
+      toastText.textContent = isAR ? "تم الاستلام (محلياً)" : "Received (locally)";
+    }
+
+    arBtn?.setAttribute("aria-pressed", String(isAR));
+    enBtn?.setAttribute("aria-pressed", String(!isAR));
+  }
+
+  arBtn?.addEventListener("click", () => setLanguage("ar"));
+  enBtn?.addEventListener("click", () => setLanguage("en"));
+
+  // Smooth scroll triggers
+  document.getElementById("scrollContact")?.addEventListener("click", () => {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  document.getElementById("viewSkills")?.addEventListener("click", () => {
+    document.getElementById("skills").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // Mobile Menu Overlay Drawer System
+  const overlay = document.getElementById("drawerOverlay");
+  const drawer = document.getElementById("drawer");
+  const openMenu = document.getElementById("openMenu");
+
+  function setDrawer(open) {
+    overlay?.classList.toggle("show", open);
+    drawer?.classList.toggle("show", open);
+    overlay?.setAttribute("aria-hidden", String(!open));
+    drawer?.setAttribute("aria-hidden", String(!open));
+  }
+
+  openMenu?.addEventListener("click", () => setDrawer(true));
+  overlay?.addEventListener("click", () => setDrawer(false));
+  document.querySelectorAll("[data-close-drawer]").forEach((a) => {
+    a.addEventListener("click", () => setDrawer(false));
+  });
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setDrawer(false);
+  });
+
+  // Dynamic Communications link updates
+  const waLink = document.getElementById("waLink");
+  const smsLink = document.getElementById("smsLink");
+  const phoneDigits = "0537292913";
+  const waPhone = "966" + phoneDigits.replace(/^0/, "");
+
+  if (waLink) {
+    const waMessage = encodeURIComponent(
+      "Hello Majd, we reviewed your cybersecurity portfolio and would like to discuss Co-op training opportunities."
+    );
+    waLink.setAttribute("href", `https://wa.me/${waPhone}?text=${waMessage}`);
+  }
+  if (smsLink) {
+    smsLink.setAttribute("href", `sms:${phoneDigits}`);
+  }
+
+  // وضع اللغة الافتراضية عند التشغيل (يمكنك تغييرها إلى "ar" إن أردت أن يفتح الموقع باللغة العربية أولاً)
+  setLanguage("en");
+})();
+  </script>
+</body>
+</html>
