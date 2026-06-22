@@ -794,9 +794,6 @@ html[dir="rtl"] .backToTop{ right:auto; left:24px; }
 @keyframes cursorSpin{ to{ transform: rotate(360deg); } }
 body.cursor-active .cursor-ring{ width:50px; height:50px; border-color: var(--cyan); }
 body.cursor-active .cursor-dot{ background: var(--blue); }
-@media (pointer: coarse){
-  .cursor-dot, .cursor-ring, .cursor-glow{ display:none !important; }
-}
 
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce){
@@ -1528,8 +1525,11 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
    ===================================================== */
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduceMotion) return;
+
   const isFinePointer = window.matchMedia("(pointer: fine)").matches;
-  if (reduceMotion || !isFinePointer) return;
+  const hasTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
+  if (!isFinePointer && !hasTouch) return;
 
   const dot = document.createElement("div");
   dot.className = "cursor-dot";
@@ -1539,46 +1539,91 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
   glow.className = "cursor-glow";
 
   document.body.append(glow, ring, dot);
-  document.body.classList.add("has-custom-cursor");
+  if (isFinePointer) document.body.classList.add("has-custom-cursor");
+  if (hasTouch) document.body.classList.add("has-touch-cursor");
 
   let mx = window.innerWidth / 2;
   let my = window.innerHeight / 2;
   let dotX = mx, dotY = my;
   let ringX = mx, ringY = my;
   let glowX = mx, glowY = my;
-  let revealed = false;
+  let hideTimer = null;
 
   function reveal() {
-    if (revealed) return;
-    revealed = true;
+    clearTimeout(hideTimer);
     dot.style.opacity = 1;
     ring.style.opacity = 1;
     glow.style.opacity = 1;
   }
-
-  window.addEventListener("mousemove", (e) => {
-    mx = e.clientX;
-    my = e.clientY;
-    reveal();
-  });
-  document.addEventListener("mouseleave", () => {
-    dot.style.opacity = 0;
-    ring.style.opacity = 0;
-    glow.style.opacity = 0;
-  });
-  document.addEventListener("mouseenter", reveal);
+  function hide(delay) {
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => {
+      dot.style.opacity = 0;
+      ring.style.opacity = 0;
+      glow.style.opacity = 0;
+    }, delay || 0);
+  }
 
   const hoverSelector = "a, button, .chip, .ctaBtn, input, textarea, .card, .langToggle button";
-  document.addEventListener("mouseover", (e) => {
-    if (e.target.closest && e.target.closest(hoverSelector)) {
-      document.body.classList.add("cursor-active");
+
+  // ----- Mouse / trackpad (fine pointer) -----
+  if (isFinePointer) {
+    window.addEventListener("mousemove", (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+      reveal();
+    });
+    document.addEventListener("mouseleave", () => hide(0));
+    document.addEventListener("mouseenter", reveal);
+
+    document.addEventListener("mouseover", (e) => {
+      if (e.target.closest && e.target.closest(hoverSelector)) {
+        document.body.classList.add("cursor-active");
+      }
+    });
+    document.addEventListener("mouseout", (e) => {
+      if (e.target.closest && e.target.closest(hoverSelector)) {
+        document.body.classList.remove("cursor-active");
+      }
+    });
+  }
+
+  // ----- Touch (iPad / iPhone / tablets / all touch screens) -----
+  if (hasTouch) {
+    function touchPoint(e) {
+      const t = e.touches && e.touches[0];
+      return t ? { x: t.clientX, y: t.clientY } : null;
     }
-  });
-  document.addEventListener("mouseout", (e) => {
-    if (e.target.closest && e.target.closest(hoverSelector)) {
+
+    document.addEventListener("touchstart", (e) => {
+      const p = touchPoint(e);
+      if (!p) return;
+      mx = dotX = ringX = glowX = p.x;
+      my = dotY = ringY = glowY = p.y;
+      reveal();
+      if (e.target.closest && e.target.closest(hoverSelector)) {
+        document.body.classList.add("cursor-active");
+      }
+    }, { passive: true });
+
+    document.addEventListener("touchmove", (e) => {
+      const p = touchPoint(e);
+      if (!p) return;
+      mx = p.x;
+      my = p.y;
+      reveal();
+    }, { passive: true });
+
+    document.addEventListener("touchend", () => {
       document.body.classList.remove("cursor-active");
-    }
-  });
+      hide(550);
+    }, { passive: true });
+
+    document.addEventListener("touchcancel", () => {
+      document.body.classList.remove("cursor-active");
+      hide(200);
+    }, { passive: true });
+  }
 
   function tick() {
     dotX += (mx - dotX) * 0.35;
