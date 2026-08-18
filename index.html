@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -554,6 +554,16 @@ html[dir="rtl"] .badge { gap: 8px; }
   .miniStats{ grid-template-columns: 1fr; }
 }
 
+@media (max-width: 480px){
+  .hero{ padding: 28px 14px 16px; }
+  .section{ padding: 22px 14px; }
+  .heroInner{ padding: 18px; }
+  .brand-text p{ display:none; }
+  .heroActions, .cvDownloadSection{ flex-direction:column; align-items:stretch; }
+  .heroActions .ctaBtn, .cvDownloadSection .cvBtn{ justify-content:center; }
+  .chipRow{ gap:6px; }
+}
+
 /* Language support hiding/showing mechanism via JS */
 [data-lang="ar"], [data-lang="en"] { display: none; }
 
@@ -765,7 +775,7 @@ html[dir="rtl"] .backToTop{ right:auto; left:24px; }
 }
 .cursor-ring{
   position:fixed; top:0; left:0;
-  width:34px; height:34px;
+  width:20px; height:20px;
   border-radius:50%;
   border:1px solid rgba(217,70,239,.55);
   pointer-events:none;
@@ -791,7 +801,7 @@ html[dir="rtl"] .backToTop{ right:auto; left:24px; }
   transition: opacity .3s ease;
 }
 @keyframes cursorSpin{ to{ transform: rotate(360deg); } }
-body.cursor-active .cursor-ring{ width:50px; height:50px; border-color: var(--cyan); }
+body.cursor-active .cursor-ring{ width:30px; height:30px; border-color: var(--cyan); }
 body.cursor-active .cursor-dot{ background: var(--blue); }
 
 /* Respect reduced-motion preference */
@@ -835,8 +845,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
         <div class="right">
           <div class="langToggle" role="group" aria-label="Language">
-            <button type="button" id="langAr" aria-pressed="false">AR</button>
-            <button type="button" id="langEn" aria-pressed="true">EN</button>
+            <button type="button" id="langAr" aria-pressed="true">AR</button>
+            <button type="button" id="langEn" aria-pressed="false">EN</button>
           </div>
 
           <button class="ctaBtn mobileToggle" type="button" id="openMenu" aria-label="Open menu">
@@ -879,13 +889,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </h2>
 
             <p class="heroLead">
-              <span data-lang="en">Cybersecurity Diploma Student | Certified Ethical Hacker (CEH)</span>
-              <span data-lang="ar">طالبة دبلوم أمن سيبراني | حاصلة على شهادة الـ CEH</span>
-            </p>
-
-            <p class="heroLead" style="color: var(--cyan); font-weight: 600;">
-              <span data-lang="en">Seeking a Co-op Training opportunity.</span>
-              <span data-lang="ar">أبحث عن فرصة تدريب تعاوني.</span>
+              <span data-lang="en">Cybersecurity Specialist & Web Application Security | Certified Ethical Hacker (CEH)</span>
+              <span data-lang="ar">متخصصة أمن سيبراني وأمان تطبيقات الويب | حاصلة على شهادة CEH</span>
             </p>
 
             <div class="heroActions">
@@ -898,6 +903,19 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                 <span aria-hidden="true">🏅</span>
                 <span data-lang="en">Accreditations Vault</span>
                 <span data-lang="ar">خزنة الشهادات والوثائق</span>
+              </a>
+            </div>
+
+            <div class="heroActions" style="margin-top: 12px;">
+              <a class="ctaBtn primary" href="Majd_CV.pdf" download>
+                <span aria-hidden="true">📄</span>
+                <span data-lang="en">Download CV (EN)</span>
+                <span data-lang="ar">تحميل السيرة (EN)</span>
+              </a>
+              <a class="ctaBtn ghost" href="Majd_CV_AR.pdf" download>
+                <span aria-hidden="true">📄</span>
+                <span data-lang="en">Download CV (AR)</span>
+                <span data-lang="ar">تحميل السيرة (AR)</span>
               </a>
             </div>
           </div>
@@ -945,12 +963,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               <div class="cardInner">
                 <div class="sectionHeader" style="margin:0;">
                   <h3>
-                    <span data-lang="en">Why Co-op Ready?</span>
-                    <span data-lang="ar">لماذا أنا مستعدة للتدريب؟</span>
+                    <span data-lang="en">Professional Focus</span>
+                    <span data-lang="ar">التركيز المهني</span>
                   </h3>
                   <p style="font-size: 12.5px;">
-                    <span data-lang="en">Deep self-learning, academic discipline, and hands-on lab projects.</span>
-                    <span data-lang="ar">تعليم ذاتي عميق، انضباط أكاديمي، ومشاريع معملية تطبيقية.</span>
+                    <span data-lang="en">Vulnerability identification, application security, and hands-on penetration testing.</span>
+                    <span data-lang="ar">تحديد الثغرات الأمنية، أمان التطبيقات، واختبار الاختراق العملي.</span>
                   </p>
                 </div>
               </div>
@@ -1038,6 +1056,30 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                       <span data-lang="ar">تطبيق إعدادات الحماية الصارمة، مصفوفات التحكم بالوصول، وسياسات الأمن الأساسية.</span>
                     </span>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="cardInner">
+            <h3 style="font-size:16px; color: var(--cyan);">
+              <span data-lang="en">Professional Experience</span>
+              <span data-lang="ar">الخبرة المهنية</span>
+            </h3>
+            <div class="list">
+              <div class="item">
+                <div class="itemIcon" aria-hidden="true">💼</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Secure Web Developer — Pago Agency (2021 – Present)</span>
+                    <span data-lang="ar">مطورة ويب آمن — وكالة Pago (2021 – حتى الآن)</span>
+                  </b>
+                  <span>
+                    <span data-lang="en">Architected and deployed secure web applications using Cloudflare Workers, integrating cybersecurity best practices for OWASP Top 10 protection and data integrity. Enforced authentication, access control, and encryption standards across client applications, and conducted code reviews and vulnerability assessments prior to deployment.</span>
+                    <span data-lang="ar">تصميم ونشر تطبيقات ويب آمنة باستخدام Cloudflare Workers، مع دمج أفضل ممارسات الأمن السيبراني للحماية من ثغرات OWASP Top 10 وضمان سلامة البيانات. تطبيق معايير المصادقة والتحكم بالوصول والتشفير في تطبيقات العملاء، وإجراء مراجعات للأكواد وتقييمات للثغرات قبل النشر.</span>
+                  </span>
                 </div>
               </div>
             </div>
@@ -1134,6 +1176,80 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           </div>
         </div>
 
+        <div class="grid2" style="margin-top: 16px;">
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:16px; color: var(--cyan);">
+                <span data-lang="en">Programming Languages</span>
+                <span data-lang="ar">لغات البرمجة</span>
+              </h3>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon">💻</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Python, JavaScript, HTML/CSS, Bash</span>
+                      <span data-lang="ar">Python وJavaScript وHTML/CSS وBash</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Used for scripting, automation, secure web development, and system-level tasks.</span>
+                      <span data-lang="ar">مستخدمة في البرمجة النصية، الأتمتة، تطوير الويب الآمن، ومهام مستوى الأنظمة.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardInner">
+              <h3 style="font-size:16px; color: var(--cyan);">
+                <span data-lang="en">Cloud & Web Security</span>
+                <span data-lang="ar">أمان السحابة والويب</span>
+              </h3>
+              <div class="list">
+                <div class="item">
+                  <div class="itemIcon">☁️</div>
+                  <div>
+                    <b>
+                      <span data-lang="en">Cloudflare Workers, OWASP Top 10, Secure Coding</span>
+                      <span data-lang="ar">Cloudflare Workers وOWASP Top 10 والبرمجة الآمنة</span>
+                    </b>
+                    <span>
+                      <span data-lang="en">Deploying edge applications with security-first architecture and threat-aware development practices.</span>
+                      <span data-lang="ar">نشر تطبيقات على الحافة (Edge) بمعمارية تراعي الأمان وممارسات تطوير واعية بالتهديدات.</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 16px;">
+          <div class="cardInner">
+            <h3 style="font-size:16px; color: var(--cyan);">
+              <span data-lang="en">Tools & Techniques</span>
+              <span data-lang="ar">الأدوات والتقنيات</span>
+            </h3>
+            <div class="list">
+              <div class="item">
+                <div class="itemIcon">🛠️</div>
+                <div>
+                  <b>
+                    <span data-lang="en">Burp Suite, Nmap, Wireshark, Kali Linux</span>
+                    <span data-lang="ar">Burp Suite وNmap وWireshark وKali Linux</span>
+                  </b>
+                  <span>
+                    <span data-lang="en">Linux CLI, penetration testing, digital forensics, and cryptography.</span>
+                    <span data-lang="ar">سطر أوامر Linux، اختبار الاختراق، الأدلة الجنائية الرقمية، والتشفير.</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="card" style="margin-top: 16px;">
           <div class="cardInner">
             <h3 style="font-size:16px; color: var(--cyan);">
@@ -1186,6 +1302,19 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
         </div>
 
         <div class="grid2">
+          <div class="card">
+            <div class="cardInner">
+              <h4>
+                <span data-lang="en">🔒 Pago Agency Secure Web Platform</span>
+                <span data-lang="ar">🔒 منصة Pago Agency للويب الآمن</span>
+              </h4>
+              <p style="font-size:13px; color:var(--muted);">
+                <span data-lang="en">A production-grade suite of secure web applications built for Pago Agency clients, engineered end-to-end with authentication hardening, encryption of data in transit and at rest, and strict OWASP Top 10 compliance. Implements advanced role-based access controls and least-privilege policies across client-facing modules, backed by regular internal security audits and vulnerability reviews to keep the platform resilient against evolving threats.</span>
+                <span data-lang="ar">مجموعة تطبيقات ويب آمنة جاهزة للإنتاج تم بناؤها لعملاء وكالة Pago، بتصميم متكامل يشمل تقوية آليات المصادقة، وتشفير البيانات أثناء النقل والتخزين، والالتزام الصارم بمعايير OWASP Top 10. تطبق ضوابط تحكم بالوصول متقدمة قائمة على الأدوار وبمبدأ أقل الصلاحيات عبر الوحدات الخاصة بالعملاء، مدعومة بتدقيقات أمنية داخلية دورية ومراجعات للثغرات للحفاظ على متانة المنصة أمام التهديدات المتطورة.</span>
+              </p>
+            </div>
+          </div>
+
           <div class="card">
             <div class="cardInner">
               <h4>
@@ -1243,8 +1372,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                     <span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span>
                   </b>
                   <span>
-                    <span data-lang="en">Issued by EC-Council. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span>
-                    <span data-lang="ar">صادرة من المجلس العالمي وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span>
+                    <span data-lang="en">Issued by EC-Council, May 2026. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span>
+                    <span data-lang="ar">صادرة من المجلس العالمي (EC-Council) في مايو 2026، وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span>
                   </span>
                     <div style="margin-top:8px;">
                       <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; color: var(--cyan); text-decoration: underline; display:inline-flex; align-items:center; gap:4px;">
@@ -1259,12 +1388,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                 <div class="itemIcon">🎓</div>
                 <div>
                   <b>
-                    <span data-lang="en">Cybersecurity Professional Diploma</span>
-                    <span data-lang="ar">دبلوم الأمن السيبراني المحترف</span>
+                    <span data-lang="en">Cybersecurity Specialization Diploma</span>
+                    <span data-lang="ar">دبلوم التخصص في الأمن السيبراني</span>
                   </b>
                   <span>
-                    <span data-lang="en">Academy of Learning | Built upon rigorous academic standards, administrative discipline, and secure foundational frameworks.</span>
-                    <span data-lang="ar">أكاديمية التعلم | دبلوم أكاديمي مبني على أسس قوية لمعايير أمن المعلومات والشبكات والإدارة الفنية.</span>
+                    <span data-lang="en">Academy of Learning | Perfect 5.0 GPA. Advanced coursework in web application security, operating systems security, cryptography, and network defense.</span>
+                    <span data-lang="ar">أكاديمية التعلم | بمعدل تراكمي كامل 5.0. مقررات متقدمة في أمان تطبيقات الويب، أمن أنظمة التشغيل، التشفير، والدفاع عن الشبكات.</span>
                   </span>
                     <div style="margin-top:8px;">
                       <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; color: var(--cyan); text-decoration: underline; display:inline-flex; align-items:center; gap:4px;">
@@ -1309,8 +1438,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <span data-lang="ar">قنوات التواصل</span>
           </h3>
           <p>
-            <span data-lang="en">Reach out immediately for Co-op opportunities. Desktop & mobile optimized.</span>
-            <span data-lang="ar">تواصل فوري لمناقشة فرص التدريب التعاوني. متوافق بالكامل مع الجوال والحاسوب.</span>
+            <span data-lang="en">Reach out for professional opportunities and collaboration. Desktop & mobile optimized.</span>
+            <span data-lang="ar">تواصل للفرص المهنية والتعاون. متوافق بالكامل مع الجوال والحاسوب.</span>
           </p>
         </div>
 
@@ -1430,8 +1559,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
       <footer>
         <div>
-          <span data-lang="en">© 2026 Majd Abdulaziz Ali Ibrahim. All Rights Reserved. Cybersecurity & Co-op Portfolio.</span>
-          <span data-lang="ar">© 2026 مجد عبد العزيز علي إبراهيم. جميع الحقوق محفوظة. محفظة الأمن السيبراني والتدريب التعاوني.</span>
+          <span data-lang="en">© 2026 Majd Abdulaziz Ali Ibrahim. Cybersecurity Professional. All rights reserved.</span>
+          <span data-lang="ar">© 2026 مجد عبد العزيز علي إبراهيم. متخصص أمن سيبراني. جميع الحقوق محفوظة.</span>
         </div>
       </footer>
     </main>
@@ -1507,7 +1636,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
   if (waLink) {
     const waMessage = encodeURIComponent(
-      "Hello Majd, we reviewed your cybersecurity portfolio and would like to discuss Co-op training opportunities."
+      "Hello Majd, we reviewed your cybersecurity portfolio and would like to discuss professional opportunities."
     );
     waLink.setAttribute("href", `https://wa.me/${waPhone}?text=${waMessage}`);
   }
@@ -1515,8 +1644,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
     smsLink.setAttribute("href", `sms:${phoneDigits}`);
   }
 
-  // وضع اللغة الافتراضية عند التشغيل (يمكنك تغييرها إلى "ar" إن أردت أن يفتح الموقع باللغة العربية أولاً)
-  setLanguage("en");
+  // اللغة الافتراضية عند التشغيل: العربية
+  setLanguage("ar");
 })();
 
 /* =====================================================
