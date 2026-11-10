@@ -2,6 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; manifest-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="Majd Ibrahim — Cybersecurity Specialist, web developer and security awareness creator in Saudi Arabia." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark" />
   <title>Cybersecurity & Secure Web Development Portfolio</title>
@@ -810,8 +813,87 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
   .cursor-dot, .cursor-ring, .cursor-glow{ display:none !important; }
   .reveal{ opacity:1; transform:none; }
 }
+
+/* ===== Co-op training ===== */
+.achieveRow{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:12px; margin-bottom:16px; }
+.achieve{ background: var(--card2); border:1px solid var(--stroke2); border-radius: var(--radius-md); padding:14px 16px; display:flex; flex-direction:column; gap:2px; }
+.achieve strong{ font-size: 28px; line-height:1.1; background: linear-gradient(135deg,#f5d0fe,#c084fc); -webkit-background-clip:text; background-clip:text; color: transparent; }
+.achieve span{ color: var(--muted); font-size: 13px; }
+.coopGrid{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start; }
+.coopCard h4{ margin:10px 0 8px; font-size:16px; line-height:1.5; }
+.coopTag{ display:inline-block; font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--stroke); color: var(--cyan); background: rgba(168,85,247,.08); }
+.coopText{ font-size:13.5px; color: var(--muted); line-height:1.8; margin:0 0 12px; }
+.secList, .steps{ margin:14px 0 0; padding-inline-start: 20px; color: var(--muted); font-size:13px; line-height:1.9; }
+.secList li::marker{ content: "🛡️ "; }
+.steps li::marker{ color: var(--cyan); font-weight:700; }
+.shotGrid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap:10px; margin-top:16px; }
+
+/* shared clickable thumbnail */
+.shot, .certCard{ all: unset; box-sizing: border-box; cursor: zoom-in; display:flex; flex-direction:column; border-radius: var(--radius-sm); overflow:hidden; border:1px solid var(--stroke2); background: rgba(10,14,28,.5); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.shot:hover, .certCard:hover, .shot:focus-visible, .certCard:focus-visible{ transform: translateY(-3px); border-color: var(--stroke); box-shadow: var(--shadow2); }
+.shot:focus-visible, .certCard:focus-visible{ outline:none; box-shadow: var(--focus); }
+.shot img, .certCard img{ display:block; width:100%; height:auto; aspect-ratio: 16/10; object-fit: cover; object-position: top; background:#0b0f1d; }
+.shotCap{ font-size:11.5px; color: var(--muted2); padding:6px 8px; line-height:1.4; }
+
+/* ===== Credentials + certificates ===== */
+.credCard .credIcon{ font-size:28px; }
+.credCard h4{ margin:8px 0 6px; font-size:16px; }
+.credCard p{ font-size:13px; color: var(--muted); line-height:1.8; margin:0; }
+.credCard .credNote{ margin-top:8px; color: var(--muted2); font-size:12.5px; }
+.certBoard{ margin-top:16px; }
+.certFilters{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+.certFilter{ all: unset; cursor:pointer; display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border-radius:999px; font-size:13px; color: var(--muted); border:1px solid var(--stroke2); background: rgba(10,14,28,.45); transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.certFilter em{ font-style:normal; font-size:11px; padding:1px 7px; border-radius:999px; background: rgba(168,85,247,.16); color: var(--text); }
+.certFilter:hover{ border-color: var(--stroke); color: var(--text); }
+.certFilter.active{ background: var(--grad); color:#fff; border-color: transparent; }
+.certFilter:focus-visible{ box-shadow: var(--focus); }
+.certGrid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap:12px; }
+.certGrid.collapsed .certCard:nth-child(n+13){ display:none; }
+.moreWrap{ display:flex; justify-content:center; margin-top:16px; }
+.moreWrap[hidden]{ display:none; }
+.certCard[hidden]{ display:none; }
+.certCard img{ aspect-ratio: 792/612; object-fit: contain; background:#fff; }
+.certMeta{ padding:10px 12px; display:flex; flex-direction:column; gap:3px; }
+.certMeta b{ font-size:12.5px; line-height:1.5; color: var(--text); font-weight:600; }
+.certMeta small{ font-size:11px; color: var(--muted2); }
+
+/* ===== Lightbox ===== */
+.lightbox{ border:0; padding:0; background: transparent; max-width: 100vw; max-height: 100vh; width:100vw; height:100vh; margin:0; color: var(--text); }
+.lightbox::backdrop{ background: rgba(3,4,8,.88); backdrop-filter: blur(6px); }
+.lightbox[open]{ display:flex; align-items:center; justify-content:center; }
+.lightbox figure{ margin:0; max-width: min(1100px, 92vw); display:flex; flex-direction:column; align-items:center; gap:10px; }
+.lightbox img{ max-width:100%; max-height: 80vh; border-radius: var(--radius-md); box-shadow: var(--shadow); background:#fff; }
+.lightbox figcaption{ font-size:14px; color: var(--muted); text-align:center; padding: 0 12px; }
+.lbBtn{ all: unset; cursor:pointer; position:fixed; display:grid; place-items:center; width:46px; height:46px; border-radius:50%; font-size:26px; color:#fff; background: rgba(168,85,247,.25); border:1px solid var(--stroke); }
+.lbBtn:hover, .lbBtn:focus-visible{ background: rgba(168,85,247,.5); }
+.lbClose{ top:16px; inset-inline-end:16px; font-size:18px; }
+.lbPrev{ inset-inline-start:16px; top:50%; transform: translateY(-50%); }
+.lbNext{ inset-inline-end:16px; top:50%; transform: translateY(-50%); }
+[dir="rtl"] .lbPrev, [dir="rtl"] .lbNext{ transform: translateY(-50%) scaleX(-1); }
+.lightbox.single .lbPrev, .lightbox.single .lbNext{ display:none; }
+
+/* ===== Footer brand ===== */
+.agencyBrand{ display:inline-block; padding:10px 16px; border-radius: var(--radius-md); border:1px solid var(--stroke2); background: rgba(10,14,28,.45); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.agencyBrand:hover, .agencyBrand:focus-visible{ transform: translateY(-2px); border-color: var(--stroke); box-shadow: var(--shadow2); }
+.agencyBrand img{ display:block; height:40px; width:auto; }
+.footRights{ margin:14px 0 0; font-size:13px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px){
+  .coopGrid{ grid-template-columns: 1fr; }
+  .achieveRow{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 480px){
+  .certGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); gap:8px; }
+  .certMeta{ padding:8px; }
+  .certMeta b{ font-size:11.5px; }
+  .shotGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .achieve strong{ font-size:24px; }
+  .lbPrev, .lbNext{ top:auto; bottom:18px; transform:none; }
+  [dir="rtl"] .lbPrev, [dir="rtl"] .lbNext{ transform: scaleX(-1); }
+}
+
 </style>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
 </head>
 <body class="noise">
   <div class="cyberGrid" aria-hidden="true"></div>
@@ -838,6 +920,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <li><a href="#about"><span data-lang="en">About</span><span data-lang="ar">من أنا</span></a></li>
             <li><a href="#skills"><span data-lang="en">Skills</span><span data-lang="ar">المهارات التقنية</span></a></li>
             <li><a href="#projects"><span data-lang="en">Projects & Tools</span><span data-lang="ar">المشاريع والأدوات</span></a></li>
+            <li><a href="#coop"><span data-lang="en">Co-op</span><span data-lang="ar">التدريب</span></a></li>
             <li><a href="#awareness"><span data-lang="en">Awareness</span><span data-lang="ar">التوعية</span></a></li>
             <li><a href="#certs"><span data-lang="en">Accreditations</span><span data-lang="ar">الاعتمادات والشهادات</span></a></li>
             <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ar">التواصل</span></a></li>
@@ -869,6 +952,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
         <li><a href="#about" class="drawerLink" data-close-drawer><span data-lang="ar">من أنا</span><span data-lang="en">About</span></a></li>
         <li><a href="#skills" class="drawerLink" data-close-drawer><span data-lang="ar">المهارات</span><span data-lang="en">Skills</span></a></li>
         <li><a href="#projects" class="drawerLink" data-close-drawer><span data-lang="ar">المشاريع</span><span data-lang="en">Projects</span></a></li>
+        <li><a href="#coop" class="drawerLink" data-close-drawer><span data-lang="ar">التدريب التعاوني</span><span data-lang="en">Co-op Training</span></a></li>
         <li><a href="#awareness" class="drawerLink" data-close-drawer><span data-lang="ar">التوعية</span><span data-lang="en">Awareness</span></a></li>
         <li><a href="#certs" class="drawerLink" data-close-drawer><span data-lang="ar">الشهادات</span><span data-lang="en">Certifications</span></a></li>
         <li><a href="#contact" class="drawerLink" data-close-drawer><span data-lang="ar">التواصل</span><span data-lang="en">Contact</span></a></li>
@@ -1360,9 +1444,83 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
         </div>
       </section>
 
-      <section class="section" id="awareness">
+      <section class="section" id="coop">
         <div class="sectionHeader">
           <span class="secIndex">04</span>
+          <h3>
+            <span data-lang="en">Co-op Training — Dhahran Municipality</span>
+            <span data-lang="ar">التدريب التعاوني — بلدية الظهران</span>
+          </h3>
+          <p>
+            <span data-lang="en">Information Technology Department · 2026. Two real projects I designed and delivered during my training.</span>
+            <span data-lang="ar">إدارة تقنية المعلومات · 2026. مشروعان عمليان صمّمتهما ونفّذتهما خلال فترة التدريب.</span>
+          </p>
+        </div>
+
+        <div class="achieveRow">
+          <div class="achieve"><strong>2</strong><span><span data-lang="en">delivered projects</span><span data-lang="ar">مشروعان مكتملان</span></span></div>
+          <div class="achieve"><strong>9</strong><span><span data-lang="en">portal modules</span><span data-lang="ar">أقسام في البوابة</span></span></div>
+          <div class="achieve"><strong>13</strong><span><span data-lang="en">linked database tables</span><span data-lang="ar">جدولاً مترابطاً في قاعدة البيانات</span></span></div>
+          <div class="achieve"><strong>1</strong><span><span data-lang="en">live Power BI dashboard</span><span data-lang="ar">لوحة Power BI مباشرة</span></span></div>
+        </div>
+
+        <div class="coopGrid">
+          <article class="card coopCard">
+            <div class="cardInner">
+              <span class="coopTag"><span data-lang="en">Web Development</span><span data-lang="ar">تطوير الويب</span></span>
+              <h4>
+                <span data-lang="en">🌐 Employee Portal — internal communication platform</span>
+                <span data-lang="ar">🌐 بوابة الموظفين — منصة تواصل داخلية</span>
+              </h4>
+              <p class="coopText">
+                <span data-lang="en">A full web platform that brings municipality staff together: dashboard, instant chat with notifications, forums, activities calendar, projects with a drag-and-drop Kanban board, staff directory, and light/dark mode. Fully responsive.</span>
+                <span data-lang="ar">منصة ويب متكاملة تجمع موظفي البلدية في مكان واحد: لوحة تحكم، دردشة فورية مع إشعارات، منتديات، تقويم للأنشطة، إدارة مشاريع بلوحة Kanban بالسحب والإفلات، دليل للموظفين، ووضع ليلي ونهاري. تعمل على كل الأجهزة.</span>
+              </p>
+              <div class="chipRow">
+                <span class="chip"><i></i>PHP 8 · PDO</span><span class="chip"><i></i>MySQL</span><span class="chip"><i></i>JavaScript</span><span class="chip"><i></i>HTML5 / CSS3</span>
+              </div>
+              <ul class="secList">
+                <li><span data-lang="en">Passwords hashed with bcrypt</span><span data-lang="ar">تشفير كلمات المرور (bcrypt)</span></li>
+                <li><span data-lang="en">Prepared statements against SQL injection</span><span data-lang="ar">استعلامات مُجهّزة ضد حقن SQL</span></li>
+                <li><span data-lang="en">Output escaping against XSS</span><span data-lang="ar">ترميز المخرجات ضد XSS</span></li>
+                <li><span data-lang="en">CSRF tokens on every form and request</span><span data-lang="ar">رمز CSRF في كل نموذج وطلب</span></li>
+                <li><span data-lang="en">Session hardening (regenerate ID, HttpOnly, SameSite)</span><span data-lang="ar">حماية الجلسة (تجديد المعرّف، HttpOnly، SameSite)</span></li>
+                <li><span data-lang="en">Server-side permission checks</span><span data-lang="ar">التحقق من الصلاحيات في الخادم</span></li>
+              </ul>
+              <div class="shotGrid"><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard.webp" data-cap-en="Dashboard" data-cap-ar="لوحة التحكم"><img src="img/coop/portal-dashboard-thumb.webp" alt="Dashboard" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard</span><span data-lang="ar">لوحة التحكم</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard-dark.webp" data-cap-en="Dark mode" data-cap-ar="الوضع الليلي"><img src="img/coop/portal-dashboard-dark-thumb.webp" alt="Dark mode" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dark mode</span><span data-lang="ar">الوضع الليلي</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-kanban.webp" data-cap-en="Projects Kanban board" data-cap-ar="لوحة المشاريع (Kanban)"><img src="img/coop/portal-kanban-thumb.webp" alt="Projects Kanban board" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Projects Kanban board</span><span data-lang="ar">لوحة المشاريع (Kanban)</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-chat.webp" data-cap-en="Instant chat" data-cap-ar="الدردشة الفورية"><img src="img/coop/portal-chat-thumb.webp" alt="Instant chat" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Instant chat</span><span data-lang="ar">الدردشة الفورية</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-calendar.webp" data-cap-en="Activities calendar" data-cap-ar="تقويم الأنشطة"><img src="img/coop/portal-calendar-thumb.webp" alt="Activities calendar" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Activities calendar</span><span data-lang="ar">تقويم الأنشطة</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-login.webp" data-cap-en="Secure sign-in" data-cap-ar="تسجيل الدخول الآمن"><img src="img/coop/portal-login-thumb.webp" alt="Secure sign-in" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Secure sign-in</span><span data-lang="ar">تسجيل الدخول الآمن</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-mobile.webp" data-cap-en="Works on mobile" data-cap-ar="يعمل على الجوال"><img src="img/coop/portal-mobile-thumb.webp" alt="Works on mobile" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Works on mobile</span><span data-lang="ar">يعمل على الجوال</span></span></button></div>
+            </div>
+          </article>
+
+          <article class="card coopCard">
+            <div class="cardInner">
+              <span class="coopTag"><span data-lang="en">Data &amp; Business Intelligence</span><span data-lang="ar">تحليل البيانات</span></span>
+              <h4>
+                <span data-lang="en">📊 Dhahran Municipality KPI Dashboard 2026 — Power BI</span>
+                <span data-lang="ar">📊 لوحة مؤشرات بلدية الظهران 2026 — Power BI</span>
+              </h4>
+              <p class="coopText">
+                <span data-lang="en">I turned the department's monthly indicators into an interactive dashboard so managers can follow visits, transactions and resolved visual-distortion cases at a glance.</span>
+                <span data-lang="ar">حوّلت مؤشرات الإدارة الشهرية إلى لوحة تفاعلية تساعد المسؤولين على متابعة الزيارات والمعاملات ومعالجة التشوهات البصرية بنظرة واحدة.</span>
+              </p>
+              <ol class="steps">
+                <li><span data-lang="en">Organised the indicators in a structured Excel table</span><span data-lang="ar">تنظيم المؤشرات في جدول Excel منظّم</span></li>
+                <li><span data-lang="en">Stored the file in SharePoint / OneDrive</span><span data-lang="ar">رفع الملف على SharePoint / OneDrive</span></li>
+                <li><span data-lang="en">Connected Power BI through Power Query</span><span data-lang="ar">ربط Power BI عن طريق Power Query</span></li>
+                <li><span data-lang="en">Built KPI cards, a monthly area chart, a donut chart and a month slicer</span><span data-lang="ar">بناء بطاقات المؤشرات ومخطط شهري ومخطط دائري وفلتر للأشهر</span></li>
+                <li><span data-lang="en">Pinned it live to a dashboard and shared it inside the organisation</span><span data-lang="ar">تثبيت اللوحة مباشرة ومشاركتها داخل المنظمة</span></li>
+              </ol>
+              <div class="chipRow">
+                <span class="chip"><i></i>Power BI</span><span class="chip"><i></i>Power Query</span><span class="chip"><i></i>Excel</span><span class="chip"><i></i>SharePoint</span>
+              </div>
+              <div class="shotGrid"><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-dashboard.webp" data-cap-en="Dashboard: KPI cards, monthly trend, share by indicator" data-cap-ar="اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر"><img src="img/coop/powerbi-dashboard-thumb.webp" alt="Dashboard: KPI cards, monthly trend, share by indicator" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard: KPI cards, monthly trend, share by indicator</span><span data-lang="ar">اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-powerquery.webp" data-cap-en="Power Query: loading the data table" data-cap-ar="Power Query: تحميل جدول البيانات"><img src="img/coop/powerbi-powerquery-thumb.webp" alt="Power Query: loading the data table" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Power Query: loading the data table</span><span data-lang="ar">Power Query: تحميل جدول البيانات</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-excel.webp" data-cap-en="Source data in Excel" data-cap-ar="البيانات المصدر في Excel"><img src="img/coop/powerbi-excel-thumb.webp" alt="Source data in Excel" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Source data in Excel</span><span data-lang="ar">البيانات المصدر في Excel</span></span></button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="awareness">
+        <div class="sectionHeader">
+          <span class="secIndex">05</span>
           <h3>
             <span data-lang="en">Security Awareness — I Teach</span>
             <span data-lang="ar">التوعية الأمنية — أعلّم وأوعّي</span>
@@ -1428,89 +1586,47 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
       <section class="section" id="certs">
         <div class="sectionHeader">
-          <span class="secIndex">05</span>
+          <span class="secIndex">06</span>
           <h3>
-            <span data-lang="en">Accreditations & Credentials Vault</span>
-            <span data-lang="ar">الاعتمادات الأكاديمية والشهادات</span>
+            <span data-lang="en">Accreditations &amp; Certificates</span>
+            <span data-lang="ar">الاعتمادات والشهادات</span>
           </h3>
           <p>
-            <span data-lang="en">Validated certifications and diplomas foundational to my cybersecurity career track.</span>
-            <span data-lang="ar">الشهادات المعتمدة والدبلومات الأساسية التي تشكل ركيزة مساري المهني في الأمن السيبراني.</span>
+            <span data-lang="en">My credentials and 38 completed professional courses. Tap any certificate to view it in full.</span>
+            <span data-lang="ar">اعتماداتي و38 دورة احترافية مكتملة. اضغط على أي شهادة لعرضها كاملة.</span>
           </p>
         </div>
 
-        <div class="card">
-          <div class="cardInner">
-            <div class="list" style="margin-top:0;">
-              <div class="item">
-                <div class="itemIcon" style="background:rgba(217,70,239,.1); border-color:var(--neon);">🏅</div>
-                <div>
-                  <b>
-                    <span data-lang="en">Certified Ethical Hacker (CEH)</span>
-                    <span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span>
-                  </b>
-                  <span>
-                    <span data-lang="en">Issued by EC-Council, May 2026. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span>
-                    <span data-lang="ar">صادرة من المجلس العالمي (EC-Council) في مايو 2026، وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span>
-                  </span>
-                    <div style="margin-top:8px;">
-                      <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; color: var(--cyan); text-decoration: underline; display:inline-flex; align-items:center; gap:4px;">
-                        <span data-lang="en">View Certificate on Google Drive ↗</span>
-                        <span data-lang="ar">عرض الشهادة عبر Google Drive ↗</span>
-                      </a>
-                    </div>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="itemIcon">🎓</div>
-                <div>
-                  <b>
-                    <span data-lang="en">Cybersecurity Specialization Diploma</span>
-                    <span data-lang="ar">دبلوم التخصص في الأمن السيبراني</span>
-                  </b>
-                  <span>
-                    <span data-lang="en">Academy of Learning | Perfect 5.0 GPA. Advanced coursework in web application security, operating systems security, cryptography, and network defense.</span>
-                    <span data-lang="ar">أكاديمية التعلم | بمعدل تراكمي كامل 5.0. مقررات متقدمة في أمان تطبيقات الويب، أمن أنظمة التشغيل، التشفير، والدفاع عن الشبكات.</span>
-                  </span>
-                    <div style="margin-top:8px;">
-                      <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="font-size:12.5px; color: var(--cyan); text-decoration: underline; display:inline-flex; align-items:center; gap:4px;">
-                        <span data-lang="en">View Certificate on Google Drive ↗</span>
-                        <span data-lang="ar">عرض الشهادة عبر Google Drive ↗</span>
-                      </a>
-                    </div>
-                </div>
-              </div>
-
-              <div class="item" style="margin-top: 15px; border-style: dashed;">
-                <div class="itemIcon">🧪</div>
-                <div>
-                  <b>
-                    <span data-lang="en">Verified Digital Files Vault</span>
-                    <span data-lang="ar">خزنة الوثائق والملفات المعتمدة</span>
-                  </b>
-                  <span style="display:block; font-size:13px; margin-top:6px;">
-                    <span data-lang="en">An organized file directory housing official academic transcripts, certificate validations, and laboratory documentation folders.</span>
-                    <span data-lang="ar">دليل منظم يحتوي على السجلات الأكاديمية الرسمية، إثباتات الشهادات الرقمية، وتقارير المعامل التطبيقية.</span>
-                  </span>
-                  <span style="font-size:12px; margin-top:10px; display:block; color: var(--cyan);">
-                    <span data-lang="en">Academic & Certificates Drive Portfolio</span>
-                    <span data-lang="ar">ملف الشهادات والوثائق الأكاديمية (Google Drive)</span>
-                  </span>
-                  <span style="font-size:12px; margin-top:5px; display:block; color: var(--cyan);">
-                    <span data-lang="en">Secure Cloud Link Available for Verification</span>
-                    <span data-lang="ar">رابط سحابي آمن متاح للتحقق</span>
-                  </span>
-                </div>
-              </div>
+        <div class="grid2">
+          <div class="card credCard">
+            <div class="cardInner">
+              <div class="credIcon" aria-hidden="true">🏅</div>
+              <h4><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span></h4>
+              <p><span data-lang="en">Issued by EC-Council, May 2026. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span><span data-lang="ar">صادرة من المجلس العالمي (EC-Council) في مايو 2026، وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span></p>
             </div>
+          </div>
+          <div class="card credCard">
+            <div class="cardInner">
+              <div class="credIcon" aria-hidden="true">🎓</div>
+              <h4><span data-lang="en">Cybersecurity Specialization Diploma</span><span data-lang="ar">دبلوم التخصص في الأمن السيبراني</span></h4>
+              <p><span data-lang="en">Academy of Learning | Perfect 5.0 GPA. Advanced coursework in web application security, operating systems security, cryptography, and network defense.</span><span data-lang="ar">أكاديمية التعلم | بمعدل تراكمي كامل 5.0. مقررات متقدمة في أمان تطبيقات الويب، أمن أنظمة التشغيل، التشفير، والدفاع عن الشبكات.</span></p>
+              <p class="credNote"><span data-lang="en">Official transcript available on request.</span><span data-lang="ar">السجل الأكاديمي الرسمي متاح عند الطلب.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card certBoard">
+          <div class="cardInner">
+            <div class="certFilters" role="group" aria-label="Filter certificates"><button class="certFilter active" type="button" data-filter="all" aria-pressed="true"><span data-lang="en">All</span><span data-lang="ar">الكل</span><em>38</em></button><button class="certFilter" type="button" data-filter="offense" aria-pressed="false"><span data-lang="en">Offensive security</span><span data-lang="ar">الاختبار الهجومي</span><em>10</em></button><button class="certFilter" type="button" data-filter="defense" aria-pressed="false"><span data-lang="en">Defence & SOC</span><span data-lang="ar">الدفاع والاستجابة</span><em>15</em></button><button class="certFilter" type="button" data-filter="grc" aria-pressed="false"><span data-lang="en">GRC & risk</span><span data-lang="ar">الحوكمة والمخاطر</span><em>2</em></button><button class="certFilter" type="button" data-filter="ai" aria-pressed="false"><span data-lang="en">AI & security</span><span data-lang="ar">الذكاء الاصطناعي</span><em>7</em></button><button class="certFilter" type="button" data-filter="linux" aria-pressed="false"><span data-lang="en">Linux</span><span data-lang="ar">لينكس</span><em>3</em></button><button class="certFilter" type="button" data-filter="other" aria-pressed="false"><span data-lang="en">Workshops</span><span data-lang="ar">ورش عمل</span><em>1</em></button></div>
+            <div class="certGrid collapsed" id="certGrid"><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/advanced-pen-testing-techniques-for-active-directory.webp" data-cap-en="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning" data-cap-ar="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning"><img src="img/certs/advanced-pen-testing-techniques-for-active-directory-thumb.webp" alt="Advanced Pen Testing Techniques for Active Directory certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Advanced Pen Testing Techniques for Active Directory</span><span data-lang="ar">Advanced Pen Testing Techniques for Active Directory</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/artificial-intelligence-for-cybersecurity.webp" data-cap-en="Artificial Intelligence for Cybersecurity — LinkedIn Learning" data-cap-ar="Artificial Intelligence for Cybersecurity — LinkedIn Learning"><img src="img/certs/artificial-intelligence-for-cybersecurity-thumb.webp" alt="Artificial Intelligence for Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Artificial Intelligence for Cybersecurity</span><span data-lang="ar">Artificial Intelligence for Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/become-an-it-security-specialist.webp" data-cap-en="Become an IT Security Specialist — LinkedIn Learning" data-cap-ar="Become an IT Security Specialist — LinkedIn Learning"><img src="img/certs/become-an-it-security-specialist-thumb.webp" alt="Become an IT Security Specialist certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Become an IT Security Specialist</span><span data-lang="ar">Become an IT Security Specialist</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/build-your-own-ai-lab.webp" data-cap-en="Build Your Own AI Lab — LinkedIn Learning" data-cap-ar="Build Your Own AI Lab — LinkedIn Learning"><img src="img/certs/build-your-own-ai-lab-thumb.webp" alt="Build Your Own AI Lab certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Build Your Own AI Lab</span><span data-lang="ar">Build Your Own AI Lab</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep.webp" data-cap-en="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning" data-cap-ar="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning"><img src="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep-thumb.webp" alt="CCNA Cybersecurity 200-201 v1.2 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span><span data-lang="ar">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/certified-ethical-hacker-ceh.webp" data-cap-en="Certified Ethical Hacker (CEH) — LinkedIn Learning" data-cap-ar="Certified Ethical Hacker (CEH) — LinkedIn Learning"><img src="img/certs/certified-ethical-hacker-ceh-thumb.webp" alt="Certified Ethical Hacker (CEH) certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">Certified Ethical Hacker (CEH)</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi.webp" data-cap-en="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning" data-cap-ar="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning"><img src="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi-thumb.webp" alt="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span><span data-lang="ar">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy.webp" data-cap-en="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning" data-cap-ar="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning"><img src="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy-thumb.webp" alt="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span><span data-lang="ar">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a.webp" data-cap-en="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning" data-cap-ar="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning"><img src="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a-thumb.webp" alt="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span><span data-lang="ar">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cybersecurity-foundations-incident-response.webp" data-cap-en="Cybersecurity Foundations Incident Response — LinkedIn Learning" data-cap-ar="Cybersecurity Foundations Incident Response — LinkedIn Learning"><img src="img/certs/cybersecurity-foundations-incident-response-thumb.webp" alt="Cybersecurity Foundations Incident Response certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Foundations Incident Response</span><span data-lang="ar">Cybersecurity Foundations Incident Response</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-cryptography.webp" data-cap-en="Ethical Hacking Cryptography — LinkedIn Learning" data-cap-ar="Ethical Hacking Cryptography — LinkedIn Learning"><img src="img/certs/ethical-hacking-cryptography-thumb.webp" alt="Ethical Hacking Cryptography certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Cryptography</span><span data-lang="ar">Ethical Hacking Cryptography</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-denial-of-service.webp" data-cap-en="Ethical Hacking Denial of Service — LinkedIn Learning" data-cap-ar="Ethical Hacking Denial of Service — LinkedIn Learning"><img src="img/certs/ethical-hacking-denial-of-service-thumb.webp" alt="Ethical Hacking Denial of Service certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Denial of Service</span><span data-lang="ar">Ethical Hacking Denial of Service</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-the-complete-malware-analysis-process.webp" data-cap-en="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning" data-cap-ar="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning"><img src="img/certs/ethical-hacking-the-complete-malware-analysis-process-thumb.webp" alt="Ethical Hacking The Complete Malware Analysis Process certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking The Complete Malware Analysis Process</span><span data-lang="ar">Ethical Hacking The Complete Malware Analysis Process</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-vulnerability-analysis.webp" data-cap-en="Ethical Hacking Vulnerability Analysis — LinkedIn Learning" data-cap-ar="Ethical Hacking Vulnerability Analysis — LinkedIn Learning"><img src="img/certs/ethical-hacking-vulnerability-analysis-thumb.webp" alt="Ethical Hacking Vulnerability Analysis certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Vulnerability Analysis</span><span data-lang="ar">Ethical Hacking Vulnerability Analysis</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/foundations-of-detection-engineering.webp" data-cap-en="Foundations of Detection Engineering — LinkedIn Learning" data-cap-ar="Foundations of Detection Engineering — LinkedIn Learning"><img src="img/certs/foundations-of-detection-engineering-thumb.webp" alt="Foundations of Detection Engineering certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Foundations of Detection Engineering</span><span data-lang="ar">Foundations of Detection Engineering</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/fundamentals-to-become-a-machine-learning-engineer.webp" data-cap-en="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning" data-cap-ar="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning"><img src="img/certs/fundamentals-to-become-a-machine-learning-engineer-thumb.webp" alt="Fundamentals to Become a Machine Learning Engineer certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Fundamentals to Become a Machine Learning Engineer</span><span data-lang="ar">Fundamentals to Become a Machine Learning Engineer</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/genaiops-foundations.webp" data-cap-en="GenAIOps Foundations — LinkedIn Learning" data-cap-ar="GenAIOps Foundations — LinkedIn Learning"><img src="img/certs/genaiops-foundations-thumb.webp" alt="GenAIOps Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">GenAIOps Foundations</span><span data-lang="ar">GenAIOps Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-core-concepts.webp" data-cap-en="IT Security Foundations Core Concepts — LinkedIn Learning" data-cap-ar="IT Security Foundations Core Concepts — LinkedIn Learning"><img src="img/certs/it-security-foundations-core-concepts-thumb.webp" alt="IT Security Foundations Core Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Core Concepts</span><span data-lang="ar">IT Security Foundations Core Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-network-security.webp" data-cap-en="IT Security Foundations Network Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Network Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-network-security-thumb.webp" alt="IT Security Foundations Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Network Security</span><span data-lang="ar">IT Security Foundations Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-operating-system-security.webp" data-cap-en="IT Security Foundations Operating System Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Operating System Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-operating-system-security-thumb.webp" alt="IT Security Foundations Operating System Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Operating System Security</span><span data-lang="ar">IT Security Foundations Operating System Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/incident-response-leadership-for-cybersecurity-managers-from.webp" data-cap-en="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning" data-cap-ar="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning"><img src="img/certs/incident-response-leadership-for-cybersecurity-managers-from-thumb.webp" alt="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span><span data-lang="ar">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/introduction-to-linux.webp" data-cap-en="Introduction to Linux — LinkedIn Learning" data-cap-ar="Introduction to Linux — LinkedIn Learning"><img src="img/certs/introduction-to-linux-thumb.webp" alt="Introduction to Linux certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Linux</span><span data-lang="ar">Introduction to Linux</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-offensive-security.webp" data-cap-en="Introduction to Offensive Security — LinkedIn Learning" data-cap-ar="Introduction to Offensive Security — LinkedIn Learning"><img src="img/certs/introduction-to-offensive-security-thumb.webp" alt="Introduction to Offensive Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Offensive Security</span><span data-lang="ar">Introduction to Offensive Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals.webp" data-cap-en="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning" data-cap-ar="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning"><img src="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals-thumb.webp" alt="Introduction to Pen Testing for Cybersecurity Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Pen Testing for Cybersecurity Professionals</span><span data-lang="ar">Introduction to Pen Testing for Cybersecurity Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/introduction-to-risk-management.webp" data-cap-en="Introduction to Risk Management — LinkedIn Learning" data-cap-ar="Introduction to Risk Management — LinkedIn Learning"><img src="img/certs/introduction-to-risk-management-thumb.webp" alt="Introduction to Risk Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Risk Management</span><span data-lang="ar">Introduction to Risk Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking.webp" data-cap-en="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning" data-cap-ar="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning"><img src="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking-thumb.webp" alt="Kali Linux for Advanced Pen Testing and Ethical Hacking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Kali Linux for Advanced Pen Testing and Ethical Hacking</span><span data-lang="ar">Kali Linux for Advanced Pen Testing and Ethical Hacking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/learning-linux-command-line.webp" data-cap-en="Learning Linux Command Line — LinkedIn Learning" data-cap-ar="Learning Linux Command Line — LinkedIn Learning"><img src="img/certs/learning-linux-command-line-thumb.webp" alt="Learning Linux Command Line certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Learning Linux Command Line</span><span data-lang="ar">Learning Linux Command Line</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/machine-learning-with-python-foundations.webp" data-cap-en="Machine Learning with Python Foundations — LinkedIn Learning" data-cap-ar="Machine Learning with Python Foundations — LinkedIn Learning"><img src="img/certs/machine-learning-with-python-foundations-thumb.webp" alt="Machine Learning with Python Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Machine Learning with Python Foundations</span><span data-lang="ar">Machine Learning with Python Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/offensive-penetration-testing.webp" data-cap-en="Offensive Penetration Testing — LinkedIn Learning" data-cap-ar="Offensive Penetration Testing — LinkedIn Learning"><img src="img/certs/offensive-penetration-testing-thumb.webp" alt="Offensive Penetration Testing certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Offensive Penetration Testing</span><span data-lang="ar">Offensive Penetration Testing</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/practical-cybersecurity-for-it-professionals.webp" data-cap-en="Practical Cybersecurity for IT Professionals — LinkedIn Learning" data-cap-ar="Practical Cybersecurity for IT Professionals — LinkedIn Learning"><img src="img/certs/practical-cybersecurity-for-it-professionals-thumb.webp" alt="Practical Cybersecurity for IT Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Practical Cybersecurity for IT Professionals</span><span data-lang="ar">Practical Cybersecurity for IT Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/quantum-spark-network-security.webp" data-cap-en="Quantum Spark Network Security — LinkedIn Learning" data-cap-ar="Quantum Spark Network Security — LinkedIn Learning"><img src="img/certs/quantum-spark-network-security-thumb.webp" alt="Quantum Spark Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Quantum Spark Network Security</span><span data-lang="ar">Quantum Spark Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking.webp" data-cap-en="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning" data-cap-ar="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning"><img src="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking-thumb.webp" alt="RAG AI Apps and AI Agents for Cybersecurity and Networking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">RAG AI Apps and AI Agents for Cybersecurity and Networking</span><span data-lang="ar">RAG AI Apps and AI Agents for Cybersecurity and Networking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/strategic-linux-for-network-professionals-security-monitorin.webp" data-cap-en="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning" data-cap-ar="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning"><img src="img/certs/strategic-linux-for-network-professionals-security-monitorin-thumb.webp" alt="Strategic Linux for Network Professionals Security Monitoring and Automation certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Strategic Linux for Network Professionals Security Monitoring and Automation</span><span data-lang="ar">Strategic Linux for Network Professionals Security Monitoring and Automation</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/xai-and-interpretability-in-cybersecurity.webp" data-cap-en="XAI and Interpretability in Cybersecurity — LinkedIn Learning" data-cap-ar="XAI and Interpretability in Cybersecurity — LinkedIn Learning"><img src="img/certs/xai-and-interpretability-in-cybersecurity-thumb.webp" alt="XAI and Interpretability in Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">XAI and Interpretability in Cybersecurity</span><span data-lang="ar">XAI and Interpretability in Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="other" data-gallery="certs" data-full="img/certs/hadaf-soft-skills.webp" data-cap-en="Soft Skills &amp; Communication Workshop — HRDF (Hadaf)" data-cap-ar="ورشة المهارات الناعمة وفن الاتصال — HRDF (Hadaf)"><img src="img/certs/hadaf-soft-skills-thumb.webp" alt="Soft Skills &amp; Communication Workshop certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Soft Skills &amp; Communication Workshop</span><span data-lang="ar">ورشة المهارات الناعمة وفن الاتصال</span></b><small>HRDF (Hadaf)</small></span></button></div>
+            <div class="moreWrap"><button class="ctaBtn ghost" type="button" id="certMore" aria-expanded="false" aria-controls="certGrid"><span data-lang="en">Show all certificates</span><span data-lang="ar">عرض كل الشهادات</span></button></div>
           </div>
         </div>
       </section>
 
       <section class="section" id="contact">
         <div class="sectionHeader">
-          <span class="secIndex">06</span>
+          <span class="secIndex">07</span>
           <h3>
             <span data-lang="en">Contact Channels</span>
             <span data-lang="ar">قنوات التواصل</span>
@@ -1557,20 +1673,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                     </div>
                   </div>
                 </div>
-                <div class="item" style="align-items:center;">
-                  <div class="itemIcon">🔳</div>
-                  <div>
-                    <b>QR Google Drive</b>
-                    <div style="margin-top:8px;">
-                      <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" aria-label="Open Google Drive">
-                        <img src="data:image/png;base64,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" alt="QR Google Drive" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
-                      </a>
-                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
-                        <a href="https://drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">drive.google.com/drive/folders/1vJvyBD4Z0FtNfLpD4ZtG8CeadwVY1_Ik</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>
@@ -1636,10 +1739,13 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
       </section>
 
       <footer>
-        <div>
-          <span data-lang="en">© 2026 Majd Abdulaziz Ali Ibrahim. Cybersecurity Professional. All rights reserved.</span>
-          <span data-lang="ar">© 2026 مجد عبد العزيز علي إبراهيم. متخصص أمن سيبراني. جميع الحقوق محفوظة.</span>
-        </div>
+        <a class="agencyBrand" href="https://pago.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer" aria-label="Pago — visit the store">
+          <img src="img/pago-logo.png" alt="Pago" width="160" height="48" loading="lazy" decoding="async">
+        </a>
+        <p class="footRights">
+          <span data-lang="en">© 2026 All rights reserved to Pago Agency · Designed &amp; developed by Majd Abdulaziz Ibrahim</span>
+          <span data-lang="ar">© 2026 جميع الحقوق محفوظة لوكالة Pago · تصميم وتطوير مجد عبدالعزيز إبراهيم</span>
+        </p>
       </footer>
     </main>
 
@@ -1649,298 +1755,16 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
     </div>
   </div>
 
-  <script>
-  (function () {
-  const root = document.documentElement;
-  const arBtn = document.getElementById("langAr");
-  const enBtn = document.getElementById("langEn");
-  const toastText = document.getElementById("toastText");
+  <dialog class="lightbox" id="lightbox" aria-label="Image viewer">
+    <button class="lbBtn lbClose" type="button" data-lb="close" aria-label="Close">✕</button>
+    <button class="lbBtn lbPrev" type="button" data-lb="prev" aria-label="Previous">‹</button>
+    <figure>
+      <img id="lbImg" alt="" decoding="async">
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lbBtn lbNext" type="button" data-lb="next" aria-label="Next">›</button>
+  </dialog>
 
-  function setLanguage(lang) {
-    const isAR = lang === "ar";
-
-    root.lang = lang;
-    root.dir = isAR ? "rtl" : "ltr";
-
-    // التحكم بالظهور والاختفاء عبر الـ JavaScript مباشرة لتفادي تعليق التصميم
-    document.querySelectorAll('[data-lang="ar"]').forEach(el => el.style.display = isAR ? 'inline' : 'none');
-    document.querySelectorAll('[data-lang="en"]').forEach(el => el.style.display = isAR ? 'none' : 'inline');
-
-    if (toastText) {
-      toastText.textContent = isAR ? "تم الاستلام (محلياً)" : "Received (locally)";
-    }
-
-    arBtn?.setAttribute("aria-pressed", String(isAR));
-    enBtn?.setAttribute("aria-pressed", String(!isAR));
-  }
-
-  arBtn?.addEventListener("click", () => setLanguage("ar"));
-  enBtn?.addEventListener("click", () => setLanguage("en"));
-
-  // Smooth scroll triggers
-  document.getElementById("scrollContact")?.addEventListener("click", () => {
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-  document.getElementById("viewSkills")?.addEventListener("click", () => {
-    document.getElementById("skills").scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  // Mobile Menu Overlay Drawer System
-  const overlay = document.getElementById("drawerOverlay");
-  const drawer = document.getElementById("drawer");
-  const openMenu = document.getElementById("openMenu");
-
-  function setDrawer(open) {
-    overlay?.classList.toggle("show", open);
-    drawer?.classList.toggle("show", open);
-    overlay?.setAttribute("aria-hidden", String(!open));
-    drawer?.setAttribute("aria-hidden", String(!open));
-  }
-
-  openMenu?.addEventListener("click", () => setDrawer(true));
-  overlay?.addEventListener("click", () => setDrawer(false));
-  document.querySelectorAll("[data-close-drawer]").forEach((a) => {
-    a.addEventListener("click", () => setDrawer(false));
-  });
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") setDrawer(false);
-  });
-
-  // Dynamic Communications link updates
-  const waLink = document.getElementById("waLink");
-  const smsLink = document.getElementById("smsLink");
-  const phoneDigits = "0537292913";
-  const waPhone = "966" + phoneDigits.replace(/^0/, "");
-
-  if (waLink) {
-    const waMessage = encodeURIComponent(
-      "Hello Majd, we reviewed your cybersecurity portfolio and would like to discuss professional opportunities."
-    );
-    waLink.setAttribute("href", `https://wa.me/${waPhone}?text=${waMessage}`);
-  }
-  if (smsLink) {
-    smsLink.setAttribute("href", `sms:${phoneDigits}`);
-  }
-
-  // اللغة الافتراضية عند التشغيل: العربية
-  setLanguage("ar");
-})();
-
-/* =====================================================
-   Cyber cursor — soft halo + ring + core dot, eased trailing
-   ===================================================== */
-(function () {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduceMotion) return;
-
-  const isFinePointer = window.matchMedia("(pointer: fine)").matches;
-  const hasTouch = ("ontouchstart" in window) || navigator.maxTouchPoints > 0;
-  if (!isFinePointer && !hasTouch) return;
-
-  const dot = document.createElement("div");
-  dot.className = "cursor-dot";
-  const ring = document.createElement("div");
-  ring.className = "cursor-ring";
-  const glow = document.createElement("div");
-  glow.className = "cursor-glow";
-
-  document.body.append(glow, ring, dot);
-  if (isFinePointer) document.body.classList.add("has-custom-cursor");
-  if (hasTouch) document.body.classList.add("has-touch-cursor");
-
-  let mx = window.innerWidth / 2;
-  let my = window.innerHeight / 2;
-  let dotX = mx, dotY = my;
-  let ringX = mx, ringY = my;
-  let glowX = mx, glowY = my;
-  let hideTimer = null;
-
-  function reveal() {
-    clearTimeout(hideTimer);
-    dot.style.opacity = 1;
-    ring.style.opacity = 1;
-    glow.style.opacity = 1;
-  }
-  function hide(delay) {
-    clearTimeout(hideTimer);
-    hideTimer = setTimeout(() => {
-      dot.style.opacity = 0;
-      ring.style.opacity = 0;
-      glow.style.opacity = 0;
-    }, delay || 0);
-  }
-
-  const hoverSelector = "a, button, .chip, .ctaBtn, input, textarea, .card, .langToggle button";
-
-  // ----- Mouse / trackpad (fine pointer) -----
-  if (isFinePointer) {
-    window.addEventListener("mousemove", (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      reveal();
-    });
-    document.addEventListener("mouseleave", () => hide(0));
-    document.addEventListener("mouseenter", reveal);
-
-    document.addEventListener("mouseover", (e) => {
-      if (e.target.closest && e.target.closest(hoverSelector)) {
-        document.body.classList.add("cursor-active");
-      }
-    });
-    document.addEventListener("mouseout", (e) => {
-      if (e.target.closest && e.target.closest(hoverSelector)) {
-        document.body.classList.remove("cursor-active");
-      }
-    });
-  }
-
-  // ----- Touch (iPad / iPhone / tablets / all touch screens) -----
-  if (hasTouch) {
-    function touchPoint(e) {
-      const t = e.touches && e.touches[0];
-      return t ? { x: t.clientX, y: t.clientY } : null;
-    }
-
-    document.addEventListener("touchstart", (e) => {
-      const p = touchPoint(e);
-      if (!p) return;
-      mx = dotX = ringX = glowX = p.x;
-      my = dotY = ringY = glowY = p.y;
-      reveal();
-      if (e.target.closest && e.target.closest(hoverSelector)) {
-        document.body.classList.add("cursor-active");
-      }
-    }, { passive: true });
-
-    document.addEventListener("touchmove", (e) => {
-      const p = touchPoint(e);
-      if (!p) return;
-      mx = p.x;
-      my = p.y;
-      reveal();
-    }, { passive: true });
-
-    document.addEventListener("touchend", () => {
-      document.body.classList.remove("cursor-active");
-      hide(550);
-    }, { passive: true });
-
-    document.addEventListener("touchcancel", () => {
-      document.body.classList.remove("cursor-active");
-      hide(200);
-    }, { passive: true });
-  }
-
-  function tick() {
-    dotX += (mx - dotX) * 0.35;
-    dotY += (my - dotY) * 0.35;
-    ringX += (mx - ringX) * 0.18;
-    ringY += (my - ringY) * 0.18;
-    glowX += (mx - glowX) * 0.09;
-    glowY += (my - glowY) * 0.09;
-
-    dot.style.transform = `translate(${dotX}px, ${dotY}px) translate(-50%, -50%)`;
-    ring.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    glow.style.transform = `translate(${glowX}px, ${glowY}px) translate(-50%, -50%)`;
-
-    requestAnimationFrame(tick);
-  }
-  tick();
-})();
-
-/* =====================================================
-   Scroll progress, header state, reveal-on-scroll,
-   active nav link, back-to-top, card spotlight glow
-   ===================================================== */
-(function () {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // Scroll progress bar
-  const progress = document.createElement("div");
-  progress.className = "scrollProgress";
-  document.body.prepend(progress);
-
-  // Back-to-top button
-  const backBtn = document.createElement("button");
-  backBtn.type = "button";
-  backBtn.className = "backToTop";
-  backBtn.setAttribute("aria-label", "Back to top");
-  backBtn.innerHTML = "&uarr;";
-  document.body.appendChild(backBtn);
-  backBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-  });
-
-  const header = document.querySelector("header");
-
-  function onScroll() {
-    const docEl = document.documentElement;
-    const scrollTop = docEl.scrollTop || document.body.scrollTop;
-    const scrollHeight = (docEl.scrollHeight || document.body.scrollHeight) - docEl.clientHeight;
-    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    progress.style.width = pct + "%";
-    header && header.classList.toggle("scrolled", scrollTop > 10);
-    backBtn.classList.toggle("show", scrollTop > 400);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
-
-  // Reveal-on-scroll targets
-  const revealEls = document.querySelectorAll(
-    ".heroCard, .sideCard, .sectionHeader, .card, footer > div"
-  );
-  revealEls.forEach((el) => el.classList.add("reveal"));
-
-  // Staggered delay for siblings inside the same grid
-  document.querySelectorAll(".grid2").forEach((group) => {
-    Array.from(group.children).forEach((child, i) => {
-      child.style.transitionDelay = i * 0.1 + "s";
-    });
-  });
-
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
-    );
-    revealEls.forEach((el) => io.observe(el));
-
-    // Active nav link tracking
-    const sections = document.querySelectorAll("main section[id]");
-    const navLinks = document.querySelectorAll("header nav a[href^='#']");
-    const navIO = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const link = document.querySelector(`header nav a[href="#${entry.target.id}"]`);
-          if (!link) return;
-          navLinks.forEach((l) => l.classList.remove("navLinkActive"));
-          link.classList.add("navLinkActive");
-        });
-      },
-      { threshold: 0, rootMargin: "-40% 0px -55% 0px" }
-    );
-    sections.forEach((s) => navIO.observe(s));
-  } else {
-    revealEls.forEach((el) => el.classList.add("in-view"));
-  }
-
-  // Card spotlight glow follows pointer
-  document.querySelectorAll(".card").forEach((card) => {
-    card.addEventListener("pointermove", (e) => {
-      const r = card.getBoundingClientRect();
-      card.style.setProperty("--mx", e.clientX - r.left + "px");
-      card.style.setProperty("--my", e.clientY - r.top + "px");
-    });
-  });
-})();
-  </script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
