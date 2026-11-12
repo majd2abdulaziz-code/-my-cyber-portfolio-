@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; manifest-src 'self'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'; manifest-src 'self'; media-src 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="Majd Ibrahim — Cybersecurity Specialist, web developer and security awareness creator in Saudi Arabia." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -908,6 +908,83 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
   [dir="rtl"] .lbPrev, [dir="rtl"] .lbNext{ transform: scaleX(-1); }
 }
 
+
+/* ================= Refined professional pass (2026-11-13) ================= */
+:root{
+  --cyan:#d8b4fe;
+  --shadow: 0 14px 44px rgba(0,0,0,.38);
+  --shadow2: 0 8px 26px rgba(0,0,0,.28);
+  --stroke: rgba(196,181,253,.20);
+  --stroke2: rgba(196,181,253,.10);
+}
+body::before{ opacity:.30; animation:none; filter: blur(70px); }
+body::after{ opacity:.10; animation:none; }
+.noise::before{ opacity:.05; }
+.cyberGrid{ opacity:.03; }
+.heroTitle{ text-shadow:none; letter-spacing:-.01em; }
+.pulseDot, .pulseDot::after{ animation:none !important; box-shadow:none !important; }
+.chip i{ box-shadow:none; }
+.itemIcon{ box-shadow:none; }
+.card::after{ display:none; }
+.card:hover{ transform: translateY(-2px); border-color: var(--stroke); box-shadow: var(--shadow2); }
+.scrollProgress{ box-shadow:none; height:2px; }
+.cursor-dot, .cursor-ring, .cursor-glow{ display:none !important; }
+body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button{ cursor:auto !important; }
+body.has-custom-cursor a, body.has-custom-cursor button{ cursor:pointer !important; }
+.section{ padding-top: 34px; }
+.sectionHeader h3{ letter-spacing:-.01em; }
+.secIndex{ color: #a78bfa; }
+
+.ico{ width:1.15em; height:1.15em; vertical-align:-.2em; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; flex:none; }
+.itemIcon .ico{ width:20px; height:20px; color: var(--cyan); }
+h4 .ico{ color: var(--cyan); margin-inline-end:4px; }
+.secList li::marker{ content:"› "; color: var(--cyan); }
+
+/* case-study rows */
+.caseRows{ margin:12px 0 0; display:grid; gap:10px; }
+.caseRows > div{ display:grid; grid-template-columns: 92px 1fr; gap:12px; align-items:baseline; padding:10px 12px; border:1px solid var(--stroke2); border-radius: var(--radius-sm); background: rgba(10,14,28,.35); }
+.caseRows dt{ margin:0; font-size:12px; font-weight:700; color: var(--cyan); letter-spacing:.02em; }
+.caseRows dd{ margin:0; font-size:13.5px; color: var(--muted); line-height:1.75; }
+
+/* walkthrough video */
+.coopVideo{ margin:14px 0 0; }
+.coopVideo video{ width:100%; height:auto; display:block; border-radius: var(--radius-sm); border:1px solid var(--stroke2); background:#0b1210; }
+.coopVideo figcaption{ margin-top:6px; font-size:12px; color: var(--muted2); }
+.demoNote{ margin:10px 0 0; padding:8px 12px; border-radius: var(--radius-sm); border:1px dashed rgba(250,204,21,.35); color:#fde68a; font-size:12.5px; line-height:1.7; background: rgba(250,204,21,.05); }
+
+/* labs roadmap */
+.labGrid{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px; }
+.labTop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.labNum{ font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:28px; font-weight:700; color: rgba(216,180,254,.85); }
+.labStatus{ font-size:12px; padding:4px 10px; border-radius:999px; border:1px solid var(--stroke); color: var(--muted); }
+.lab-active .labStatus{ color:#86efac; border-color: rgba(134,239,172,.35); background: rgba(134,239,172,.06); }
+.labText{ font-size:13px; color: var(--muted); line-height:1.8; margin:8px 0 12px; }
+.labSteps{ display:flex; align-items:center; gap:6px; margin-bottom:12px; }
+.labSteps i{ width:26px; height:5px; border-radius:3px; background: rgba(196,181,253,.14); }
+.labSteps i.on{ background: var(--cyan); }
+.labSteps small{ margin-inline-start:8px; font-family: ui-monospace, Menlo, monospace; color: var(--muted2); font-size:11.5px; }
+.lab-planned{ opacity:.82; }
+
+/* about + skills */
+.skillsBlock{ margin-top:16px; }
+
+/* contact */
+.contactRow{ display:flex; flex-wrap:wrap; gap:10px; }
+.contactRow .ctaBtn{ gap:8px; }
+.contactMail{ margin:12px 0 0; font-family: ui-monospace, Menlo, monospace; font-size:13px; color: var(--muted2); direction:ltr; text-align:start; }
+html[dir="rtl"] .contactMail{ text-align:right; }
+
+@media (max-width: 900px){ .labGrid{ grid-template-columns: 1fr; } }
+@media (max-width: 720px){
+  .caseRows > div{ grid-template-columns: 1fr; gap:4px; }
+  .contactRow .ctaBtn{ flex:1 1 calc(50% - 10px); justify-content:center; }
+}
+
+.proofList{ margin-top:auto; display:flex; flex-direction:column; gap:8px; }
+.proofList h3{ margin:0 0 4px; font-size:14px; color: var(--muted); font-weight:600; }
+.proofItem{ display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius: var(--radius-sm); border:1px solid var(--stroke2); background: rgba(10,14,28,.35); font-size:13px; color: var(--text); transition: border-color .2s, background .2s; }
+.proofItem:hover{ border-color: var(--stroke); background: rgba(196,181,253,.06); }
+.proofItem .ico{ color: var(--cyan); width:18px; height:18px; }
 </style>
 </head>
 <body class="noise">
@@ -932,12 +1009,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
         <nav aria-label="Main navigation">
           <ul>
-            <li><a href="#about"><span data-lang="en">About</span><span data-lang="ar">من أنا</span></a></li>
-            <li><a href="#skills"><span data-lang="en">Skills</span><span data-lang="ar">المهارات التقنية</span></a></li>
-            <li><a href="#projects"><span data-lang="en">Projects & Tools</span><span data-lang="ar">المشاريع والأدوات</span></a></li>
             <li><a href="#coop"><span data-lang="en">Co-op</span><span data-lang="ar">التدريب</span></a></li>
+            <li><a href="#labs"><span data-lang="en">Labs</span><span data-lang="ar">المختبرات</span></a></li>
+            <li><a href="#projects"><span data-lang="en">Projects</span><span data-lang="ar">المشاريع</span></a></li>
+            <li><a href="#about"><span data-lang="en">About</span><span data-lang="ar">عني</span></a></li>
+            <li><a href="#certs"><span data-lang="en">Certificates</span><span data-lang="ar">الشهادات</span></a></li>
             <li><a href="#awareness"><span data-lang="en">Awareness</span><span data-lang="ar">التوعية</span></a></li>
-            <li><a href="#certs"><span data-lang="en">Accreditations</span><span data-lang="ar">الاعتمادات والشهادات</span></a></li>
             <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ar">التواصل</span></a></li>
           </ul>
         </nav>
@@ -949,13 +1026,13 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           </div>
 
           <button class="ctaBtn mobileToggle" type="button" id="openMenu" aria-label="Open menu">
-            <span aria-hidden="true">☰</span>
+            <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></span>
           </button>
 
           <button class="ctaBtn" type="button" id="scrollContact">
-            <span aria-hidden="true">⚡</span>
-            <span data-lang="en">Quick reach</span>
-            <span data-lang="ar">تواصل فوري</span>
+            <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+            <span data-lang="en">Contact</span>
+            <span data-lang="ar">تواصل</span>
           </button>
         </div>
       </div>
@@ -964,12 +1041,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
     <div class="drawerOverlay" id="drawerOverlay" aria-hidden="true"></div>
     <div class="drawer" id="drawer" aria-hidden="true">
       <ul>
-        <li><a href="#about" class="drawerLink" data-close-drawer><span data-lang="ar">من أنا</span><span data-lang="en">About</span></a></li>
-        <li><a href="#skills" class="drawerLink" data-close-drawer><span data-lang="ar">المهارات</span><span data-lang="en">Skills</span></a></li>
+        <li><a href="#coop" class="drawerLink" data-close-drawer><span data-lang="ar">التدريب</span><span data-lang="en">Co-op</span></a></li>
+        <li><a href="#labs" class="drawerLink" data-close-drawer><span data-lang="ar">المختبرات</span><span data-lang="en">Labs</span></a></li>
         <li><a href="#projects" class="drawerLink" data-close-drawer><span data-lang="ar">المشاريع</span><span data-lang="en">Projects</span></a></li>
-        <li><a href="#coop" class="drawerLink" data-close-drawer><span data-lang="ar">التدريب التعاوني</span><span data-lang="en">Co-op Training</span></a></li>
+        <li><a href="#about" class="drawerLink" data-close-drawer><span data-lang="ar">عني</span><span data-lang="en">About</span></a></li>
+        <li><a href="#certs" class="drawerLink" data-close-drawer><span data-lang="ar">الشهادات</span><span data-lang="en">Certificates</span></a></li>
         <li><a href="#awareness" class="drawerLink" data-close-drawer><span data-lang="ar">التوعية</span><span data-lang="en">Awareness</span></a></li>
-        <li><a href="#certs" class="drawerLink" data-close-drawer><span data-lang="ar">الشهادات</span><span data-lang="en">Certifications</span></a></li>
         <li><a href="#contact" class="drawerLink" data-close-drawer><span data-lang="ar">التواصل</span><span data-lang="en">Contact</span></a></li>
       </ul>
     </div>
@@ -995,7 +1072,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </p>
 
             <a class="coopPill" href="#coop">
-              <span aria-hidden="true">📌</span>
+              <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg></span>
               <span data-lang="en">Co-op training 2026 · Dhahran Municipality: see the work</span>
               <span data-lang="ar">التدريب التعاوني 2026 · بلدية الظهران: شاهد المشروعين</span>
               <span class="arrow" aria-hidden="true">←</span>
@@ -1003,12 +1080,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
             <div class="heroActions">
               <button class="ctaBtn primary" type="button" id="viewSkills">
-                <span aria-hidden="true">🛡️</span>
-                <span data-lang="en">View Technical Skills</span>
-                <span data-lang="ar">عرض المهارات التقنية</span>
+                <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3l7 3v6c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/></svg></span>
+                <span data-lang="en">Skills</span>
+                <span data-lang="ar">المهارات</span>
               </button>
               <a class="ctaBtn ghost" href="#certs">
-                <span aria-hidden="true">🏅</span>
+                <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5"/><path d="M8.6 13.4L7 21l5-3 5 3-1.6-7.6"/></svg></span>
                 <span data-lang="en">Certificates</span>
                 <span data-lang="ar">الشهادات</span>
               </a>
@@ -1016,12 +1093,12 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 
             <div class="heroActions" style="margin-top: 12px;">
               <a class="ctaBtn primary" href="Majd_CV.pdf" download>
-                <span aria-hidden="true">📄</span>
+                <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
                 <span data-lang="en">Download CV (EN)</span>
                 <span data-lang="ar">تحميل السيرة (EN)</span>
               </a>
               <a class="ctaBtn ghost" href="Majd_CV_AR.pdf" download>
-                <span aria-hidden="true">📄</span>
+                <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span>
                 <span data-lang="en">Download CV (AR)</span>
                 <span data-lang="ar">تحميل السيرة (AR)</span>
               </a>
@@ -1041,8 +1118,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </div>
             <div class="stat">
               <strong>
-                <span data-lang="en">📢 I Teach & Raise Awareness</span>
-                <span data-lang="ar">📢 أعلّم وأنشر التوعية</span>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5v3a1 1 0 0 0 1 1h2l6 4.5V5L6 9.5H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg> I Teach & Raise Awareness</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.5v3a1 1 0 0 0 1 1h2l6 4.5V5L6 9.5H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/></svg> أعلّم وأنشر التوعية</span>
               </strong>
               <span>
                 <span data-lang="en">Founder of M.A.A.I#CYS, an Arabic cybersecurity awareness channel.</span>
@@ -1077,109 +1154,200 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               <span class="chip"><i aria-hidden="true"></i><span>Secure Code Auditing</span></span>
             </div>
 
-            <div class="card" style="background: rgba(10,14,28,.30); margin-top: auto;">
-              <div class="cardInner">
-                <div class="sectionHeader" style="margin:0;">
-                  <h3>
-                    <span data-lang="en">Professional Focus</span>
-                    <span data-lang="ar">التركيز المهني</span>
-                  </h3>
-                  <p style="font-size: 12.5px;">
-                    <span data-lang="en">Vulnerability identification, application security, and hands-on penetration testing.</span>
-                    <span data-lang="ar">تحديد الثغرات الأمنية، أمان التطبيقات، واختبار الاختراق العملي.</span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            <div class="proofList"><h3><span data-lang="en">Quick proof</span><span data-lang="ar">إثباتات سريعة</span></h3><a class="proofItem" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><span><span data-lang="en">Co-op projects: code and video</span><span data-lang="ar">مشروعا التدريب التعاوني: الكود والفيديو</span></span></a><a class="proofItem" href="https://github.com/majd2abdulaziz-code/cybersecurity-labs" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6M10 3v6.2L4.6 18.4A1.7 1.7 0 0 0 6.1 21h11.8a1.7 1.7 0 0 0 1.5-2.6L14 9.2V3M7.2 15h9.6"/></svg><span><span data-lang="en">Cybersecurity labs on GitHub</span><span data-lang="ar">مختبرات الأمن السيبراني على GitHub</span></span></a><a class="proofItem" href="https://www.youtube.com/@M.A.A.I-CYS" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg><span><span data-lang="en">M.A.A.I#CYS awareness channel</span><span data-lang="ar">قناة التوعية M.A.A.I#CYS</span></span></a><a class="proofItem" href="#certs"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5"/><path d="M8.6 13.4L7 21l5-3 5 3-1.6-7.6"/></svg><span><span data-lang="en">38 certificates and courses</span><span data-lang="ar">38 شهادة ودورة تدريبية</span></span></a></div>
           </div>
         </aside>
       </section>
 
-      <section class="section" id="about">
+      <section class="section" id="coop">
         <div class="sectionHeader">
           <span class="secIndex">01</span>
           <h3>
-            <span data-lang="en">About Me</span>
-            <span data-lang="ar">من أنا</span>
+            <span data-lang="en">Co-op Training — Dhahran Municipality</span>
+            <span data-lang="ar">التدريب التعاوني — بلدية الظهران</span>
           </h3>
           <p>
-            <span data-lang="en">I study cybersecurity and practise it hands-on: labs I build myself, and websites I code and secure. Everything on this page links to the actual work.</span>
-            <span data-lang="ar">أدرس الأمن السيبراني وأطبّق ما أتعلمه بيدي: مختبرات أبنيها بنفسي، ومواقع أبرمجها وأحميها. وكل إنجاز في هذه الصفحة موثّق برابط أو صورة.</span>
+            <span data-lang="en">Information Technology Department · 2026. Twelve weeks, two projects. All the files and screenshots are on GitHub.</span>
+            <span data-lang="ar">إدارة تقنية المعلومات · 2026. اثنا عشر أسبوعًا ومشروعان، وكل ملفاتهما وصورهما موجودة على GitHub.</span>
+          </p>
+        </div>
+
+        <div class="achieveRow">
+          <div class="achieve"><strong>2</strong><span><span data-lang="en">delivered projects</span><span data-lang="ar">مشروعان مكتملان</span></span></div>
+          <div class="achieve"><strong>9</strong><span><span data-lang="en">portal modules</span><span data-lang="ar">أقسام في البوابة</span></span></div>
+          <div class="achieve"><strong>13</strong><span><span data-lang="en">linked database tables</span><span data-lang="ar">جدولاً مترابطاً في قاعدة البيانات</span></span></div>
+          <div class="achieve"><strong>1</strong><span><span data-lang="en">live Power BI dashboard</span><span data-lang="ar">لوحة Power BI مباشرة</span></span></div>
+        </div>
+
+        <div class="proofBar coopProof">
+          <a class="ctaBtn primary proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span><span data-lang="en">Both projects on GitHub</span><span data-lang="ar">ملفات المشروعين على GitHub</span></a>
+          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/employee-portal/docs/screenshots" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg></span><span data-lang="en">Portal screenshots (20)</span><span data-lang="ar">صور البوابة (20)</span></a>
+          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/powerbi-dashboard" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg></span><span data-lang="en">Power BI steps</span><span data-lang="ar">خطوات لوحة Power BI</span></a>
+        </div>
+
+        <details class="weeksBox">
+          <summary><span data-lang="en">Week by week (12 weeks)</span><span data-lang="ar">سير التدريب أسبوعًا بأسبوع (12 أسبوعًا)</span></summary>
+          <ol class="weeks"><li><span class="wk">1</span><span data-lang="en">Started in the IT department, received the training plan and the two projects</span><span data-lang="ar">بداية التدريب في إدارة تقنية المعلومات، واستلام خطة التدريب وشرح المشروعين</span></li><li><span class="wk">2</span><span data-lang="en">Collected the indicator data and entered it in Excel</span><span data-lang="ar">جمع بيانات المؤشرات وإدخالها وتنظيمها في Excel</span></li><li><span class="wk">3</span><span data-lang="en">Portal requirements, database design and page structure</span><span data-lang="ar">متطلبات بوابة التواصل، وتصميم قاعدة البيانات، وهيكل الصفحات</span></li><li><span class="wk">4</span><span data-lang="en">Designed and coded the portal: chat, forums, calendar, projects</span><span data-lang="ar">تصميم البوابة وبرمجتها: المحادثات والمنتديات والتقويم والمشاريع</span></li><li><span class="wk">5</span><span data-lang="en">Tested on desktop and mobile, security review, screenshots</span><span data-lang="ar">اختبار البوابة على الحاسب والجوال، ومراجعة الحماية، وتصوير الصفحات</span></li><li><span class="wk">6</span><span data-lang="en">Linked Excel with SharePoint and reshaped the data into one table</span><span data-lang="ar">ربط Excel مع SharePoint، وإعادة ترتيب البيانات في جدول واحد</span></li><li><span class="wk">7</span><span data-lang="en">Uploaded the data to SharePoint and started the Power BI design</span><span data-lang="ar">رفع البيانات إلى SharePoint، وبداية تصميم اللوحة في Power BI</span></li><li><span class="wk">8</span><span data-lang="en">KPI cards, monthly chart, fixed the month order</span><span data-lang="ar">بطاقات الإجماليات، والرسم الشهري، وترتيب الأشهر</span></li><li><span class="wk">9</span><span data-lang="en">Donut chart and month slicer, revised after supervisor feedback</span><span data-lang="ar">الرسم الدائري وتصفية الأشهر، والتعديل حسب ملاحظات المشرف</span></li><li><span class="wk">10</span><span data-lang="en">Connected SharePoint to Power BI and pinned the dashboard live</span><span data-lang="ar">ربط SharePoint مع Power BI، وتثبيت اللوحة بالنمط المباشر</span></li><li><span class="wk">11</span><span data-lang="en">Created the share link and handed over both projects</span><span data-lang="ar">إنشاء رابط اللوحة ومشاركته، وتسليم المشروعين</span></li><li><span class="wk">12</span><span data-lang="en">Wrote and reviewed the training report</span><span data-lang="ar">كتابة تقرير التدريب ومراجعته</span></li></ol>
+        </details>
+
+        <div class="coopGrid">
+          <article class="card coopCard">
+            <div class="cardInner">
+              <span class="coopTag"><span data-lang="en">Web Development</span><span data-lang="ar">تطوير الويب</span></span>
+              <h4>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9M12 3C9.5 5.7 8.2 8.7 8.2 12s1.3 6.3 3.8 9"/></svg> Employee Portal — internal communication platform</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9M12 3C9.5 5.7 8.2 8.7 8.2 12s1.3 6.3 3.8 9"/></svg> بوابة الموظفين — منصة تواصل داخلية</span>
+              </h4>
+              <dl class="caseRows"><div><dt><span data-lang="en">Challenge</span><span data-lang="ar">التحدي</span></dt><dd><span data-lang="en">Staff communication and follow-up were spread across several applications.</span><span data-lang="ar">أدوات التواصل ومتابعة الأعمال بين الموظفين موزعة على أكثر من تطبيق.</span></dd></div><div><dt><span data-lang="en">What I built</span><span data-lang="ar">ما نفذته</span></dt><dd><span data-lang="en">One portal with chat, forums, an activities calendar, projects with a task board, and a staff directory.</span><span data-lang="ar">بوابة واحدة تضم المحادثات والمنتديات وتقويم الأنشطة والمشاريع بلوحة مهام ودليل الموظفين.</span></dd></div><div><dt><span data-lang="en">Result</span><span data-lang="ar">النتيجة</span></dt><dd><span data-lang="en">A working prototype on desktop and mobile, protected against the most common web attacks.</span><span data-lang="ar">نموذج يعمل على الحاسب والجوال، ومحمي من أشهر هجمات تطبيقات الويب.</span></dd></div></dl>
+              <div class="chipRow">
+                <span class="chip"><i></i>PHP 8 · PDO</span><span class="chip"><i></i>MySQL</span><span class="chip"><i></i>JavaScript</span><span class="chip"><i></i>HTML5 / CSS3</span>
+              </div>
+              <figure class="coopVideo">
+                <video controls preload="none" playsinline poster="img/coop/portal-walkthrough-poster.jpg" width="1280" height="800">
+                  <source src="img/coop/portal-walkthrough.mp4" type="video/mp4">
+                </video>
+                <figcaption><span data-lang="en">54-second walkthrough of the demo version</span><span data-lang="ar">جولة في النسخة التجريبية (54 ثانية)</span></figcaption>
+              </figure>
+              <p class="demoNote"><span data-lang="en">All data shown is sample data. This portal is a training prototype, not an official Dhahran Municipality system.</span><span data-lang="ar">جميع البيانات المعروضة تجريبية. والبوابة نموذج تدريبي، وليست نظامًا رسميًا لبلدية الظهران.</span></p>
+              <ul class="secList">
+                <li><span data-lang="en">Passwords hashed with bcrypt</span><span data-lang="ar">تشفير كلمات المرور (bcrypt)</span></li>
+                <li><span data-lang="en">Prepared statements against SQL injection</span><span data-lang="ar">استعلامات مُجهّزة ضد حقن SQL</span></li>
+                <li><span data-lang="en">Output escaping against XSS</span><span data-lang="ar">ترميز المخرجات ضد XSS</span></li>
+                <li><span data-lang="en">CSRF tokens on every form and request</span><span data-lang="ar">رمز CSRF في كل نموذج وطلب</span></li>
+                <li><span data-lang="en">Session hardening (regenerate ID, HttpOnly, SameSite)</span><span data-lang="ar">حماية الجلسة (تجديد المعرّف، HttpOnly، SameSite)</span></li>
+                <li><span data-lang="en">Server-side permission checks</span><span data-lang="ar">التحقق من الصلاحيات في الخادم</span></li>
+              </ul>
+              <div class="shotGrid"><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard.webp" data-cap-en="Dashboard" data-cap-ar="لوحة التحكم"><img src="img/coop/portal-dashboard-thumb.webp" alt="Dashboard" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard</span><span data-lang="ar">لوحة التحكم</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard-dark.webp" data-cap-en="Dark mode" data-cap-ar="الوضع الليلي"><img src="img/coop/portal-dashboard-dark-thumb.webp" alt="Dark mode" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dark mode</span><span data-lang="ar">الوضع الليلي</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-kanban.webp" data-cap-en="Projects Kanban board" data-cap-ar="لوحة المشاريع (Kanban)"><img src="img/coop/portal-kanban-thumb.webp" alt="Projects Kanban board" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Projects Kanban board</span><span data-lang="ar">لوحة المشاريع (Kanban)</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-chat.webp" data-cap-en="Instant chat" data-cap-ar="الدردشة الفورية"><img src="img/coop/portal-chat-thumb.webp" alt="Instant chat" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Instant chat</span><span data-lang="ar">الدردشة الفورية</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-calendar.webp" data-cap-en="Activities calendar" data-cap-ar="تقويم الأنشطة"><img src="img/coop/portal-calendar-thumb.webp" alt="Activities calendar" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Activities calendar</span><span data-lang="ar">تقويم الأنشطة</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-login.webp" data-cap-en="Secure sign-in" data-cap-ar="تسجيل الدخول الآمن"><img src="img/coop/portal-login-thumb.webp" alt="Secure sign-in" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Secure sign-in</span><span data-lang="ar">تسجيل الدخول الآمن</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-mobile.webp" data-cap-en="Works on mobile" data-cap-ar="يعمل على الجوال"><img src="img/coop/portal-mobile-thumb.webp" alt="Works on mobile" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Works on mobile</span><span data-lang="ar">يعمل على الجوال</span></span></button></div>
+            </div>
+          </article>
+
+          <article class="card coopCard">
+            <div class="cardInner">
+              <span class="coopTag"><span data-lang="en">Data &amp; Business Intelligence</span><span data-lang="ar">تحليل البيانات</span></span>
+              <h4>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg> Dhahran Municipality KPI Dashboard 2026 — Power BI</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20V11M10 20V5M16 20v-6M21 20H3"/></svg> لوحة مؤشرات بلدية الظهران 2026 — Power BI</span>
+              </h4>
+              <dl class="caseRows"><div><dt><span data-lang="en">Challenge</span><span data-lang="ar">التحدي</span></dt><dd><span data-lang="en">The department's monthly figures were scattered and hard to follow.</span><span data-lang="ar">أرقام الإدارة الشهرية متفرقة، ويصعب متابعتها واتخاذ القرار بناءً عليها.</span></dd></div><div><dt><span data-lang="en">What I built</span><span data-lang="ar">ما نفذته</span></dt><dd><span data-lang="en">A single data table on SharePoint connected to a Power BI dashboard through Power Query.</span><span data-lang="ar">جدول بيانات واحد على SharePoint، مربوط بلوحة Power BI عن طريق Power Query.</span></dd></div><div><dt><span data-lang="en">Result</span><span data-lang="ar">النتيجة</span></dt><dd><span data-lang="en">A live dashboard that updates from one source and shows totals, monthly trends and each indicator’s share.</span><span data-lang="ar">لوحة مباشرة تتحدث من مصدر واحد، وتعرض الإجماليات والاتجاه الشهري ونسبة كل مؤشر.</span></dd></div></dl>
+              <ol class="steps">
+                <li><span data-lang="en">Organised the indicators in a structured Excel table</span><span data-lang="ar">تنظيم المؤشرات في جدول Excel منظّم</span></li>
+                <li><span data-lang="en">Stored the file in SharePoint / OneDrive</span><span data-lang="ar">رفع الملف على SharePoint / OneDrive</span></li>
+                <li><span data-lang="en">Connected Power BI through Power Query</span><span data-lang="ar">ربط Power BI عن طريق Power Query</span></li>
+                <li><span data-lang="en">Built KPI cards, a monthly area chart, a donut chart and a month slicer</span><span data-lang="ar">بناء بطاقات المؤشرات ومخطط شهري ومخطط دائري وفلتر للأشهر</span></li>
+                <li><span data-lang="en">Pinned it live to a dashboard and shared it inside the organisation</span><span data-lang="ar">تثبيت اللوحة مباشرة ومشاركتها داخل المنظمة</span></li>
+              </ol>
+              <div class="chipRow">
+                <span class="chip"><i></i>Power BI</span><span class="chip"><i></i>Power Query</span><span class="chip"><i></i>Excel</span><span class="chip"><i></i>SharePoint</span>
+              </div>
+              <div class="shotGrid"><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-dashboard.webp" data-cap-en="Dashboard: KPI cards, monthly trend, share by indicator" data-cap-ar="اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر"><img src="img/coop/powerbi-dashboard-thumb.webp" alt="Dashboard: KPI cards, monthly trend, share by indicator" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard: KPI cards, monthly trend, share by indicator</span><span data-lang="ar">اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-powerquery.webp" data-cap-en="Power Query: loading the data table" data-cap-ar="Power Query: تحميل جدول البيانات"><img src="img/coop/powerbi-powerquery-thumb.webp" alt="Power Query: loading the data table" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Power Query: loading the data table</span><span data-lang="ar">Power Query: تحميل جدول البيانات</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-excel.webp" data-cap-en="Source data in Excel" data-cap-ar="البيانات المصدر في Excel"><img src="img/coop/powerbi-excel-thumb.webp" alt="Source data in Excel" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Source data in Excel</span><span data-lang="ar">البيانات المصدر في Excel</span></span></button></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="labs">
+        <div class="sectionHeader">
+          <span class="secIndex">02</span>
+          <h3>
+            <span data-lang="en">Cybersecurity Labs</span>
+            <span data-lang="ar">مختبرات الأمن السيبراني</span>
+          </h3>
+          <p>
+            <span data-lang="en">Labs I build on my own machines. Each one is documented step by step, and new labs are added as they are finished.</span>
+            <span data-lang="ar">مختبرات أبنيها على أجهزتي الخاصة، ولكل مختبر توثيق بالخطوات والصور، وتُضاف المختبرات الجديدة عند اكتمالها.</span>
+          </p>
+        </div>
+        <div class="labGrid">
+          <article class="card labCard lab-active">
+            <div class="cardInner">
+              <div class="labTop"><span class="labNum">01</span><span class="labStatus"><span data-lang="en">In progress</span><span data-lang="ar">قيد التنفيذ</span></span></div>
+              <h4><span data-lang="en">Wazuh SIEM Monitoring Lab</span><span data-lang="ar">مختبر Wazuh للمراقبة الأمنية</span></h4>
+              <p class="labText"><span data-lang="en">Wazuh deployed on Docker to collect logs and watch lab machines; ARM64 and certificate issues solved and documented.</span><span data-lang="ar">تشغيل Wazuh على Docker لجمع السجلات ومراقبة أجهزة المختبر، مع حل مشكلتي المعالج والشهادات وتوثيقهما.</span></p>
+              <div class="labSteps" aria-label="1 / 4"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><small>1 / 4</small></div>
+              <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/cybersecurity-labs/tree/main/01-wazuh-siem-lab" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6M10 3v6.2L4.6 18.4A1.7 1.7 0 0 0 6.1 21h11.8a1.7 1.7 0 0 0 1.5-2.6L14 9.2V3M7.2 15h9.6"/></svg><span data-lang="en">Lab write-up</span><span data-lang="ar">توثيق المختبر</span></a>
+            </div>
+          </article>
+          <article class="card labCard lab-planned">
+            <div class="cardInner">
+              <div class="labTop"><span class="labNum">02</span><span class="labStatus"><span data-lang="en">Planned</span><span data-lang="ar">مخطط له</span></span></div>
+              <h4><span data-lang="en">Metasploitable 2 Penetration Test</span><span data-lang="ar">اختبار اختراق Metasploitable 2</span></h4>
+              <p class="labText"><span data-lang="en">Scanning, enumeration and exploitation of an intentionally vulnerable machine, ending with a professional report.</span><span data-lang="ar">فحص جهاز مصمم بثغرات مقصودة، وجمع المعلومات عنه واستغلاله، ثم كتابة تقرير احترافي.</span></p>
+              <div class="labSteps" aria-label="0 / 4"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><small>0 / 4</small></div>
+              
+            </div>
+          </article>
+          <article class="card labCard lab-planned">
+            <div class="cardInner">
+              <div class="labTop"><span class="labNum">03</span><span class="labStatus"><span data-lang="en">Planned</span><span data-lang="ar">مخطط له</span></span></div>
+              <h4><span data-lang="en">Web Application Testing (OWASP Top 10)</span><span data-lang="ar">اختبار تطبيقات الويب (OWASP Top 10)</span></h4>
+              <p class="labText"><span data-lang="en">Testing SQL injection, broken authentication and other common web flaws, with fixes for each finding.</span><span data-lang="ar">اختبار حقن قواعد البيانات وضعف المصادقة وغيرها من ثغرات الويب الشائعة، مع طريقة إصلاح كل ثغرة.</span></p>
+              <div class="labSteps" aria-label="0 / 4"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><small>0 / 4</small></div>
+              
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <div class="sectionHeader">
+          <span class="secIndex">03</span>
+          <h3>
+            <span data-lang="en">Projects</span>
+            <span data-lang="ar">المشاريع</span>
+          </h3>
+          <p>
+            <span data-lang="en">Work I build and run myself, with a link to each one.</span>
+            <span data-lang="ar">أعمال أبنيها وأديرها بنفسي، ومع كل منها رابط إليها.</span>
           </p>
         </div>
 
         <div class="grid2">
           <div class="card">
             <div class="cardInner">
-              <div class="item" style="margin:0; border-color: rgba(34,211,238,.2);">
-                <div class="itemIcon" aria-hidden="true">🛡️</div>
-                <div>
-                  <b>
-                    <span data-lang="en">Application Security (AppSec)</span>
-                    <span data-lang="ar">أمن التطبيقات والبرمجيات</span>
-                  </b>
-                  <span>
-                    <span data-lang="en">Evaluating logical flaws, assessing baseline authentication, and mitigating OWASP threats.</span>
-                    <span data-lang="ar">تقييم الأخطاء المنطقية، فحص آليات المصادقة، والحد من مخاطر ثغرات OWASP.</span>
-                  </span>
-                </div>
-              </div>
-              <div class="list">
-                <div class="item">
-                  <div class="itemIcon" aria-hidden="true">📋</div>
-                  <div>
-                    <b>
-                      <span data-lang="en">Actionable Technical Reporting</span>
-                      <span data-lang="ar">تقارير فنية دقيقة</span>
-                    </b>
-                    <span>
-                      <span data-lang="en">Documenting vulnerabilities with detailed evidence, business impact, and mitigation steps.</span>
-                      <span data-lang="ar">توثيق الثغرات بالأدلة الفنية وتأثيرها على العمل مع تقديم خطوات واضحة للإصلاح.</span>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <h4>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> Pago Secure Web Platform</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg> منصة Pago للويب الآمن</span>
+              </h4>
+              <p style="font-size:13px; color:var(--muted);">
+                <span data-lang="en">My store and client websites, which I build and deploy on Cloudflare Workers. Before every release I review the code against the OWASP Top 10: login and sessions, permissions, and input handling.</span>
+                <span data-lang="ar">متجري ومواقع العملاء، أبنيها وأنشرها على Cloudflare Workers. وقبل كل نشر أراجع الكود على قائمة OWASP Top 10: تسجيل الدخول والجلسات، والصلاحيات، والتعامل مع المدخلات.</span>
+              </p>
+              <div class="proofBar"><a class="ctaBtn ghost proofBtn" href="https://pago.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17.5" cy="19.5" r="1.3"/><path d="M2.5 3.5h2.6l2.4 11.3a1 1 0 0 0 1 .8h9.3a1 1 0 0 0 1-.8L20.5 7H6"/></svg></span><span data-lang="en">Visit the store</span><span data-lang="ar">زيارة المتجر</span></a></div>
             </div>
           </div>
 
           <div class="card">
             <div class="cardInner">
-              <h3>
-                <span data-lang="en">Core Mindset & Approach</span>
-                <span data-lang="ar">المنهجية والفكر التقني</span>
-              </h3>
-              <div class="list">
-                <div class="item">
-                  <div class="itemIcon" style="color:var(--cyan)">1</div>
-                  <div>
-                    <b>
-                      <span data-lang="en">Continuous Autonomous Research</span>
-                      <span data-lang="ar">البحث والتعليم الذاتي المستمر</span>
-                    </b>
-                    <span>
-                      <span data-lang="en">Utilizing terminal tools and isolated sandboxes to analyze operating systems and modern attack pathways.</span>
-                      <span data-lang="ar">استخدام سطر الأوامر (Terminal) والبيئات المعزولة لتحليل أنظمة التشغيل ومسارات الهجوم الحديثة.</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="itemIcon" style="color:var(--cyan)">2</div>
-                  <div>
-                    <b>
-                      <span data-lang="en">Hardening & Implementation</span>
-                      <span data-lang="ar">التشديد والتحصين الأمني</span>
-                    </b>
-                    <span>
-                      <span data-lang="en">Applying rigid security configurations, access control matrices, and baseline policies.</span>
-                      <span data-lang="ar">تطبيق إعدادات الحماية الصارمة، مصفوفات التحكم بالوصول، وسياسات الأمن الأساسية.</span>
-                    </span>
-                  </div>
-                </div>
+              <h4>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg> Tools I use</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg> الأدوات التي أستخدمها</span>
+              </h4>
+              <div class="chipRow" style="margin-top:10px;">
+                <span class="chip"><i></i>Nmap</span>
+                <span class="chip"><i></i>Burp Suite</span>
+                <span class="chip"><i></i>Wireshark</span>
+                <span class="chip"><i></i>Linux CLI</span>
+                <span class="chip"><i></i>macOS Hardening</span>
+                <span class="chip"><i></i>Virtualization (UTM/Parallels)</span>
+                <span class="chip"><i></i>Secure HTML5/CSS3</span>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
+      <section class="section" id="about">
+        <div class="sectionHeader">
+          <span class="secIndex">04</span>
+          <h3>
+            <span data-lang="en">About & Skills</span>
+            <span data-lang="ar">عني ومهاراتي</span>
+          </h3>
+          <p>
+            <span data-lang="en">I study cybersecurity and practise it hands-on: labs I build myself, and websites I code and secure. Every achievement on this page is documented with a link or a screenshot.</span>
+            <span data-lang="ar">أدرس الأمن السيبراني وأطبّق ما أتعلمه عمليًا: مختبرات أبنيها بنفسي، ومواقع أبرمجها وأحميها. وكل إنجاز في هذه الصفحة موثّق برابط أو صورة.</span>
+          </p>
+        </div>
         <div class="card" style="margin-top: 16px;">
           <div class="cardInner">
             <h3 style="font-size:16px; color: var(--cyan);">
@@ -1188,35 +1356,22 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </h3>
             <div class="list">
               <div class="item">
-                <div class="itemIcon" aria-hidden="true">💼</div>
+                <div class="itemIcon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/></svg></div>
                 <div>
                   <b>
                     <span data-lang="en">Web Developer — Pago (2026 – Present)</span>
                     <span data-lang="ar">مطورة مواقع ويب — Pago (2026 – حتى الآن)</span>
                   </b>
                   <span>
-                    <span data-lang="en">Architected and deployed secure web applications using Cloudflare Workers, integrating cybersecurity best practices for OWASP Top 10 protection and data integrity. Enforced authentication, access control, and encryption standards across client applications, and conducted code reviews and vulnerability assessments prior to deployment.</span>
-                    <span data-lang="ar">تصميم ونشر تطبيقات ويب آمنة باستخدام Cloudflare Workers، مع دمج أفضل ممارسات الأمن السيبراني للحماية من ثغرات OWASP Top 10 وضمان سلامة البيانات. تطبيق معايير المصادقة والتحكم بالوصول والتشفير في تطبيقات العملاء، وإجراء مراجعات للأكواد وتقييمات للثغرات قبل النشر.</span>
+                    <span data-lang="en">I build and deploy my store and client websites on Cloudflare Workers, and review each release for common web vulnerabilities (OWASP Top 10): sign-in and sessions, permissions and input handling.</span>
+                    <span data-lang="ar">أبني متجري ومواقع العملاء وأنشرها على Cloudflare Workers، وأراجع كل إصدار قبل نشره على أشهر ثغرات الويب (OWASP Top 10): تسجيل الدخول والجلسات، والصلاحيات، والتعامل مع المدخلات.</span>
                   </span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="section" id="skills">
-        <div class="sectionHeader">
-          <span class="secIndex">02</span>
-          <h3>
-            <span data-lang="en">Technical Capabilities</span>
-            <span data-lang="ar">المهارات والقدرات التقنية</span>
-          </h3>
-          <p>
-            <span data-lang="en">What I actually know and use, in attack, defence and web development.</span>
-            <span data-lang="ar">ما أعرفه وأستخدمه فعلًا، في الهجوم والدفاع وتطوير الويب.</span>
-          </p>
-        </div>
+        <div id="skills" class="skillsBlock">
 
         <div class="grid2">
           <div class="card">
@@ -1227,7 +1382,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               </h3>
               <div class="list">
                 <div class="item">
-                  <div class="itemIcon">🧩</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".8"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">Offensive Methodology (CEH)</span>
@@ -1240,7 +1395,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                   </div>
                 </div>
                 <div class="item">
-                  <div class="itemIcon">🔐</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">Defensive Posture & Hardening</span>
@@ -1264,7 +1419,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               </h3>
               <div class="list">
                 <div class="item">
-                  <div class="itemIcon">⚙️</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">Secure API Design & Logic</span>
@@ -1277,7 +1432,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                   </div>
                 </div>
                 <div class="item">
-                  <div class="itemIcon">🖥️</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">OS & Virtualization Maintenance</span>
@@ -1303,7 +1458,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               </h3>
               <div class="list">
                 <div class="item">
-                  <div class="itemIcon">💻</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M12 15h5"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">Python, JavaScript, HTML/CSS, Bash</span>
@@ -1327,7 +1482,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               </h3>
               <div class="list">
                 <div class="item">
-                  <div class="itemIcon">☁️</div>
+                  <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 18a4 4 0 0 1-.6-7.96A6 6 0 0 1 17.8 9.2 4.4 4.4 0 0 1 17.5 18z"/></svg></div>
                   <div>
                     <b>
                       <span data-lang="en">Cloudflare Workers, OWASP Top 10, Secure Coding</span>
@@ -1352,7 +1507,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </h3>
             <div class="list">
               <div class="item">
-                <div class="itemIcon">🛠️</div>
+                <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div>
                 <div>
                   <b>
                     <span data-lang="en">Burp Suite, Nmap, Wireshark, Kali Linux</span>
@@ -1376,7 +1531,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </h3>
             <div class="list">
               <div class="item">
-                <div class="itemIcon">🇸🇦</div>
+                <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h9M8.5 3v2M6 5c.4 3.6 2.8 6.4 6 7.6M11 5c-.6 3.8-3.2 6.8-7 8M13 21l4-9 4 9M14.4 18h5.2"/></svg></div>
                 <div>
                   <b>
                     <span data-lang="en">Arabic</span>
@@ -1389,7 +1544,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                 </div>
               </div>
               <div class="item">
-                <div class="itemIcon">🇬🇧</div>
+                <div class="itemIcon"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 5h9M8.5 3v2M6 5c.4 3.6 2.8 6.4 6 7.6M11 5c-.6 3.8-3.2 6.8-7 8M13 21l4-9 4 9M14.4 18h5.2"/></svg></div>
                 <div>
                   <b>
                     <span data-lang="en">English</span>
@@ -1404,158 +1559,52 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             </div>
           </div>
         </div>
+        </div>
       </section>
 
-      <section class="section" id="projects">
+      <section class="section" id="certs">
         <div class="sectionHeader">
-          <span class="secIndex">03</span>
+          <span class="secIndex">05</span>
           <h3>
-            <span data-lang="en">Academic Projects & Lab Frameworks</span>
-            <span data-lang="ar">المشاريع الأكاديمية والمختبرات التطبيقية</span>
+            <span data-lang="en">Accreditations &amp; Certificates</span>
+            <span data-lang="ar">الاعتمادات والشهادات</span>
           </h3>
           <p>
-            <span data-lang="en">Projects and labs I built myself, each with a link to the work itself.</span>
-            <span data-lang="ar">مشاريع ومختبرات نفذتها بنفسي، ومع كل واحد رابط يوصلك للعمل نفسه.</span>
+            <span data-lang="en">My credentials and 38 completed professional courses. Tap any certificate to view it in full.</span>
+            <span data-lang="ar">اعتماداتي و38 دورة احترافية مكتملة. اضغط على أي شهادة لعرضها كاملة.</span>
           </p>
         </div>
 
         <div class="grid2">
-          <div class="card">
+          <div class="card credCard">
             <div class="cardInner">
-              <h4>
-                <span data-lang="en">🔒 Pago Secure Web Platform</span>
-                <span data-lang="ar">🔒 منصة Pago للويب الآمن</span>
-              </h4>
-              <p style="font-size:13px; color:var(--muted);">
-                <span data-lang="en">My store and client websites, which I build and deploy on Cloudflare Workers. Before every release I review the code against the OWASP Top 10: login and sessions, permissions, and input handling.</span>
-                <span data-lang="ar">متجري ومواقع العملاء، أبنيها وأنشرها على Cloudflare Workers. وقبل كل نشر أراجع الكود على قائمة OWASP Top 10: تسجيل الدخول والجلسات، والصلاحيات، والتعامل مع المدخلات.</span>
-              </p>
-              <div class="proofBar"><a class="ctaBtn ghost proofBtn" href="https://pago.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🛒</span><span data-lang="en">Visit the store</span><span data-lang="ar">زيارة المتجر</span></a></div>
+              <div class="credIcon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="9" r="5"/><path d="M8.6 13.4L7 21l5-3 5 3-1.6-7.6"/></svg></div>
+              <h4><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span></h4>
+              <p><span data-lang="en">Issued by EC-Council, May 2026. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span><span data-lang="ar">صادرة من المجلس العالمي (EC-Council) في مايو 2026، وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span></p>
             </div>
           </div>
-
-          <div class="card">
+          <div class="card credCard">
             <div class="cardInner">
-              <h4>
-                <span data-lang="en">🛡️ Security Monitoring Lab (Wazuh SIEM)</span>
-                <span data-lang="ar">🛡️ مختبر مراقبة الأمن (Wazuh SIEM)</span>
-              </h4>
-              <p style="font-size:13px; color:var(--muted);">
-                <span data-lang="en">I set up Wazuh on Docker to collect logs and watch devices, and documented every step with screenshots. Next labs: Metasploitable and web application flaws.</span>
-                <span data-lang="ar">ركّبت نظام Wazuh على Docker لجمع السجلات ومراقبة الأجهزة، ووثقت كل خطوة بالصور. والمختبرات القادمة: Metasploitable وثغرات تطبيقات الويب.</span>
-              </p>
-              <div class="proofBar"><a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/cybersecurity-labs/tree/main/01-wazuh-siem-lab" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🧪</span><span data-lang="en">Lab write-up on GitHub</span><span data-lang="ar">خطوات المختبر على GitHub</span></a></div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="cardInner">
-              <h4>
-                <span data-lang="en">🧰 Toolkit & Ecosystem Competency</span>
-                <span data-lang="ar">🧰 الأدوات والبيئات التقنية المستخدمة</span>
-              </h4>
-              <div class="chipRow" style="margin-top:10px;">
-                <span class="chip"><i></i>Nmap</span>
-                <span class="chip"><i></i>Burp Suite</span>
-                <span class="chip"><i></i>Wireshark</span>
-                <span class="chip"><i></i>Linux CLI</span>
-                <span class="chip"><i></i>macOS Hardening</span>
-                <span class="chip"><i></i>Virtualization (UTM/Parallels)</span>
-                <span class="chip"><i></i>Secure HTML5/CSS3</span>
-              </div>
+              <div class="credIcon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg></div>
+              <h4><span data-lang="en">Cybersecurity Specialization Diploma</span><span data-lang="ar">دبلوم التخصص في الأمن السيبراني</span></h4>
+              <p><span data-lang="en">Academy of Learning | Perfect 5.0 GPA. Advanced coursework in web application security, operating systems security, cryptography, and network defense.</span><span data-lang="ar">أكاديمية التعلم | بمعدل تراكمي كامل 5.0. مقررات متقدمة في أمان تطبيقات الويب، أمن أنظمة التشغيل، التشفير، والدفاع عن الشبكات.</span></p>
+              <p class="credNote"><span data-lang="en">Official transcript available on request.</span><span data-lang="ar">السجل الأكاديمي الرسمي متاح عند الطلب.</span></p>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="section" id="coop">
-        <div class="sectionHeader">
-          <span class="secIndex">04</span>
-          <h3>
-            <span data-lang="en">Co-op Training — Dhahran Municipality</span>
-            <span data-lang="ar">التدريب التعاوني — بلدية الظهران</span>
-          </h3>
-          <p>
-            <span data-lang="en">Information Technology Department · 2026. Twelve weeks, two projects. All the files and screenshots are on GitHub.</span>
-            <span data-lang="ar">إدارة تقنية المعلومات · 2026. اثنا عشر أسبوعًا ومشروعان، وكل ملفاتهما وصورهما موجودة على GitHub.</span>
-          </p>
-        </div>
-
-        <div class="achieveRow">
-          <div class="achieve"><strong>2</strong><span><span data-lang="en">delivered projects</span><span data-lang="ar">مشروعان مكتملان</span></span></div>
-          <div class="achieve"><strong>9</strong><span><span data-lang="en">portal modules</span><span data-lang="ar">أقسام في البوابة</span></span></div>
-          <div class="achieve"><strong>13</strong><span><span data-lang="en">linked database tables</span><span data-lang="ar">جدولاً مترابطاً في قاعدة البيانات</span></span></div>
-          <div class="achieve"><strong>1</strong><span><span data-lang="en">live Power BI dashboard</span><span data-lang="ar">لوحة Power BI مباشرة</span></span></div>
-        </div>
-
-        <div class="proofBar coopProof">
-          <a class="ctaBtn primary proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📁</span><span data-lang="en">Both projects on GitHub</span><span data-lang="ar">ملفات المشروعين على GitHub</span></a>
-          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/employee-portal/docs/screenshots" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🖼️</span><span data-lang="en">Portal screenshots (20)</span><span data-lang="ar">صور البوابة (20)</span></a>
-          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/powerbi-dashboard" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📊</span><span data-lang="en">Power BI steps</span><span data-lang="ar">خطوات لوحة Power BI</span></a>
-        </div>
-
-        <details class="weeksBox">
-          <summary><span data-lang="en">Week by week (12 weeks)</span><span data-lang="ar">سير التدريب أسبوعًا بأسبوع (12 أسبوعًا)</span></summary>
-          <ol class="weeks"><li><span class="wk">1</span><span data-lang="en">Started in the IT department, received the training plan and the two projects</span><span data-lang="ar">بداية التدريب في إدارة تقنية المعلومات، واستلام خطة التدريب وشرح المشروعين</span></li><li><span class="wk">2</span><span data-lang="en">Collected the indicator data and entered it in Excel</span><span data-lang="ar">جمع بيانات المؤشرات وإدخالها وتنظيمها في Excel</span></li><li><span class="wk">3</span><span data-lang="en">Portal requirements, database design and page structure</span><span data-lang="ar">متطلبات بوابة التواصل، وتصميم قاعدة البيانات، وهيكل الصفحات</span></li><li><span class="wk">4</span><span data-lang="en">Designed and coded the portal: chat, forums, calendar, projects</span><span data-lang="ar">تصميم البوابة وبرمجتها: المحادثات والمنتديات والتقويم والمشاريع</span></li><li><span class="wk">5</span><span data-lang="en">Tested on desktop and mobile, security review, screenshots</span><span data-lang="ar">اختبار البوابة على الحاسب والجوال، ومراجعة الحماية، وتصوير الصفحات</span></li><li><span class="wk">6</span><span data-lang="en">Linked Excel with SharePoint and reshaped the data into one table</span><span data-lang="ar">ربط Excel مع SharePoint، وإعادة ترتيب البيانات في جدول واحد</span></li><li><span class="wk">7</span><span data-lang="en">Uploaded the data to SharePoint and started the Power BI design</span><span data-lang="ar">رفع البيانات إلى SharePoint، وبداية تصميم اللوحة في Power BI</span></li><li><span class="wk">8</span><span data-lang="en">KPI cards, monthly chart, fixed the month order</span><span data-lang="ar">بطاقات الإجماليات، والرسم الشهري، وترتيب الأشهر</span></li><li><span class="wk">9</span><span data-lang="en">Donut chart and month slicer, revised after supervisor feedback</span><span data-lang="ar">الرسم الدائري وتصفية الأشهر، والتعديل حسب ملاحظات المشرف</span></li><li><span class="wk">10</span><span data-lang="en">Connected SharePoint to Power BI and pinned the dashboard live</span><span data-lang="ar">ربط SharePoint مع Power BI، وتثبيت اللوحة بالنمط المباشر</span></li><li><span class="wk">11</span><span data-lang="en">Created the share link and handed over both projects</span><span data-lang="ar">إنشاء رابط اللوحة ومشاركته، وتسليم المشروعين</span></li><li><span class="wk">12</span><span data-lang="en">Wrote and reviewed the training report</span><span data-lang="ar">كتابة تقرير التدريب ومراجعته</span></li></ol>
-        </details>
-
-        <div class="coopGrid">
-          <article class="card coopCard">
-            <div class="cardInner">
-              <span class="coopTag"><span data-lang="en">Web Development</span><span data-lang="ar">تطوير الويب</span></span>
-              <h4>
-                <span data-lang="en">🌐 Employee Portal — internal communication platform</span>
-                <span data-lang="ar">🌐 بوابة الموظفين — منصة تواصل داخلية</span>
-              </h4>
-              <p class="coopText">
-                <span data-lang="en">A full web platform that brings municipality staff together: dashboard, instant chat with notifications, forums, activities calendar, projects with a drag-and-drop Kanban board, staff directory, and light/dark mode. Fully responsive.</span>
-                <span data-lang="ar">منصة ويب متكاملة تجمع موظفي البلدية في مكان واحد: لوحة تحكم، دردشة فورية مع إشعارات، منتديات، تقويم للأنشطة، إدارة مشاريع بلوحة Kanban بالسحب والإفلات، دليل للموظفين، ووضع ليلي ونهاري. تعمل على كل الأجهزة.</span>
-              </p>
-              <div class="chipRow">
-                <span class="chip"><i></i>PHP 8 · PDO</span><span class="chip"><i></i>MySQL</span><span class="chip"><i></i>JavaScript</span><span class="chip"><i></i>HTML5 / CSS3</span>
-              </div>
-              <ul class="secList">
-                <li><span data-lang="en">Passwords hashed with bcrypt</span><span data-lang="ar">تشفير كلمات المرور (bcrypt)</span></li>
-                <li><span data-lang="en">Prepared statements against SQL injection</span><span data-lang="ar">استعلامات مُجهّزة ضد حقن SQL</span></li>
-                <li><span data-lang="en">Output escaping against XSS</span><span data-lang="ar">ترميز المخرجات ضد XSS</span></li>
-                <li><span data-lang="en">CSRF tokens on every form and request</span><span data-lang="ar">رمز CSRF في كل نموذج وطلب</span></li>
-                <li><span data-lang="en">Session hardening (regenerate ID, HttpOnly, SameSite)</span><span data-lang="ar">حماية الجلسة (تجديد المعرّف، HttpOnly، SameSite)</span></li>
-                <li><span data-lang="en">Server-side permission checks</span><span data-lang="ar">التحقق من الصلاحيات في الخادم</span></li>
-              </ul>
-              <div class="shotGrid"><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard.webp" data-cap-en="Dashboard" data-cap-ar="لوحة التحكم"><img src="img/coop/portal-dashboard-thumb.webp" alt="Dashboard" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard</span><span data-lang="ar">لوحة التحكم</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-dashboard-dark.webp" data-cap-en="Dark mode" data-cap-ar="الوضع الليلي"><img src="img/coop/portal-dashboard-dark-thumb.webp" alt="Dark mode" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dark mode</span><span data-lang="ar">الوضع الليلي</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-kanban.webp" data-cap-en="Projects Kanban board" data-cap-ar="لوحة المشاريع (Kanban)"><img src="img/coop/portal-kanban-thumb.webp" alt="Projects Kanban board" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Projects Kanban board</span><span data-lang="ar">لوحة المشاريع (Kanban)</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-chat.webp" data-cap-en="Instant chat" data-cap-ar="الدردشة الفورية"><img src="img/coop/portal-chat-thumb.webp" alt="Instant chat" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Instant chat</span><span data-lang="ar">الدردشة الفورية</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-calendar.webp" data-cap-en="Activities calendar" data-cap-ar="تقويم الأنشطة"><img src="img/coop/portal-calendar-thumb.webp" alt="Activities calendar" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Activities calendar</span><span data-lang="ar">تقويم الأنشطة</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-login.webp" data-cap-en="Secure sign-in" data-cap-ar="تسجيل الدخول الآمن"><img src="img/coop/portal-login-thumb.webp" alt="Secure sign-in" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Secure sign-in</span><span data-lang="ar">تسجيل الدخول الآمن</span></span></button><button class="shot" type="button" data-gallery="portal" data-full="img/coop/portal-mobile.webp" data-cap-en="Works on mobile" data-cap-ar="يعمل على الجوال"><img src="img/coop/portal-mobile-thumb.webp" alt="Works on mobile" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Works on mobile</span><span data-lang="ar">يعمل على الجوال</span></span></button></div>
-            </div>
-          </article>
-
-          <article class="card coopCard">
-            <div class="cardInner">
-              <span class="coopTag"><span data-lang="en">Data &amp; Business Intelligence</span><span data-lang="ar">تحليل البيانات</span></span>
-              <h4>
-                <span data-lang="en">📊 Dhahran Municipality KPI Dashboard 2026 — Power BI</span>
-                <span data-lang="ar">📊 لوحة مؤشرات بلدية الظهران 2026 — Power BI</span>
-              </h4>
-              <p class="coopText">
-                <span data-lang="en">I turned the department's monthly indicators into an interactive dashboard so managers can follow visits, transactions and resolved visual-distortion cases at a glance.</span>
-                <span data-lang="ar">حوّلت مؤشرات الإدارة الشهرية إلى لوحة تفاعلية تساعد المسؤولين على متابعة الزيارات والمعاملات ومعالجة التشوهات البصرية بنظرة واحدة.</span>
-              </p>
-              <ol class="steps">
-                <li><span data-lang="en">Organised the indicators in a structured Excel table</span><span data-lang="ar">تنظيم المؤشرات في جدول Excel منظّم</span></li>
-                <li><span data-lang="en">Stored the file in SharePoint / OneDrive</span><span data-lang="ar">رفع الملف على SharePoint / OneDrive</span></li>
-                <li><span data-lang="en">Connected Power BI through Power Query</span><span data-lang="ar">ربط Power BI عن طريق Power Query</span></li>
-                <li><span data-lang="en">Built KPI cards, a monthly area chart, a donut chart and a month slicer</span><span data-lang="ar">بناء بطاقات المؤشرات ومخطط شهري ومخطط دائري وفلتر للأشهر</span></li>
-                <li><span data-lang="en">Pinned it live to a dashboard and shared it inside the organisation</span><span data-lang="ar">تثبيت اللوحة مباشرة ومشاركتها داخل المنظمة</span></li>
-              </ol>
-              <div class="chipRow">
-                <span class="chip"><i></i>Power BI</span><span class="chip"><i></i>Power Query</span><span class="chip"><i></i>Excel</span><span class="chip"><i></i>SharePoint</span>
-              </div>
-              <div class="shotGrid"><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-dashboard.webp" data-cap-en="Dashboard: KPI cards, monthly trend, share by indicator" data-cap-ar="اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر"><img src="img/coop/powerbi-dashboard-thumb.webp" alt="Dashboard: KPI cards, monthly trend, share by indicator" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Dashboard: KPI cards, monthly trend, share by indicator</span><span data-lang="ar">اللوحة: بطاقات المؤشرات، الاتجاه الشهري، ونسبة كل مؤشر</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-powerquery.webp" data-cap-en="Power Query: loading the data table" data-cap-ar="Power Query: تحميل جدول البيانات"><img src="img/coop/powerbi-powerquery-thumb.webp" alt="Power Query: loading the data table" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Power Query: loading the data table</span><span data-lang="ar">Power Query: تحميل جدول البيانات</span></span></button><button class="shot" type="button" data-gallery="powerbi" data-full="img/coop/powerbi-excel.webp" data-cap-en="Source data in Excel" data-cap-ar="البيانات المصدر في Excel"><img src="img/coop/powerbi-excel-thumb.webp" alt="Source data in Excel" loading="lazy" decoding="async" width="560" height="350"><span class="shotCap"><span data-lang="en">Source data in Excel</span><span data-lang="ar">البيانات المصدر في Excel</span></span></button></div>
-            </div>
-          </article>
+        <div class="card certBoard">
+          <div class="cardInner">
+            <div class="certFilters" role="group" aria-label="Filter certificates"><button class="certFilter active" type="button" data-filter="all" aria-pressed="true"><span data-lang="en">All</span><span data-lang="ar">الكل</span><em>38</em></button><button class="certFilter" type="button" data-filter="offense" aria-pressed="false"><span data-lang="en">Offensive security</span><span data-lang="ar">الاختبار الهجومي</span><em>10</em></button><button class="certFilter" type="button" data-filter="defense" aria-pressed="false"><span data-lang="en">Defence & SOC</span><span data-lang="ar">الدفاع والاستجابة</span><em>15</em></button><button class="certFilter" type="button" data-filter="grc" aria-pressed="false"><span data-lang="en">GRC & risk</span><span data-lang="ar">الحوكمة والمخاطر</span><em>2</em></button><button class="certFilter" type="button" data-filter="ai" aria-pressed="false"><span data-lang="en">AI & security</span><span data-lang="ar">الذكاء الاصطناعي</span><em>7</em></button><button class="certFilter" type="button" data-filter="linux" aria-pressed="false"><span data-lang="en">Linux</span><span data-lang="ar">لينكس</span><em>3</em></button><button class="certFilter" type="button" data-filter="other" aria-pressed="false"><span data-lang="en">Workshops</span><span data-lang="ar">ورش عمل</span><em>1</em></button></div>
+            <div class="certGrid collapsed" id="certGrid"><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/advanced-pen-testing-techniques-for-active-directory.webp" data-cap-en="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning" data-cap-ar="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning"><img src="img/certs/advanced-pen-testing-techniques-for-active-directory-thumb.webp" alt="Advanced Pen Testing Techniques for Active Directory certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Advanced Pen Testing Techniques for Active Directory</span><span data-lang="ar">Advanced Pen Testing Techniques for Active Directory</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/artificial-intelligence-for-cybersecurity.webp" data-cap-en="Artificial Intelligence for Cybersecurity — LinkedIn Learning" data-cap-ar="Artificial Intelligence for Cybersecurity — LinkedIn Learning"><img src="img/certs/artificial-intelligence-for-cybersecurity-thumb.webp" alt="Artificial Intelligence for Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Artificial Intelligence for Cybersecurity</span><span data-lang="ar">Artificial Intelligence for Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/become-an-it-security-specialist.webp" data-cap-en="Become an IT Security Specialist — LinkedIn Learning" data-cap-ar="Become an IT Security Specialist — LinkedIn Learning"><img src="img/certs/become-an-it-security-specialist-thumb.webp" alt="Become an IT Security Specialist certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Become an IT Security Specialist</span><span data-lang="ar">Become an IT Security Specialist</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/build-your-own-ai-lab.webp" data-cap-en="Build Your Own AI Lab — LinkedIn Learning" data-cap-ar="Build Your Own AI Lab — LinkedIn Learning"><img src="img/certs/build-your-own-ai-lab-thumb.webp" alt="Build Your Own AI Lab certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Build Your Own AI Lab</span><span data-lang="ar">Build Your Own AI Lab</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep.webp" data-cap-en="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning" data-cap-ar="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning"><img src="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep-thumb.webp" alt="CCNA Cybersecurity 200-201 v1.2 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span><span data-lang="ar">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/certified-ethical-hacker-ceh.webp" data-cap-en="Certified Ethical Hacker (CEH) — LinkedIn Learning" data-cap-ar="Certified Ethical Hacker (CEH) — LinkedIn Learning"><img src="img/certs/certified-ethical-hacker-ceh-thumb.webp" alt="Certified Ethical Hacker (CEH) certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">Certified Ethical Hacker (CEH)</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi.webp" data-cap-en="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning" data-cap-ar="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning"><img src="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi-thumb.webp" alt="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span><span data-lang="ar">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy.webp" data-cap-en="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning" data-cap-ar="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning"><img src="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy-thumb.webp" alt="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span><span data-lang="ar">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a.webp" data-cap-en="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning" data-cap-ar="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning"><img src="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a-thumb.webp" alt="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span><span data-lang="ar">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cybersecurity-foundations-incident-response.webp" data-cap-en="Cybersecurity Foundations Incident Response — LinkedIn Learning" data-cap-ar="Cybersecurity Foundations Incident Response — LinkedIn Learning"><img src="img/certs/cybersecurity-foundations-incident-response-thumb.webp" alt="Cybersecurity Foundations Incident Response certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Foundations Incident Response</span><span data-lang="ar">Cybersecurity Foundations Incident Response</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-cryptography.webp" data-cap-en="Ethical Hacking Cryptography — LinkedIn Learning" data-cap-ar="Ethical Hacking Cryptography — LinkedIn Learning"><img src="img/certs/ethical-hacking-cryptography-thumb.webp" alt="Ethical Hacking Cryptography certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Cryptography</span><span data-lang="ar">Ethical Hacking Cryptography</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-denial-of-service.webp" data-cap-en="Ethical Hacking Denial of Service — LinkedIn Learning" data-cap-ar="Ethical Hacking Denial of Service — LinkedIn Learning"><img src="img/certs/ethical-hacking-denial-of-service-thumb.webp" alt="Ethical Hacking Denial of Service certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Denial of Service</span><span data-lang="ar">Ethical Hacking Denial of Service</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-the-complete-malware-analysis-process.webp" data-cap-en="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning" data-cap-ar="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning"><img src="img/certs/ethical-hacking-the-complete-malware-analysis-process-thumb.webp" alt="Ethical Hacking The Complete Malware Analysis Process certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking The Complete Malware Analysis Process</span><span data-lang="ar">Ethical Hacking The Complete Malware Analysis Process</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-vulnerability-analysis.webp" data-cap-en="Ethical Hacking Vulnerability Analysis — LinkedIn Learning" data-cap-ar="Ethical Hacking Vulnerability Analysis — LinkedIn Learning"><img src="img/certs/ethical-hacking-vulnerability-analysis-thumb.webp" alt="Ethical Hacking Vulnerability Analysis certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Vulnerability Analysis</span><span data-lang="ar">Ethical Hacking Vulnerability Analysis</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/foundations-of-detection-engineering.webp" data-cap-en="Foundations of Detection Engineering — LinkedIn Learning" data-cap-ar="Foundations of Detection Engineering — LinkedIn Learning"><img src="img/certs/foundations-of-detection-engineering-thumb.webp" alt="Foundations of Detection Engineering certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Foundations of Detection Engineering</span><span data-lang="ar">Foundations of Detection Engineering</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/fundamentals-to-become-a-machine-learning-engineer.webp" data-cap-en="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning" data-cap-ar="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning"><img src="img/certs/fundamentals-to-become-a-machine-learning-engineer-thumb.webp" alt="Fundamentals to Become a Machine Learning Engineer certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Fundamentals to Become a Machine Learning Engineer</span><span data-lang="ar">Fundamentals to Become a Machine Learning Engineer</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/genaiops-foundations.webp" data-cap-en="GenAIOps Foundations — LinkedIn Learning" data-cap-ar="GenAIOps Foundations — LinkedIn Learning"><img src="img/certs/genaiops-foundations-thumb.webp" alt="GenAIOps Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">GenAIOps Foundations</span><span data-lang="ar">GenAIOps Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-core-concepts.webp" data-cap-en="IT Security Foundations Core Concepts — LinkedIn Learning" data-cap-ar="IT Security Foundations Core Concepts — LinkedIn Learning"><img src="img/certs/it-security-foundations-core-concepts-thumb.webp" alt="IT Security Foundations Core Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Core Concepts</span><span data-lang="ar">IT Security Foundations Core Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-network-security.webp" data-cap-en="IT Security Foundations Network Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Network Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-network-security-thumb.webp" alt="IT Security Foundations Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Network Security</span><span data-lang="ar">IT Security Foundations Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-operating-system-security.webp" data-cap-en="IT Security Foundations Operating System Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Operating System Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-operating-system-security-thumb.webp" alt="IT Security Foundations Operating System Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Operating System Security</span><span data-lang="ar">IT Security Foundations Operating System Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/incident-response-leadership-for-cybersecurity-managers-from.webp" data-cap-en="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning" data-cap-ar="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning"><img src="img/certs/incident-response-leadership-for-cybersecurity-managers-from-thumb.webp" alt="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span><span data-lang="ar">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/introduction-to-linux.webp" data-cap-en="Introduction to Linux — LinkedIn Learning" data-cap-ar="Introduction to Linux — LinkedIn Learning"><img src="img/certs/introduction-to-linux-thumb.webp" alt="Introduction to Linux certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Linux</span><span data-lang="ar">Introduction to Linux</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-offensive-security.webp" data-cap-en="Introduction to Offensive Security — LinkedIn Learning" data-cap-ar="Introduction to Offensive Security — LinkedIn Learning"><img src="img/certs/introduction-to-offensive-security-thumb.webp" alt="Introduction to Offensive Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Offensive Security</span><span data-lang="ar">Introduction to Offensive Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals.webp" data-cap-en="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning" data-cap-ar="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning"><img src="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals-thumb.webp" alt="Introduction to Pen Testing for Cybersecurity Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Pen Testing for Cybersecurity Professionals</span><span data-lang="ar">Introduction to Pen Testing for Cybersecurity Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/introduction-to-risk-management.webp" data-cap-en="Introduction to Risk Management — LinkedIn Learning" data-cap-ar="Introduction to Risk Management — LinkedIn Learning"><img src="img/certs/introduction-to-risk-management-thumb.webp" alt="Introduction to Risk Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Risk Management</span><span data-lang="ar">Introduction to Risk Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking.webp" data-cap-en="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning" data-cap-ar="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning"><img src="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking-thumb.webp" alt="Kali Linux for Advanced Pen Testing and Ethical Hacking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Kali Linux for Advanced Pen Testing and Ethical Hacking</span><span data-lang="ar">Kali Linux for Advanced Pen Testing and Ethical Hacking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/learning-linux-command-line.webp" data-cap-en="Learning Linux Command Line — LinkedIn Learning" data-cap-ar="Learning Linux Command Line — LinkedIn Learning"><img src="img/certs/learning-linux-command-line-thumb.webp" alt="Learning Linux Command Line certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Learning Linux Command Line</span><span data-lang="ar">Learning Linux Command Line</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/machine-learning-with-python-foundations.webp" data-cap-en="Machine Learning with Python Foundations — LinkedIn Learning" data-cap-ar="Machine Learning with Python Foundations — LinkedIn Learning"><img src="img/certs/machine-learning-with-python-foundations-thumb.webp" alt="Machine Learning with Python Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Machine Learning with Python Foundations</span><span data-lang="ar">Machine Learning with Python Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/offensive-penetration-testing.webp" data-cap-en="Offensive Penetration Testing — LinkedIn Learning" data-cap-ar="Offensive Penetration Testing — LinkedIn Learning"><img src="img/certs/offensive-penetration-testing-thumb.webp" alt="Offensive Penetration Testing certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Offensive Penetration Testing</span><span data-lang="ar">Offensive Penetration Testing</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/practical-cybersecurity-for-it-professionals.webp" data-cap-en="Practical Cybersecurity for IT Professionals — LinkedIn Learning" data-cap-ar="Practical Cybersecurity for IT Professionals — LinkedIn Learning"><img src="img/certs/practical-cybersecurity-for-it-professionals-thumb.webp" alt="Practical Cybersecurity for IT Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Practical Cybersecurity for IT Professionals</span><span data-lang="ar">Practical Cybersecurity for IT Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/quantum-spark-network-security.webp" data-cap-en="Quantum Spark Network Security — LinkedIn Learning" data-cap-ar="Quantum Spark Network Security — LinkedIn Learning"><img src="img/certs/quantum-spark-network-security-thumb.webp" alt="Quantum Spark Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Quantum Spark Network Security</span><span data-lang="ar">Quantum Spark Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking.webp" data-cap-en="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning" data-cap-ar="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning"><img src="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking-thumb.webp" alt="RAG AI Apps and AI Agents for Cybersecurity and Networking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">RAG AI Apps and AI Agents for Cybersecurity and Networking</span><span data-lang="ar">RAG AI Apps and AI Agents for Cybersecurity and Networking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/strategic-linux-for-network-professionals-security-monitorin.webp" data-cap-en="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning" data-cap-ar="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning"><img src="img/certs/strategic-linux-for-network-professionals-security-monitorin-thumb.webp" alt="Strategic Linux for Network Professionals Security Monitoring and Automation certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Strategic Linux for Network Professionals Security Monitoring and Automation</span><span data-lang="ar">Strategic Linux for Network Professionals Security Monitoring and Automation</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/xai-and-interpretability-in-cybersecurity.webp" data-cap-en="XAI and Interpretability in Cybersecurity — LinkedIn Learning" data-cap-ar="XAI and Interpretability in Cybersecurity — LinkedIn Learning"><img src="img/certs/xai-and-interpretability-in-cybersecurity-thumb.webp" alt="XAI and Interpretability in Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">XAI and Interpretability in Cybersecurity</span><span data-lang="ar">XAI and Interpretability in Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="other" data-gallery="certs" data-full="img/certs/hadaf-soft-skills.webp" data-cap-en="Soft Skills &amp; Communication Workshop — HRDF (Hadaf)" data-cap-ar="ورشة المهارات الناعمة وفن الاتصال — HRDF (Hadaf)"><img src="img/certs/hadaf-soft-skills-thumb.webp" alt="Soft Skills &amp; Communication Workshop certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Soft Skills &amp; Communication Workshop</span><span data-lang="ar">ورشة المهارات الناعمة وفن الاتصال</span></b><small>HRDF (Hadaf)</small></span></button></div>
+            <div class="moreWrap"><button class="ctaBtn ghost" type="button" id="certMore" aria-expanded="false" aria-controls="certGrid"><span data-lang="en">Show all certificates</span><span data-lang="ar">عرض كل الشهادات</span></button></div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="awareness">
         <div class="sectionHeader">
-          <span class="secIndex">05</span>
+          <span class="secIndex">06</span>
           <h3>
             <span data-lang="en">Security Awareness — I Teach</span>
             <span data-lang="ar">التوعية الأمنية — أعلّم وأوعّي</span>
@@ -1570,8 +1619,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           <div class="card">
             <div class="cardInner">
               <h4>
-                <span data-lang="en">🎥 M.A.A.I#CYS 🇸🇦 — «Your mind is your digital shield»</span>
-                <span data-lang="ar">🎥 قناة M.A.A.I#CYS 🇸🇦 — «عقلك.. درعك الرقمي»</span>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg> M.A.A.I#CYS — «Your mind is your digital shield»</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg> قناة M.A.A.I#CYS — «عقلك.. درعك الرقمي»</span>
               </h4>
               <p style="font-size:13px; color:var(--muted);">
                 <span data-lang="en">Short videos and explainers on social engineering, phishing, scam messages, fake support calls and account takeovers — with real stories and simple steps to stay safe.</span>
@@ -1589,27 +1638,27 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           <div class="card">
             <div class="cardInner">
               <h4>
-                <span data-lang="en">📲 Follow the channel</span>
-                <span data-lang="ar">📲 تابعوا القناة</span>
+                <span data-lang="en"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg> Follow the channel</span>
+                <span data-lang="ar"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="7" y="2.5" width="10" height="19" rx="2"/><path d="M11 18h2"/></svg> تابعوا القناة</span>
               </h4>
               <div class="heroActions" style="margin-top:12px; flex-wrap:wrap;">
                 <a class="ctaBtn primary" href="https://www.youtube.com/@M.A.A.I-CYS" target="_blank" rel="noopener noreferrer">
-                  <span aria-hidden="true">▶️</span>
+                  <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></span>
                   <span data-lang="en">YouTube</span>
                   <span data-lang="ar">يوتيوب</span>
                 </a>
                 <a class="ctaBtn ghost" href="https://www.tiktok.com/@majdibrahim_cys" target="_blank" rel="noopener noreferrer">
-                  <span aria-hidden="true">🎵</span>
+                  <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 18V5l10-2v13"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></span>
                   <span data-lang="en">TikTok</span>
                   <span data-lang="ar">تيك توك</span>
                 </a>
                 <a class="ctaBtn ghost" href="https://www.instagram.com/m.a.a.i_cys/" target="_blank" rel="noopener noreferrer">
-                  <span aria-hidden="true">📸</span>
+                  <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="6.5" width="18" height="13.5" rx="3"/><circle cx="12" cy="13" r="3.6"/><path d="M8.5 6.5L10 4h4l1.5 2.5"/></svg></span>
                   <span data-lang="en">Instagram</span>
                   <span data-lang="ar">انستقرام</span>
                 </a>
                 <a class="ctaBtn ghost" href="https://rough-leaf-1e76.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer">
-                  <span aria-hidden="true">🔗</span>
+                  <span aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
                   <span data-lang="en">All links</span>
                   <span data-lang="ar">كل الروابط</span>
                 </a>
@@ -1619,159 +1668,37 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
         </div>
       </section>
 
-      <section class="section" id="certs">
-        <div class="sectionHeader">
-          <span class="secIndex">06</span>
-          <h3>
-            <span data-lang="en">Accreditations &amp; Certificates</span>
-            <span data-lang="ar">الاعتمادات والشهادات</span>
-          </h3>
-          <p>
-            <span data-lang="en">My credentials and 38 completed professional courses. Tap any certificate to view it in full.</span>
-            <span data-lang="ar">اعتماداتي و38 دورة احترافية مكتملة. اضغط على أي شهادة لعرضها كاملة.</span>
-          </p>
-        </div>
-
-        <div class="grid2">
-          <div class="card credCard">
-            <div class="cardInner">
-              <div class="credIcon" aria-hidden="true">🏅</div>
-              <h4><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">الشهادة العالمية للاختراق الأخلاقي (CEH)</span></h4>
-              <p><span data-lang="en">Issued by EC-Council, May 2026. Validated skills in core penetration testing tactics, network auditing, and attack surface mapping.</span><span data-lang="ar">صادرة من المجلس العالمي (EC-Council) في مايو 2026، وموثقة للمهارات الهجومية الأساسية واختبار اختراق الشبكات والأنظمة.</span></p>
-            </div>
-          </div>
-          <div class="card credCard">
-            <div class="cardInner">
-              <div class="credIcon" aria-hidden="true">🎓</div>
-              <h4><span data-lang="en">Cybersecurity Specialization Diploma</span><span data-lang="ar">دبلوم التخصص في الأمن السيبراني</span></h4>
-              <p><span data-lang="en">Academy of Learning | Perfect 5.0 GPA. Advanced coursework in web application security, operating systems security, cryptography, and network defense.</span><span data-lang="ar">أكاديمية التعلم | بمعدل تراكمي كامل 5.0. مقررات متقدمة في أمان تطبيقات الويب، أمن أنظمة التشغيل، التشفير، والدفاع عن الشبكات.</span></p>
-              <p class="credNote"><span data-lang="en">Official transcript available on request.</span><span data-lang="ar">السجل الأكاديمي الرسمي متاح عند الطلب.</span></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="card certBoard">
-          <div class="cardInner">
-            <div class="certFilters" role="group" aria-label="Filter certificates"><button class="certFilter active" type="button" data-filter="all" aria-pressed="true"><span data-lang="en">All</span><span data-lang="ar">الكل</span><em>38</em></button><button class="certFilter" type="button" data-filter="offense" aria-pressed="false"><span data-lang="en">Offensive security</span><span data-lang="ar">الاختبار الهجومي</span><em>10</em></button><button class="certFilter" type="button" data-filter="defense" aria-pressed="false"><span data-lang="en">Defence & SOC</span><span data-lang="ar">الدفاع والاستجابة</span><em>15</em></button><button class="certFilter" type="button" data-filter="grc" aria-pressed="false"><span data-lang="en">GRC & risk</span><span data-lang="ar">الحوكمة والمخاطر</span><em>2</em></button><button class="certFilter" type="button" data-filter="ai" aria-pressed="false"><span data-lang="en">AI & security</span><span data-lang="ar">الذكاء الاصطناعي</span><em>7</em></button><button class="certFilter" type="button" data-filter="linux" aria-pressed="false"><span data-lang="en">Linux</span><span data-lang="ar">لينكس</span><em>3</em></button><button class="certFilter" type="button" data-filter="other" aria-pressed="false"><span data-lang="en">Workshops</span><span data-lang="ar">ورش عمل</span><em>1</em></button></div>
-            <div class="certGrid collapsed" id="certGrid"><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/advanced-pen-testing-techniques-for-active-directory.webp" data-cap-en="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning" data-cap-ar="Advanced Pen Testing Techniques for Active Directory — LinkedIn Learning"><img src="img/certs/advanced-pen-testing-techniques-for-active-directory-thumb.webp" alt="Advanced Pen Testing Techniques for Active Directory certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Advanced Pen Testing Techniques for Active Directory</span><span data-lang="ar">Advanced Pen Testing Techniques for Active Directory</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/artificial-intelligence-for-cybersecurity.webp" data-cap-en="Artificial Intelligence for Cybersecurity — LinkedIn Learning" data-cap-ar="Artificial Intelligence for Cybersecurity — LinkedIn Learning"><img src="img/certs/artificial-intelligence-for-cybersecurity-thumb.webp" alt="Artificial Intelligence for Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Artificial Intelligence for Cybersecurity</span><span data-lang="ar">Artificial Intelligence for Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/become-an-it-security-specialist.webp" data-cap-en="Become an IT Security Specialist — LinkedIn Learning" data-cap-ar="Become an IT Security Specialist — LinkedIn Learning"><img src="img/certs/become-an-it-security-specialist-thumb.webp" alt="Become an IT Security Specialist certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Become an IT Security Specialist</span><span data-lang="ar">Become an IT Security Specialist</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/build-your-own-ai-lab.webp" data-cap-en="Build Your Own AI Lab — LinkedIn Learning" data-cap-ar="Build Your Own AI Lab — LinkedIn Learning"><img src="img/certs/build-your-own-ai-lab-thumb.webp" alt="Build Your Own AI Lab certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Build Your Own AI Lab</span><span data-lang="ar">Build Your Own AI Lab</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep.webp" data-cap-en="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning" data-cap-ar="CCNA Cybersecurity 200-201 v1.2 Cert Prep — LinkedIn Learning"><img src="img/certs/ccna-cybersecurity-200201-v1-2-cert-prep-thumb.webp" alt="CCNA Cybersecurity 200-201 v1.2 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span><span data-lang="ar">CCNA Cybersecurity 200-201 v1.2 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/certified-ethical-hacker-ceh.webp" data-cap-en="Certified Ethical Hacker (CEH) — LinkedIn Learning" data-cap-ar="Certified Ethical Hacker (CEH) — LinkedIn Learning"><img src="img/certs/certified-ethical-hacker-ceh-thumb.webp" alt="Certified Ethical Hacker (CEH) certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Certified Ethical Hacker (CEH)</span><span data-lang="ar">Certified Ethical Hacker (CEH)</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi.webp" data-cap-en="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning" data-cap-ar="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts — LinkedIn Learning"><img src="img/certs/cisco-certified-cyberops-associate-200201-cert-prep-1-securi-thumb.webp" alt="Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span><span data-lang="ar">Cisco Certified CyberOps Associate 200-201 Cert Prep 1 Security Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-2-vulner-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 2 Vulnerability Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-4-report-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep 4 Reporting and Communication</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep.webp" data-cap-en="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning" data-cap-ar="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep — LinkedIn Learning"><img src="img/certs/comptia-cybersecurity-analyst-cysa-cs0003-cert-prep-thumb.webp" alt="CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span><span data-lang="ar">CompTIA Cybersecurity Analyst CySA+ CS0-003 Cert Prep</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy.webp" data-cap-en="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning" data-cap-ar="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack — LinkedIn Learning"><img src="img/certs/crisis-communication-planning-after-a-ransomware-or-other-cy-thumb.webp" alt="Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span><span data-lang="ar">Crisis Communication Planning After a Ransomware or Other Cybersecurity Attack</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a.webp" data-cap-en="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning" data-cap-ar="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts — LinkedIn Learning"><img src="img/certs/cybersecurity-compliance-and-regulatory-essentials-for-grc-a-thumb.webp" alt="Cybersecurity Compliance and Regulatory Essentials for GRC Analysts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span><span data-lang="ar">Cybersecurity Compliance and Regulatory Essentials for GRC Analysts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/cybersecurity-foundations-incident-response.webp" data-cap-en="Cybersecurity Foundations Incident Response — LinkedIn Learning" data-cap-ar="Cybersecurity Foundations Incident Response — LinkedIn Learning"><img src="img/certs/cybersecurity-foundations-incident-response-thumb.webp" alt="Cybersecurity Foundations Incident Response certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Cybersecurity Foundations Incident Response</span><span data-lang="ar">Cybersecurity Foundations Incident Response</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-cryptography.webp" data-cap-en="Ethical Hacking Cryptography — LinkedIn Learning" data-cap-ar="Ethical Hacking Cryptography — LinkedIn Learning"><img src="img/certs/ethical-hacking-cryptography-thumb.webp" alt="Ethical Hacking Cryptography certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Cryptography</span><span data-lang="ar">Ethical Hacking Cryptography</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-denial-of-service.webp" data-cap-en="Ethical Hacking Denial of Service — LinkedIn Learning" data-cap-ar="Ethical Hacking Denial of Service — LinkedIn Learning"><img src="img/certs/ethical-hacking-denial-of-service-thumb.webp" alt="Ethical Hacking Denial of Service certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Denial of Service</span><span data-lang="ar">Ethical Hacking Denial of Service</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-the-complete-malware-analysis-process.webp" data-cap-en="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning" data-cap-ar="Ethical Hacking The Complete Malware Analysis Process — LinkedIn Learning"><img src="img/certs/ethical-hacking-the-complete-malware-analysis-process-thumb.webp" alt="Ethical Hacking The Complete Malware Analysis Process certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking The Complete Malware Analysis Process</span><span data-lang="ar">Ethical Hacking The Complete Malware Analysis Process</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/ethical-hacking-vulnerability-analysis.webp" data-cap-en="Ethical Hacking Vulnerability Analysis — LinkedIn Learning" data-cap-ar="Ethical Hacking Vulnerability Analysis — LinkedIn Learning"><img src="img/certs/ethical-hacking-vulnerability-analysis-thumb.webp" alt="Ethical Hacking Vulnerability Analysis certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Ethical Hacking Vulnerability Analysis</span><span data-lang="ar">Ethical Hacking Vulnerability Analysis</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/foundations-of-detection-engineering.webp" data-cap-en="Foundations of Detection Engineering — LinkedIn Learning" data-cap-ar="Foundations of Detection Engineering — LinkedIn Learning"><img src="img/certs/foundations-of-detection-engineering-thumb.webp" alt="Foundations of Detection Engineering certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Foundations of Detection Engineering</span><span data-lang="ar">Foundations of Detection Engineering</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/fundamentals-to-become-a-machine-learning-engineer.webp" data-cap-en="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning" data-cap-ar="Fundamentals to Become a Machine Learning Engineer — LinkedIn Learning"><img src="img/certs/fundamentals-to-become-a-machine-learning-engineer-thumb.webp" alt="Fundamentals to Become a Machine Learning Engineer certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Fundamentals to Become a Machine Learning Engineer</span><span data-lang="ar">Fundamentals to Become a Machine Learning Engineer</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/genaiops-foundations.webp" data-cap-en="GenAIOps Foundations — LinkedIn Learning" data-cap-ar="GenAIOps Foundations — LinkedIn Learning"><img src="img/certs/genaiops-foundations-thumb.webp" alt="GenAIOps Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">GenAIOps Foundations</span><span data-lang="ar">GenAIOps Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-core-concepts.webp" data-cap-en="IT Security Foundations Core Concepts — LinkedIn Learning" data-cap-ar="IT Security Foundations Core Concepts — LinkedIn Learning"><img src="img/certs/it-security-foundations-core-concepts-thumb.webp" alt="IT Security Foundations Core Concepts certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Core Concepts</span><span data-lang="ar">IT Security Foundations Core Concepts</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-network-security.webp" data-cap-en="IT Security Foundations Network Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Network Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-network-security-thumb.webp" alt="IT Security Foundations Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Network Security</span><span data-lang="ar">IT Security Foundations Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/it-security-foundations-operating-system-security.webp" data-cap-en="IT Security Foundations Operating System Security — LinkedIn Learning" data-cap-ar="IT Security Foundations Operating System Security — LinkedIn Learning"><img src="img/certs/it-security-foundations-operating-system-security-thumb.webp" alt="IT Security Foundations Operating System Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">IT Security Foundations Operating System Security</span><span data-lang="ar">IT Security Foundations Operating System Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/incident-response-leadership-for-cybersecurity-managers-from.webp" data-cap-en="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning" data-cap-ar="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity — LinkedIn Learning"><img src="img/certs/incident-response-leadership-for-cybersecurity-managers-from-thumb.webp" alt="Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span><span data-lang="ar">Incident Response Leadership for Cybersecurity Managers From Incident Planning to Business Continuity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/introduction-to-linux.webp" data-cap-en="Introduction to Linux — LinkedIn Learning" data-cap-ar="Introduction to Linux — LinkedIn Learning"><img src="img/certs/introduction-to-linux-thumb.webp" alt="Introduction to Linux certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Linux</span><span data-lang="ar">Introduction to Linux</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-offensive-security.webp" data-cap-en="Introduction to Offensive Security — LinkedIn Learning" data-cap-ar="Introduction to Offensive Security — LinkedIn Learning"><img src="img/certs/introduction-to-offensive-security-thumb.webp" alt="Introduction to Offensive Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Offensive Security</span><span data-lang="ar">Introduction to Offensive Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals.webp" data-cap-en="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning" data-cap-ar="Introduction to Pen Testing for Cybersecurity Professionals — LinkedIn Learning"><img src="img/certs/introduction-to-pen-testing-for-cybersecurity-professionals-thumb.webp" alt="Introduction to Pen Testing for Cybersecurity Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Pen Testing for Cybersecurity Professionals</span><span data-lang="ar">Introduction to Pen Testing for Cybersecurity Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="grc" data-gallery="certs" data-full="img/certs/introduction-to-risk-management.webp" data-cap-en="Introduction to Risk Management — LinkedIn Learning" data-cap-ar="Introduction to Risk Management — LinkedIn Learning"><img src="img/certs/introduction-to-risk-management-thumb.webp" alt="Introduction to Risk Management certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Introduction to Risk Management</span><span data-lang="ar">Introduction to Risk Management</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking.webp" data-cap-en="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning" data-cap-ar="Kali Linux for Advanced Pen Testing and Ethical Hacking — LinkedIn Learning"><img src="img/certs/kali-linux-for-advanced-pen-testing-and-ethical-hacking-thumb.webp" alt="Kali Linux for Advanced Pen Testing and Ethical Hacking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Kali Linux for Advanced Pen Testing and Ethical Hacking</span><span data-lang="ar">Kali Linux for Advanced Pen Testing and Ethical Hacking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/learning-linux-command-line.webp" data-cap-en="Learning Linux Command Line — LinkedIn Learning" data-cap-ar="Learning Linux Command Line — LinkedIn Learning"><img src="img/certs/learning-linux-command-line-thumb.webp" alt="Learning Linux Command Line certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Learning Linux Command Line</span><span data-lang="ar">Learning Linux Command Line</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/machine-learning-with-python-foundations.webp" data-cap-en="Machine Learning with Python Foundations — LinkedIn Learning" data-cap-ar="Machine Learning with Python Foundations — LinkedIn Learning"><img src="img/certs/machine-learning-with-python-foundations-thumb.webp" alt="Machine Learning with Python Foundations certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Machine Learning with Python Foundations</span><span data-lang="ar">Machine Learning with Python Foundations</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="offense" data-gallery="certs" data-full="img/certs/offensive-penetration-testing.webp" data-cap-en="Offensive Penetration Testing — LinkedIn Learning" data-cap-ar="Offensive Penetration Testing — LinkedIn Learning"><img src="img/certs/offensive-penetration-testing-thumb.webp" alt="Offensive Penetration Testing certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Offensive Penetration Testing</span><span data-lang="ar">Offensive Penetration Testing</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/practical-cybersecurity-for-it-professionals.webp" data-cap-en="Practical Cybersecurity for IT Professionals — LinkedIn Learning" data-cap-ar="Practical Cybersecurity for IT Professionals — LinkedIn Learning"><img src="img/certs/practical-cybersecurity-for-it-professionals-thumb.webp" alt="Practical Cybersecurity for IT Professionals certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Practical Cybersecurity for IT Professionals</span><span data-lang="ar">Practical Cybersecurity for IT Professionals</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="defense" data-gallery="certs" data-full="img/certs/quantum-spark-network-security.webp" data-cap-en="Quantum Spark Network Security — LinkedIn Learning" data-cap-ar="Quantum Spark Network Security — LinkedIn Learning"><img src="img/certs/quantum-spark-network-security-thumb.webp" alt="Quantum Spark Network Security certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Quantum Spark Network Security</span><span data-lang="ar">Quantum Spark Network Security</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking.webp" data-cap-en="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning" data-cap-ar="RAG AI Apps and AI Agents for Cybersecurity and Networking — LinkedIn Learning"><img src="img/certs/rag-ai-apps-and-ai-agents-for-cybersecurity-and-networking-thumb.webp" alt="RAG AI Apps and AI Agents for Cybersecurity and Networking certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">RAG AI Apps and AI Agents for Cybersecurity and Networking</span><span data-lang="ar">RAG AI Apps and AI Agents for Cybersecurity and Networking</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="linux" data-gallery="certs" data-full="img/certs/strategic-linux-for-network-professionals-security-monitorin.webp" data-cap-en="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning" data-cap-ar="Strategic Linux for Network Professionals Security Monitoring and Automation — LinkedIn Learning"><img src="img/certs/strategic-linux-for-network-professionals-security-monitorin-thumb.webp" alt="Strategic Linux for Network Professionals Security Monitoring and Automation certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Strategic Linux for Network Professionals Security Monitoring and Automation</span><span data-lang="ar">Strategic Linux for Network Professionals Security Monitoring and Automation</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="ai" data-gallery="certs" data-full="img/certs/xai-and-interpretability-in-cybersecurity.webp" data-cap-en="XAI and Interpretability in Cybersecurity — LinkedIn Learning" data-cap-ar="XAI and Interpretability in Cybersecurity — LinkedIn Learning"><img src="img/certs/xai-and-interpretability-in-cybersecurity-thumb.webp" alt="XAI and Interpretability in Cybersecurity certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">XAI and Interpretability in Cybersecurity</span><span data-lang="ar">XAI and Interpretability in Cybersecurity</span></b><small>LinkedIn Learning</small></span></button><button class="certCard" type="button" data-cat="other" data-gallery="certs" data-full="img/certs/hadaf-soft-skills.webp" data-cap-en="Soft Skills &amp; Communication Workshop — HRDF (Hadaf)" data-cap-ar="ورشة المهارات الناعمة وفن الاتصال — HRDF (Hadaf)"><img src="img/certs/hadaf-soft-skills-thumb.webp" alt="Soft Skills &amp; Communication Workshop certificate" loading="lazy" decoding="async" width="480" height="371"><span class="certMeta"><b><span data-lang="en">Soft Skills &amp; Communication Workshop</span><span data-lang="ar">ورشة المهارات الناعمة وفن الاتصال</span></b><small>HRDF (Hadaf)</small></span></button></div>
-            <div class="moreWrap"><button class="ctaBtn ghost" type="button" id="certMore" aria-expanded="false" aria-controls="certGrid"><span data-lang="en">Show all certificates</span><span data-lang="ar">عرض كل الشهادات</span></button></div>
-          </div>
-        </div>
-      </section>
-
       <section class="section" id="contact">
         <div class="sectionHeader">
           <span class="secIndex">07</span>
           <h3>
-            <span data-lang="en">Contact Channels</span>
-            <span data-lang="ar">قنوات التواصل</span>
+            <span data-lang="en">Contact</span>
+            <span data-lang="ar">التواصل</span>
           </h3>
           <p>
-            <span data-lang="en">Reach out for professional opportunities and collaboration. Desktop & mobile optimized.</span>
-            <span data-lang="ar">تواصل للفرص المهنية والتعاون. متوافق بالكامل مع الجوال والحاسوب.</span>
+            <span data-lang="en">For job opportunities, training or collaboration.</span>
+            <span data-lang="ar">للفرص الوظيفية أو التدريب أو التعاون.</span>
           </p>
         </div>
-
-        <div class="grid2" style="grid-template-columns: 1fr;">
-          <div class="card">
-            <div class="cardInner">
-              <h3 style="font-size:15px; color: var(--cyan);">
-                <span data-lang="en">Professional Matrices & Codes (QR)</span>
-                <span data-lang="ar">المنصات والملفات المهنية الموثقة (QR)</span>
-              </h3>
-              <div class="grid2" style="margin-top:12px; grid-template-columns: 1fr;">
-                <div class="item" style="align-items:center;">
-                  <div class="itemIcon">🔳</div>
-                  <div>
-                    <b>QR GitHub</b>
-                    <div style="margin-top:8px;">
-                      <a href="https://github.com/majd2abdulaziz-code" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub">
-                        <img src="data:image/png;base64,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" alt="QR GitHub" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
-                      </a>
-                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
-                        <a href="https://github.com/majd2abdulaziz-code" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">https://github.com/majd2abdulaziz-code</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" style="align-items:center;">
-                  <div class="itemIcon">🔳</div>
-                  <div>
-                    <b>QR LinkedIn</b>
-                    <div style="margin-top:8px;">
-                      <a href="https://www.linkedin.com/in/majd-ibrahim-7147833a0/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn">
-                        <img src="data:image/png;base64,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" alt="LinkedIn QR Code" style="width:110px; height:110px; object-fit:contain; border-radius:8px;">
-                      </a>
-                      <div style="margin-top:6px; font-size:12.5px; color: var(--muted2);">
-                        <a href="https://www.linkedin.com/in/majd-ibrahim-7147833a0/" target="_blank" rel="noopener noreferrer" style="color: var(--cyan); text-decoration: underline;">linkedin.com/in/majd-ibrahim-7147833a0</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="cardInner">
-              <h3 style="font-size:15px; color: var(--cyan);">
-                <span data-lang="en">Secure Electronic Mail</span>
-                <span data-lang="ar">البريد الإلكتروني الرسمي</span>
-              </h3>
-              <div class="list" style="margin-top:12px;">
-                <div class="item" style="align-items:center;">
-                  <div class="itemIcon">📧</div>
-                  <div>
-                    <b><span data-lang="en">Primary Contact</span><span data-lang="ar">البريد الأساسي</span></b>
-                    <a href="mailto:majd2.abdulaziz@gmail.com" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
-                      majd2.abdulaziz@gmail.com
-                    </a>
-                  </div>
-                </div>
-                <div class="item" style="align-items:center;">
-                  <div class="itemIcon">📩</div>
-                  <div>
-                    <b><span data-lang="en">Backup Contact</span><span data-lang="ar">البريد الاحتياطي</span></b>
-                    <a href="mailto:majd_abdulaziz@icloud.com" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
-                      majd_abdulaziz@icloud.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top: 16px;">
+        <div class="card contactCard">
           <div class="cardInner">
-            <h3 style="font-size:15px; color: var(--cyan);">
-              <span data-lang="en">Direct Communications (Instant Contact)</span>
-              <span data-lang="ar">الاتصال والرسائل الفورية (تواصل سريع)</span>
-            </h3>
-            <div class="list" style="margin-top:12px;">
-              <div class="item" style="align-items:center;">
-                <div class="itemIcon">💬</div>
-                <div>
-                  <b><span data-lang="en">Instant WhatsApp</span><span data-lang="ar">مراسلة فورية عبر الواتساب</span></b>
-                  <a id="waLink" href="#" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
-                    0537292913
-                  </a>
-                </div>
-              </div>
-              <div class="item" style="align-items:center;">
-                <div class="itemIcon">📱</div>
-                <div>
-                  <b><span data-lang="en">Direct SMS</span><span data-lang="ar">رسالة نصية مباشرة</span></b>
-                  <a id="smsLink" href="#" style="display:inline-block; margin-top:4px; color:var(--text); text-decoration:underline;">
-                    0537292913
-                  </a>
-                </div>
-              </div>
+            <div class="contactRow">
+              <a class="ctaBtn primary" href="mailto:majd2.abdulaziz@gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6 8.5-6"/></svg><span data-lang="en">Email</span><span data-lang="ar">البريد الإلكتروني</span></a>
+              <a class="ctaBtn ghost" href="https://www.linkedin.com/in/majd-ibrahim-7147833a0/" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/></svg><span>LinkedIn</span></a>
+              <a class="ctaBtn ghost" href="https://github.com/majd2abdulaziz-code" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg><span>GitHub</span></a>
+              <a class="ctaBtn ghost" id="waLink" href="#" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 12a8.5 8.5 0 0 1-12.3 7.6L3.5 21l1.4-4.6A8.5 8.5 0 1 1 20.5 12z"/></svg><span data-lang="en">WhatsApp</span><span data-lang="ar">واتساب</span></a>
+              <a class="ctaBtn ghost" href="Majd_CV_AR.pdf" download><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg><span data-lang="en">CV (Arabic)</span><span data-lang="ar">السيرة الذاتية</span></a>
             </div>
+            <p class="contactMail">majd2.abdulaziz@gmail.com</p>
           </div>
         </div>
       </section>
+
+
+
+
+
+
 
       <footer>
         <a class="agencyBrand" href="https://pago.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer" aria-label="Pago — visit the store">
@@ -1785,7 +1712,7 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite">
-      <div class="ticon" aria-hidden="true">✅</div>
+      <div class="ticon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.8 2.8L16.5 9.5"/></svg></div>
       <p id="toastText">Received (locally)</p>
     </div>
   </div>
