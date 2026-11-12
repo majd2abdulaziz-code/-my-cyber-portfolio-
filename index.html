@@ -825,6 +825,21 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
 .coopText{ font-size:13.5px; color: var(--muted); line-height:1.8; margin:0 0 12px; }
 .secList, .steps{ margin:14px 0 0; padding-inline-start: 20px; color: var(--muted); font-size:13px; line-height:1.9; }
 .secList li::marker{ content: "🛡️ "; }
+/* co-op shortcut + proof links (2026-11-12) */
+.coopPill{ display:inline-flex; align-items:center; gap:8px; margin:4px 0 16px; padding:8px 14px; border-radius:999px; border:1px solid var(--stroke); background: rgba(168,85,247,.10); color: var(--text, #f5f3ff); font-size:13.5px; text-decoration:none; transition: background .2s, border-color .2s; }
+.coopPill:hover{ background: rgba(168,85,247,.18); border-color: var(--cyan); }
+.coopPill .arrow{ color: var(--cyan); }
+[dir="ltr"] .coopPill .arrow{ transform: scaleX(-1); }
+.proofBar{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+.coopProof{ margin:0 0 14px; }
+.proofBtn{ font-size:13px; padding:8px 14px; text-decoration:none; }
+.weeksBox{ margin:0 0 16px; background: var(--card2); border:1px solid var(--stroke2); border-radius: var(--radius-md); padding:12px 16px; }
+.weeksBox summary{ cursor:pointer; font-weight:600; color: var(--cyan); }
+.weeks{ list-style:none; margin:12px 0 0; padding:0; display:grid; grid-template-columns: 1fr 1fr; gap:8px 20px; color: var(--muted); font-size:13px; line-height:1.7; }
+.weeks li{ display:flex; gap:10px; align-items:baseline; }
+.weeks .wk{ flex:none; min-width:26px; height:26px; display:inline-grid; place-items:center; border-radius:8px; border:1px solid var(--stroke); color: var(--cyan); font-weight:700; font-size:12px; }
+@media (max-width: 720px){ .weeks{ grid-template-columns: 1fr; } .proofBtn{ flex:1 1 100%; justify-content:center; } }
+
 .steps li::marker{ color: var(--cyan); font-weight:700; }
 .shotGrid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap:10px; margin-top:16px; }
 
@@ -965,8 +980,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           <div class="heroInner">
             <div class="badge">
               <span class="pulseDot" aria-hidden="true"></span>
-              <span data-lang="en">Ready to secure environments & lift defensive postures</span>
-              <span data-lang="ar">جاهزة لتأمين البيئات الرقمية ورفع مستوى الحماية الدفاعية</span>
+              <span data-lang="en">Open to cybersecurity and web development roles</span>
+              <span data-lang="ar">متاحة لفرص العمل في الأمن السيبراني وتطوير الويب</span>
             </div>
 
             <h2 class="heroTitle">
@@ -979,6 +994,13 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               <span data-lang="ar">متخصصة أمن سيبراني وأمان تطبيقات الويب | حاصلة على شهادة CEH</span>
             </p>
 
+            <a class="coopPill" href="#coop">
+              <span aria-hidden="true">📌</span>
+              <span data-lang="en">Co-op training 2026 · Dhahran Municipality: see the work</span>
+              <span data-lang="ar">التدريب التعاوني 2026 · بلدية الظهران: شاهد المشروعين</span>
+              <span class="arrow" aria-hidden="true">←</span>
+            </a>
+
             <div class="heroActions">
               <button class="ctaBtn primary" type="button" id="viewSkills">
                 <span aria-hidden="true">🛡️</span>
@@ -987,8 +1009,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
               </button>
               <a class="ctaBtn ghost" href="#certs">
                 <span aria-hidden="true">🏅</span>
-                <span data-lang="en">Accreditations Vault</span>
-                <span data-lang="ar">خزنة الشهادات والوثائق</span>
+                <span data-lang="en">Certificates</span>
+                <span data-lang="ar">الشهادات</span>
               </a>
             </div>
 
@@ -1081,8 +1103,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <span data-lang="ar">من أنا</span>
           </h3>
           <p>
-            <span data-lang="en">Bridging academic theoretical knowledge with hands-on offensive and defensive practice in cybersecurity labs.</span>
-            <span data-lang="ar">ربط المعرفة النظرية الأكاديمية بالتطبيق العملي الدفاعي والهجومي في المختبرات السيبرانية.</span>
+            <span data-lang="en">I study cybersecurity and practise it hands-on: labs I build myself, and websites I code and secure. Everything on this page links to the actual work.</span>
+            <span data-lang="ar">أدرس الأمن السيبراني وأطبّق ما أتعلمه بيدي: مختبرات أبنيها بنفسي، ومواقع أبرمجها وأحميها. وكل إنجاز في هذه الصفحة موثّق برابط أو صورة.</span>
           </p>
         </div>
 
@@ -1191,8 +1213,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <span data-lang="ar">المهارات والقدرات التقنية</span>
           </h3>
           <p>
-            <span data-lang="en">Offensive tactics balanced with practical secure development and system defense knowledge.</span>
-            <span data-lang="ar">القدرات الهجومية المتوازنة مع التطوير الآمن ومعرفة آليات الدفاع عن الأنظمة.</span>
+            <span data-lang="en">What I actually know and use, in attack, defence and web development.</span>
+            <span data-lang="ar">ما أعرفه وأستخدمه فعلًا، في الهجوم والدفاع وتطوير الويب.</span>
           </p>
         </div>
 
@@ -1392,8 +1414,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <span data-lang="ar">المشاريع الأكاديمية والمختبرات التطبيقية</span>
           </h3>
           <p>
-            <span data-lang="en">A showcase of practical engineering and vulnerability simulation blueprints designed for enterprise validation.</span>
-            <span data-lang="ar">نماذج عملية لمشاريع برمجية ومختبرات فحص الثغرات مجهزة خصيصاً للتوافق مع المعايير المؤسسية.</span>
+            <span data-lang="en">Projects and labs I built myself, each with a link to the work itself.</span>
+            <span data-lang="ar">مشاريع ومختبرات نفذتها بنفسي، ومع كل واحد رابط يوصلك للعمل نفسه.</span>
           </p>
         </div>
 
@@ -1405,22 +1427,24 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
                 <span data-lang="ar">🔒 منصة Pago للويب الآمن</span>
               </h4>
               <p style="font-size:13px; color:var(--muted);">
-                <span data-lang="en">A production-grade suite of secure web applications built for Pago clients, engineered end-to-end with authentication hardening, encryption of data in transit and at rest, and strict OWASP Top 10 compliance. Implements advanced role-based access controls and least-privilege policies across client-facing modules, backed by regular internal security audits and vulnerability reviews to keep the platform resilient against evolving threats.</span>
-                <span data-lang="ar">مجموعة تطبيقات ويب آمنة جاهزة للإنتاج تم بناؤها لعملاء Pago، بتصميم متكامل يشمل تقوية آليات المصادقة، وتشفير البيانات أثناء النقل والتخزين، والالتزام الصارم بمعايير OWASP Top 10. تطبق ضوابط تحكم بالوصول متقدمة قائمة على الأدوار وبمبدأ أقل الصلاحيات عبر الوحدات الخاصة بالعملاء، مدعومة بتدقيقات أمنية داخلية دورية ومراجعات للثغرات للحفاظ على متانة المنصة أمام التهديدات المتطورة.</span>
+                <span data-lang="en">My store and client websites, which I build and deploy on Cloudflare Workers. Before every release I review the code against the OWASP Top 10: login and sessions, permissions, and input handling.</span>
+                <span data-lang="ar">متجري ومواقع العملاء، أبنيها وأنشرها على Cloudflare Workers. وقبل كل نشر أراجع الكود على قائمة OWASP Top 10: تسجيل الدخول والجلسات، والصلاحيات، والتعامل مع المدخلات.</span>
               </p>
+              <div class="proofBar"><a class="ctaBtn ghost proofBtn" href="https://pago.majd2-abdulaziz.workers.dev/" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🛒</span><span data-lang="en">Visit the store</span><span data-lang="ar">زيارة المتجر</span></a></div>
             </div>
           </div>
 
           <div class="card">
             <div class="cardInner">
               <h4>
-                <span data-lang="en">🛡️ Web Application Pen-Testing Sandbox</span>
-                <span data-lang="ar">🛡️ مختبر محاكاة فحص ثغرات تطبيقات الويب</span>
+                <span data-lang="en">🛡️ Security Monitoring Lab (Wazuh SIEM)</span>
+                <span data-lang="ar">🛡️ مختبر مراقبة الأمن (Wazuh SIEM)</span>
               </h4>
               <p style="font-size:13px; color:var(--muted);">
-                <span data-lang="en">An isolated testing structure utilizing virtualization to deploy, scan, and document OWASP Top 10 critical flaws like SQLi and Broken Authentication inside a laboratory environment.</span>
-                <span data-lang="ar">بيئة معزولة بالكامل تحاكي تطبيقات ويب حقيقية لفحص واكتشاف ثغرات OWASP العشرة الأكثر خطورة (مثل حقن قواعد البيانات واختراق المصادقة) وتوثيقها في تقارير فنية.</span>
+                <span data-lang="en">I set up Wazuh on Docker to collect logs and watch devices, and documented every step with screenshots. Next labs: Metasploitable and web application flaws.</span>
+                <span data-lang="ar">ركّبت نظام Wazuh على Docker لجمع السجلات ومراقبة الأجهزة، ووثقت كل خطوة بالصور. والمختبرات القادمة: Metasploitable وثغرات تطبيقات الويب.</span>
               </p>
+              <div class="proofBar"><a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/cybersecurity-labs/tree/main/01-wazuh-siem-lab" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🧪</span><span data-lang="en">Lab write-up on GitHub</span><span data-lang="ar">خطوات المختبر على GitHub</span></a></div>
             </div>
           </div>
 
@@ -1452,8 +1476,8 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
             <span data-lang="ar">التدريب التعاوني — بلدية الظهران</span>
           </h3>
           <p>
-            <span data-lang="en">Information Technology Department · 2026. Two real projects I designed and delivered during my training.</span>
-            <span data-lang="ar">إدارة تقنية المعلومات · 2026. مشروعان عمليان صمّمتهما ونفّذتهما خلال فترة التدريب.</span>
+            <span data-lang="en">Information Technology Department · 2026. Twelve weeks, two projects. All the files and screenshots are on GitHub.</span>
+            <span data-lang="ar">إدارة تقنية المعلومات · 2026. اثنا عشر أسبوعًا ومشروعان، وكل ملفاتهما وصورهما موجودة على GitHub.</span>
           </p>
         </div>
 
@@ -1463,6 +1487,17 @@ body.cursor-active .cursor-dot{ background: var(--blue); }
           <div class="achieve"><strong>13</strong><span><span data-lang="en">linked database tables</span><span data-lang="ar">جدولاً مترابطاً في قاعدة البيانات</span></span></div>
           <div class="achieve"><strong>1</strong><span><span data-lang="en">live Power BI dashboard</span><span data-lang="ar">لوحة Power BI مباشرة</span></span></div>
         </div>
+
+        <div class="proofBar coopProof">
+          <a class="ctaBtn primary proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📁</span><span data-lang="en">Both projects on GitHub</span><span data-lang="ar">ملفات المشروعين على GitHub</span></a>
+          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/employee-portal/docs/screenshots" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🖼️</span><span data-lang="en">Portal screenshots (20)</span><span data-lang="ar">صور البوابة (20)</span></a>
+          <a class="ctaBtn ghost proofBtn" href="https://github.com/majd2abdulaziz-code/dhahran-coop-2026/tree/main/powerbi-dashboard" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📊</span><span data-lang="en">Power BI steps</span><span data-lang="ar">خطوات لوحة Power BI</span></a>
+        </div>
+
+        <details class="weeksBox">
+          <summary><span data-lang="en">Week by week (12 weeks)</span><span data-lang="ar">سير التدريب أسبوعًا بأسبوع (12 أسبوعًا)</span></summary>
+          <ol class="weeks"><li><span class="wk">1</span><span data-lang="en">Started in the IT department, received the training plan and the two projects</span><span data-lang="ar">بداية التدريب في إدارة تقنية المعلومات، واستلام خطة التدريب وشرح المشروعين</span></li><li><span class="wk">2</span><span data-lang="en">Collected the indicator data and entered it in Excel</span><span data-lang="ar">جمع بيانات المؤشرات وإدخالها وتنظيمها في Excel</span></li><li><span class="wk">3</span><span data-lang="en">Portal requirements, database design and page structure</span><span data-lang="ar">متطلبات بوابة التواصل، وتصميم قاعدة البيانات، وهيكل الصفحات</span></li><li><span class="wk">4</span><span data-lang="en">Designed and coded the portal: chat, forums, calendar, projects</span><span data-lang="ar">تصميم البوابة وبرمجتها: المحادثات والمنتديات والتقويم والمشاريع</span></li><li><span class="wk">5</span><span data-lang="en">Tested on desktop and mobile, security review, screenshots</span><span data-lang="ar">اختبار البوابة على الحاسب والجوال، ومراجعة الحماية، وتصوير الصفحات</span></li><li><span class="wk">6</span><span data-lang="en">Linked Excel with SharePoint and reshaped the data into one table</span><span data-lang="ar">ربط Excel مع SharePoint، وإعادة ترتيب البيانات في جدول واحد</span></li><li><span class="wk">7</span><span data-lang="en">Uploaded the data to SharePoint and started the Power BI design</span><span data-lang="ar">رفع البيانات إلى SharePoint، وبداية تصميم اللوحة في Power BI</span></li><li><span class="wk">8</span><span data-lang="en">KPI cards, monthly chart, fixed the month order</span><span data-lang="ar">بطاقات الإجماليات، والرسم الشهري، وترتيب الأشهر</span></li><li><span class="wk">9</span><span data-lang="en">Donut chart and month slicer, revised after supervisor feedback</span><span data-lang="ar">الرسم الدائري وتصفية الأشهر، والتعديل حسب ملاحظات المشرف</span></li><li><span class="wk">10</span><span data-lang="en">Connected SharePoint to Power BI and pinned the dashboard live</span><span data-lang="ar">ربط SharePoint مع Power BI، وتثبيت اللوحة بالنمط المباشر</span></li><li><span class="wk">11</span><span data-lang="en">Created the share link and handed over both projects</span><span data-lang="ar">إنشاء رابط اللوحة ومشاركته، وتسليم المشروعين</span></li><li><span class="wk">12</span><span data-lang="en">Wrote and reviewed the training report</span><span data-lang="ar">كتابة تقرير التدريب ومراجعته</span></li></ol>
+        </details>
 
         <div class="coopGrid">
           <article class="card coopCard">
