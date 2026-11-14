@@ -260,9 +260,11 @@ if (window.top !== window.self) { try { window.top.location.replace(window.self.
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
     revealEls.forEach((el) => io.observe(el));
+    // Safety net: never leave content hidden (tall cards, small screens, Safari)
+    setTimeout(() => revealEls.forEach((el) => el.classList.add("in-view")), 2500);
 
     // Active nav link tracking
     const sections = document.querySelectorAll("main section[id]");
